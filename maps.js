@@ -18,15 +18,15 @@ var SchoolIcon = L.Icon.extend({
     }
 });
 
-var Elementary = new SchoolIcon({iconUrl: 'school.png'}),
-    High       = new SchoolIcon({iconUrl: 'university.png'}),
-    span       = new SchoolIcon({iconUrl: 'spanschool.png'}),
-    Hosting    = new SchoolIcon({iconUrl: 'award.png'}),
-    Middle     = new SchoolIcon({iconUrl: 'school2.png'},
-                                Elementaryteam = new SchoolIcon({iconUrl: 'schoolblue.png'}),
-                                Highteam        = new SchoolIcon({iconUrl: 'universityblue.png'}),
-                                spanteam       = new SchoolIcon({iconUrl: 'spanschoolblue.png'}),
-                                Middleteam    = new SchoolIcon({iconUrl: 'school2blue.png'}));
+var Elementary     = new SchoolIcon({iconUrl: 'school.png'}),
+    High           = new SchoolIcon({iconUrl: 'university.png'}),
+    span           = new SchoolIcon({iconUrl: 'spanschool.png'}),
+    Hosting        = new SchoolIcon({iconUrl: 'award.png'}),
+    Middle         = new SchoolIcon({iconUrl: 'school2.png'}),
+    Elementaryteam = new SchoolIcon({iconUrl: 'schoolblue.png'}),
+    Highteam       = new SchoolIcon({iconUrl: 'universityblue.png'}),
+    spanteam       = new SchoolIcon({iconUrl: 'spanschoolblue.png'}),
+    Middleteam     = new SchoolIcon({iconUrl: 'school2blue.png'});
 
 function onEachFeature(feature, layer) {
     // does this feature have a property named popupContent?
@@ -52,16 +52,17 @@ L.geoJSON(schools, {
 
         switch(geoJsonPoint.properties.Grade) {
             case "Elementary":
-                icon_map.icon = Elementary;
+                icon_map.icon = (geoJsonPoint.properties.Teams != "" ? Elementaryteam : Elementary);
                 break;
             case "Middle":
-                icon_map.icon = Middle;
+                icon_map.icon = (geoJsonPoint.properties.Teams != "" ? Middleteam : Middle);
                 break;
             case "High":
-                icon_map.icon = High;
+                icon_map.icon = (geoJsonPoint.properties.Teams != "" ? Highteam : High);
                 break;
             case "span": // Fallback for non-primary schools
             default:
+                icon_map.icon = (geoJsonPoint.properties.Teams != "" ? spanteam : span);
                 break;
         }
 
