@@ -23,32 +23,50 @@ var Elementary = new SchoolIcon({iconUrl: 'school.png'}),
     span       = new SchoolIcon({iconUrl: 'spanschool.png'}),
     Hosting    = new SchoolIcon({iconUrl: 'award.png'}),
     Middle     = new SchoolIcon({iconUrl: 'school2.png'},
-    Elementaryteam = new SchoolIcon({iconUrl: 'schoolblue.png'}),
-    Highteam        = new SchoolIcon({iconUrl: 'universityblue.png'}),
-    spanteam       = new SchoolIcon({iconUrl: 'spanschoolblue.png'}),
-    Middleteam    = new SchoolIcon({iconUrl: 'school2blue.png'}));
+                                Elementaryteam = new SchoolIcon({iconUrl: 'schoolblue.png'}),
+                                Highteam        = new SchoolIcon({iconUrl: 'universityblue.png'}),
+                                spanteam       = new SchoolIcon({iconUrl: 'spanschoolblue.png'}),
+                                Middleteam    = new SchoolIcon({iconUrl: 'school2blue.png'}));
 
-    function onEachFeature(feature, layer) {
-        // does this feature have a property named popupContent?
-        if (feature.properties && feature.properties.popupContent) {
-            layer.bindPopup(feature.properties.School);
-        }
+function onEachFeature(feature, layer) {
+    // does this feature have a property named popupContent?
+    if (feature.properties && feature.properties.popupContent) {
+        layer.bindPopup(feature.properties.School);
     }
+}
 
 L.geoJSON(districtborders, {
     style: function (feature) {
         return {color: feature.properties.stroke,
-                
-        };
+
+               };
     }
 }).addTo(mymap);
 
 L.geoJSON(schools, {
     pointToLayer: function(geoJsonPoint, latlng) {
-    return L.marker(latlng, {
-      icon:span
-    });
-},
-onEachFeature: onEachFeature
+        // Determine what icon to use for the schools.
+        let icon_map = {
+            icon: span
+        };
+
+        switch(geoJsonPoint.properties.Grade) {
+            case "Elementary":
+                icon_map.icon = Elementary;
+                break;
+            case "Middle":
+                icon_map.icon = Middle;
+                break;
+            case "High":
+                icon_map.icon = High;
+                break;
+            case "span": // Fallback for non-primary schools
+            default:
+                break;
+        }
+
+        return L.marker(latlng, icon_map);
+    },
+    onEachFeature: onEachFeature
 
 }).addTo(mymap);
