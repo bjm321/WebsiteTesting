@@ -72,9 +72,17 @@ L.geoJSON(schools, {
         }
 
         let marker = L.marker(latlng, icon_map);
+
+        let teamInnerHTML = "";
+        if (geoJsonPoint.properties.Teams) {
+            teamInnerHTML = `<dt>Team numbers</dt><dd>${geoJsonPoint.properties.Teams}</dd>`;
+        }
         marker.bindPopup(`
 <p>
   <h2>${geoJsonPoint.properties.School}</h2>
+  <dl>
+    ${teamInnerHTML}
+  </dl>
   <span style="color: navy">Navy text!</span>
 </p>`);
 
