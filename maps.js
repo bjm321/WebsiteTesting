@@ -66,7 +66,19 @@ L.geoJSON(schools, {
                 break;
         }
 
-        return L.marker(latlng, icon_map);
+        // When a school hosts, its icon is different.
+        if (geoJsonPoint.properties.Hosting != null && geoJsonPoint.properties.Hosting != "") {
+            icon_map.icon = Hosting;
+        }
+
+        let marker = L.marker(latlng, icon_map);
+        marker.bindPopup(`
+<p>
+  <h2>${geoJsonPoint.properties.School}</h2>
+  <span style="color: navy">Navy text!</span>
+</p>`);
+
+        return marker;
     },
     onEachFeature: onEachFeature
 
