@@ -18,27 +18,27 @@ var SchoolIcon = L.Icon.extend({
     }
 });
 
-var elementary     = new SchoolIcon({iconUrl: 'script/maptesting/Elementary.svg'}),
-    high           = new SchoolIcon({iconUrl: 'script/maptesting/high.svg'}),
-    span           = new SchoolIcon({iconUrl: 'script/maptesting/span.svg'}),
-    hosting        = new SchoolIcon({iconUrl: 'script/maptesting/hosting.svg'}),
-    hostingred     = new SchoolIcon({iconUrl: 'script/maptesting/hostingred.svg'}),
-    hostingblue    = new SchoolIcon({iconUrl: 'script/maptesting/hostingblue.svg'}),
-    hostingpurple  = new SchoolIcon({iconUrl: 'script/maptesting/hostingpurple.svg'}),
-    hostinggreen   = new SchoolIcon({iconUrl: 'script/maptesting/hostinggreen.svg'}),
-    hostingyellow  = new SchoolIcon({iconUrl: 'script/maptesting/hostingyellow.svg'}),
-    middle         = new SchoolIcon({iconUrl: 'script/maptesting/middle.svg'}),
-    elementaryblue = new SchoolIcon({iconUrl: 'script/maptesting/Elementaryblue.svg'}),
-    highred        = new SchoolIcon({iconUrl: 'script/maptesting/highred.svg'}),
-    spanblue       = new SchoolIcon({iconUrl: 'script/maptesting/spanblue.svg'}),
-    spanred        = new SchoolIcon({iconUrl: 'script/maptesting/spanred.svg'}),
-    spanpurple     = new SchoolIcon({iconUrl: 'script/maptesting/spanpurple.svg'}),
-    middleblue     = new SchoolIcon({iconUrl: 'script/maptesting/middleblue.svg'}),
-    middlered      = new SchoolIcon({iconUrl: 'script/maptesting/middlered.svg'}),
-    middlepurple   = new SchoolIcon({iconUrl: 'script/maptesting/middlepurple.svg'}),
-    grantsgreen    = new SchoolIcon({iconUrl: 'script/maptesting/grantsgreen.svg'}),
-    grantsyellow   = new SchoolIcon({iconUrl: 'script/maptesting/grantsyellow.svg'}),
-    error          = new SchoolIcon({iconUrl: 'script/maptesting/error.svg'});
+var elementary     = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/elementary.svg'}),
+    high           = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/high.svg'}),
+    span           = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/span.svg'}),
+    hosting        = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/hosting.svg'}),
+    hostingred     = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/hostingred.svg'}),
+    hostingblue    = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/hostingblue.svg'}),
+    hostingpurple  = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/hostingpurple.svg'}),
+    hostinggreen   = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/hostinggreen.svg'}),
+    hostingyellow  = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/hostingyellow.svg'}),
+    middle         = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/middle.svg'}),
+    elementaryblue = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/elementaryblue.svg'}),
+    highred        = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/highred.svg'}),
+    spanblue       = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/spanblue.svg'}),
+    spanred        = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/spanred.svg'}),
+    spanpurple     = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/spanpurple.svg'}),
+    middleblue     = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/middleblue.svg'}),
+    middlered      = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/middlered.svg'}),
+    middlepurple   = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/middlepurple.svg'}),
+    grantsgreen    = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/grantsgreen.svg'}),
+    grantsyellow   = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/grantsyellow.svg'}),
+    error          = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/error.svg'});
 
 function onEachFeature(feature, layer) {
     // does this feature have a property named popupContent?
@@ -82,37 +82,13 @@ L.geoJSON(schools, {
         if (geoJsonPoint.properties.Hosting != null && geoJsonPoint.properties.Hosting != "") {
             icon_map.icon = Hosting;
         } */
-
-        Boolean (NTG),
-	    Boolean (VIQC),
-        Boolean (VRC);
 	
-if (geoJsonPoint.properties.NTG = "yes" || geoJsonPoint.properties.NTG = "Yes"){
-	NTG = true;
-	 
-}
-else {
-	NTG = false;
-}
-
-if (geoJsonPoint.properties.VIQC = "yes" || geoJsonPoint.properties.VIQC = "Yes"){
-	VIQC = true;
-	 
-}
-else {
-	VIQC = false;
-}
-
-if (geoJsonPoint.properties.VRC = "yes" || geoJsonPoint.properties.VRC = "Yes"){
-	VRC = true;
-	 
-} else {
-	VRC = false;
-}
-
-let code = (NTG << 2) | (VIQC << 1) | VRC;
-let data = [];
-let result = "";
+        let NTG  = ("NTG" in geoJsonPoint.properties  && geoJsonPoint.properties.NTG.toLowerCase().trim()  === "yes");
+        let VIQC = ("VIQC" in geoJsonPoint.properties && geoJsonPoint.properties.VIQC.toLowerCase().trim() === "yes");
+        let VRC  = ("VRC" in geoJsonPoint.properties  && geoJsonPoint.properties.VRC.toLowerCase().trim()  === "yes");
+        let code = (NTG << 2) | (VIQC << 1) | VRC;
+        let data = [];
+        let result = "";
 
 if (geoJsonPoint.properties.Hosting != null && geoJsonPoint.properties.Hosting != "") {
     data = ["hosting",                     // (NTG, VIQC, VRC) = 000
@@ -125,7 +101,7 @@ if (geoJsonPoint.properties.Hosting != null && geoJsonPoint.properties.Hosting !
             "hostingyellow"];              // (NTG, VIQC, VRC) = 111
 } else {
         switch (geoJsonPoint.properties.Grade) {
-            case Elementary:
+            case elementary:
                 data = ["elementary",      // (NTG, VIQC, VRC) = 000
                         "error",           // (NTG, VIQC, VRC) = 001 Error
                         "elementaryblue",  // (NTG, VIQC, VRC) = 010
@@ -135,7 +111,7 @@ if (geoJsonPoint.properties.Hosting != null && geoJsonPoint.properties.Hosting !
                         "grantsgreen",     // (NTG, VIQC, VRC) = 110 
                         "error"];          // (NTG, VIQC, VRC) = 111 Error
                 break;
-            case Middle:
+            case middle:
                 data = ["middle",          // (NTG, VIQC, VRC) = 000
                         "middlered",       // (NTG, VIQC, VRC) = 001
                         "middleblue",      // (NTG, VIQC, VRC) = 010
@@ -145,7 +121,7 @@ if (geoJsonPoint.properties.Hosting != null && geoJsonPoint.properties.Hosting !
                         "grantsgreen",     // (NTG, VIQC, VRC) = 110 
                         "grantsyellow"];   // (NTG, VIQC, VRC) = 111 
                 break;
-            case High:
+            case high:
                 data = ["high",            // (NTG, VIQC, VRC) = 000
                         "highred",         // (NTG, VIQC, VRC) = 001
                         "error",           // (NTG, VIQC, VRC) = 010 Error
@@ -167,7 +143,7 @@ if (geoJsonPoint.properties.Hosting != null && geoJsonPoint.properties.Hosting !
                 break;
         }
     }
-}
+
 
 result = data[code];
 icon_map.icon = result;
