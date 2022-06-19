@@ -18,15 +18,27 @@ var SchoolIcon = L.Icon.extend({
     }
 });
 
-var Elementary     = new SchoolIcon({iconUrl: 'school.png'}),
-    High           = new SchoolIcon({iconUrl: 'university.png'}),
-    span           = new SchoolIcon({iconUrl: 'spanschool.png'}),
-    Hosting        = new SchoolIcon({iconUrl: 'award.png'}),
-    Middle         = new SchoolIcon({iconUrl: 'school2.png'}),
-    Elementaryteam = new SchoolIcon({iconUrl: 'schoolblue.png'}),
-    Highteam       = new SchoolIcon({iconUrl: 'universityblue.png'}),
-    spanteam       = new SchoolIcon({iconUrl: 'spanschoolblue.png'}),
-    Middleteam     = new SchoolIcon({iconUrl: 'school2blue.png'});
+var elementary     = new SchoolIcon({iconUrl: 'script/maptesting/Elementary.svg'}),
+    high           = new SchoolIcon({iconUrl: 'script/maptesting/high.svg'}),
+    span           = new SchoolIcon({iconUrl: 'script/maptesting/span.svg'}),
+    hosting        = new SchoolIcon({iconUrl: 'script/maptesting/hosting.svg'}),
+    hostingred     = new SchoolIcon({iconUrl: 'script/maptesting/hostingred.svg'}),
+    hostingblue    = new SchoolIcon({iconUrl: 'script/maptesting/hostingblue.svg'}),
+    hostingpurple  = new SchoolIcon({iconUrl: 'script/maptesting/hostingpurple.svg'}),
+    hostinggreen   = new SchoolIcon({iconUrl: 'script/maptesting/hostinggreen.svg'}),
+    hostingyellow  = new SchoolIcon({iconUrl: 'script/maptesting/hostingyellow.svg'}),
+    middle         = new SchoolIcon({iconUrl: 'script/maptesting/middle.svg'}),
+    elementaryblue = new SchoolIcon({iconUrl: 'script/maptesting/Elementaryblue.svg'}),
+    highred        = new SchoolIcon({iconUrl: 'script/maptesting/highred.svg'}),
+    spanblue       = new SchoolIcon({iconUrl: 'script/maptesting/spanblue.svg'}),
+    spanred        = new SchoolIcon({iconUrl: 'script/maptesting/spanred.svg'}),
+    spanpurple     = new SchoolIcon({iconUrl: 'script/maptesting/spanpurple.svg'}),
+    middleblue     = new SchoolIcon({iconUrl: 'script/maptesting/middleblue.svg'}),
+    middlered      = new SchoolIcon({iconUrl: 'script/maptesting/middlered.svg'}),
+    middlepurple   = new SchoolIcon({iconUrl: 'script/maptesting/middlepurple.svg'}),
+    grantsgreen    = new SchoolIcon({iconUrl: 'script/maptesting/grantsgreen.svg'}),
+    grantsyellow   = new SchoolIcon({iconUrl: 'script/maptesting/grantsyellow.svg'}),
+    error          = new SchoolIcon({iconUrl: 'script/maptesting/error.svg'});
 
 function onEachFeature(feature, layer) {
     // does this feature have a property named popupContent?
@@ -50,7 +62,7 @@ L.geoJSON(schools, {
             icon: span
         };
 
-        switch(geoJsonPoint.properties.Grade) {
+       /*  switch(geoJsonPoint.properties.Grade) {
             case "Elementary":
                 icon_map.icon = (geoJsonPoint.properties.Teams != "" ? Elementaryteam : Elementary);
                 break;
@@ -69,7 +81,96 @@ L.geoJSON(schools, {
         // When a school hosts, its icon is different.
         if (geoJsonPoint.properties.Hosting != null && geoJsonPoint.properties.Hosting != "") {
             icon_map.icon = Hosting;
+        } */
+
+        Boolean (NTG),
+	    Boolean (VIQC),
+        Boolean (VRC);
+	
+if (geoJsonPoint.properties.NTG = "yes" || geoJsonPoint.properties.NTG = "Yes"){
+	NTG = true;
+	 
+}
+else {
+	NTG = false;
+}
+
+if (geoJsonPoint.properties.VIQC = "yes" || geoJsonPoint.properties.VIQC = "Yes"){
+	VIQC = true;
+	 
+}
+else {
+	VIQC = false;
+}
+
+if (geoJsonPoint.properties.VRC = "yes" || geoJsonPoint.properties.VRC = "Yes"){
+	VRC = true;
+	 
+} else {
+	VRC = false;
+}
+
+let code = (NTG << 2) | (VIQC << 1) | VRC;
+let data = [];
+let result = "";
+
+if (geoJsonPoint.properties.Hosting != null && geoJsonPoint.properties.Hosting != "") {
+    data = ["hosting",                     // (NTG, VIQC, VRC) = 000
+            "hostingred",                  // (NTG, VIQC, VRC) = 001
+            "hostingblue",                 // (NTG, VIQC, VRC) = 010
+            "hostingpurple",               // (NTG, VIQC, VRC) = 011
+            "error",                       // (NTG, VIQC, VRC) = 100 Error
+            "error",                       // (NTG, VIQC, VRC) = 101 Error
+            "hostinggreen",                // (NTG, VIQC, VRC) = 110
+            "hostingyellow"];              // (NTG, VIQC, VRC) = 111
+} else {
+        switch (geoJsonPoint.properties.Grade) {
+            case Elementary:
+                data = ["elementary",      // (NTG, VIQC, VRC) = 000
+                        "error",           // (NTG, VIQC, VRC) = 001 Error
+                        "elementaryblue",  // (NTG, VIQC, VRC) = 010
+                        "error",           // (NTG, VIQC, VRC) = 011
+                        "error",           // (NTG, VIQC, VRC) = 100 Error
+                        "error",           // (NTG, VIQC, VRC) = 101 Error
+                        "grantsgreen",     // (NTG, VIQC, VRC) = 110 
+                        "error"];          // (NTG, VIQC, VRC) = 111 Error
+                break;
+            case Middle:
+                data = ["middle",          // (NTG, VIQC, VRC) = 000
+                        "middlered",       // (NTG, VIQC, VRC) = 001
+                        "middleblue",      // (NTG, VIQC, VRC) = 010
+                        "middlmpurple",    // (NTG, VIQC, VRC) = 011
+                        "error",           // (NTG, VIQC, VRC) = 100 Error
+                        "error",           // (NTG, VIQC, VRC) = 101 Error
+                        "grantsgreen",     // (NTG, VIQC, VRC) = 110 
+                        "grantsyellow"];   // (NTG, VIQC, VRC) = 111 
+                break;
+            case High:
+                data = ["high",            // (NTG, VIQC, VRC) = 000
+                        "highred",         // (NTG, VIQC, VRC) = 001
+                        "error",           // (NTG, VIQC, VRC) = 010 Error
+                        "error",           // (NTG, VIQC, VRC) = 011 Error
+                        "error",           // (NTG, VIQC, VRC) = 100 Error
+                        "error",           // (NTG, VIQC, VRC) = 101 Error
+                        "error",           // (NTG, VIQC, VRC) = 110 Error
+                        "error"];          // (NTG, VIQC, VRC) = 111 Error
+                break;
+            default:
+                data = ["span",            // (NTG, VIQC, VRC) = 000
+                        "spanred",         // (NTG, VIQC, VRC) = 001
+                        "spanblue",        // (NTG, VIQC, VRC) = 010
+                        "spanpurple",      // (NTG, VIQC, VRC) = 011
+                        "error",           // (NTG, VIQC, VRC) = 100 Error
+                        "error",           // (NTG, VIQC, VRC) = 101 Error
+                        "grantsgreen",     // (NTG, VIQC, VRC) = 110 
+                        "grantsyellow"];   // (NTG, VIQC, VRC) = 111 
+                break;
         }
+    }
+}
+
+result = data[code];
+icon_map.icon = result;
 
         let marker = L.marker(latlng, icon_map);
 
@@ -93,7 +194,6 @@ L.geoJSON(schools, {
     ${teamInnerHTML}
     ${eventInnerHTML}
   </dl>
-  <span style="color: navy">Navy text!</span>
 </p>`);
 
         return marker;
