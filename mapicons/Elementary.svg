@@ -26,15 +26,15 @@
      inkscape:deskcolor="#505050"
      showgrid="false"
      showguides="true"
-     inkscape:zoom="17.987029"
-     inkscape:cx="-2.5296007"
-     inkscape:cy="32.690224"
+     inkscape:zoom="1.5898438"
+     inkscape:cx="-40.570024"
+     inkscape:cy="112.58968"
      inkscape:window-width="2560"
      inkscape:window-height="1017"
      inkscape:window-x="1220"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1">
+     inkscape:current-layer="layer2">
     <sodipodi:guide
        position="49.690418,461.0516"
        orientation="0,-1"
@@ -60,18 +60,20 @@
      inkscape:groupmode="layer"
      id="layer1"
      inkscape:label="Image 1"
-     style="display:inline">
+     style="display:inline"
+     transform="matrix(6.971681,0,0,6.971681,-57.162516,-67.368026)">
     <path
        id="rect234"
        style="display:inline;fill:#808080;stroke-width:0.808865"
-       d="M 10.066406 11.28125 C 9.7930373 11.28125 9.5722656 11.502022 9.5722656 11.775391 L 9.5722656 39.945312 C 9.5722656 40.218681 9.7930373 40.4375 10.066406 40.4375 L 20.244141 40.4375 L 22.464844 44.107422 L 24.90625 48.146484 L 27.183594 44.011719 L 29.150391 40.4375 L 41.46875 40.4375 C 41.742119 40.4375 41.962891 40.218681 41.962891 39.945312 L 41.962891 11.775391 C 41.962891 11.502022 41.742119 11.28125 41.46875 11.28125 L 10.066406 11.28125 z " />
+       d="m 10.066406,11.28125 c -0.2733687,0 -0.4941404,0.220772 -0.4941404,0.494141 v 28.169921 c 0,0.273369 0.2207717,0.492188 0.4941404,0.492188 h 10.177735 l 2.220703,3.669922 2.441406,4.039062 2.277344,-4.134765 1.966797,-3.574219 H 41.46875 c 0.273369,0 0.494141,-0.218819 0.494141,-0.492188 V 11.775391 c 0,-0.273369 -0.220772,-0.494141 -0.494141,-0.494141 z" />
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="Image 2"
      style="display:inline"
-     sodipodi:insensitive="true">
+     sodipodi:insensitive="true"
+     transform="matrix(6.971681,0,0,6.971681,-57.162516,-67.368026)">
     <path
        id="path596"
        style="display:inline;fill:#ffffff"

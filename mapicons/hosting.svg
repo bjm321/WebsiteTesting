@@ -7,21 +7,46 @@
    viewBox="0 0 210 297"
    version="1.1"
    id="svg151"
+   sodipodi:docname="hosting.svg"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview173"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.74564394"
+     inkscape:cx="397.64288"
+     inkscape:cy="454.64059"
+     inkscape:window-width="2560"
+     inkscape:window-height="1017"
+     inkscape:window-x="1220"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg151" />
   <defs
      id="defs148" />
   <g
      id="layer2"
-     style="display:inline">
+     style="display:inline"
+     transform="matrix(4.2477736,0,0,4.2477736,1.0186188,-53.250005)">
     <path
        id="path427"
-       style="stroke-width:0.264583;fill:#808080"
-       transform="rotate(-1.7290968,27.773571,-63.435119)"
-       d="m 21.891799,39.518142 -2.120561,-4.107507 -2.120561,-4.107506 4.617485,0.217293 4.617486,0.217294 -2.496925,3.890213 z M -2.5786401,15.515955 46.87936,17.008973 c 0.07259,0.0022 0.129252,0.06239 0.127061,0.13497 l -0.46076,15.263198 c -0.0022,0.07259 -0.06239,0.12925 -0.13497,0.127059 L -3.0473094,31.041182 c -0.072582,-0.0022 -0.1292506,-0.06239 -0.1270596,-0.13497 l 0.4607593,-15.263198 c 0.00219,-0.07258 0.062388,-0.12925 0.1349696,-0.127059 z" />
+       style="fill:#808080;stroke-width:0.247633"
+       d="m 23.379292,38.159135 -2.099811,-3.782739 -2.099812,-3.782738 4.325853,0.07288 4.325854,0.07288 -2.226042,3.709859 z M -0.19095846,16.395849 H 46.119796 c 0.06797,8e-6 0.122678,0.05472 0.122678,0.122678 v 14.291928 c -8e-6,0.06797 -0.05472,0.122677 -0.122678,0.122677 H -0.19095846 c -0.0679635,-7e-6 -0.12267754,-0.05472 -0.12267755,-0.122677 l 3e-8,-14.291929 c -9.5e-7,-0.06796 0.0547146,-0.122677 0.12267752,-0.122677 z" />
   </g>
   <g
-     id="layer1">
+     id="layer1"
+     transform="matrix(3.9756566,0,0,3.9756566,0.93327311,-48.788416)">
     <g
        id="Artwork"
        transform="matrix(0.10058586,0,0,0.10058586,1.5264161,15.665389)"
@@ -76,7 +101,7 @@
          data-name="IQ Print">
         <polygon
            class="cls-1"
-           points="358.66,65.64 366.92,65.64 372.01,52.27 338.95,52.27 333.86,65.64 342.12,65.64 331.94,92.36 323.68,92.36 318.59,105.73 351.65,105.73 356.74,92.36 348.48,92.36 "
+           points="333.86,65.64 342.12,65.64 331.94,92.36 323.68,92.36 318.59,105.73 351.65,105.73 356.74,92.36 348.48,92.36 358.66,65.64 366.92,65.64 372.01,52.27 338.95,52.27 "
            id="polygon24"
            style="fill:#ffffff" />
         <path
