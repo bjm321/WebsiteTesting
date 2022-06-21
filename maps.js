@@ -83,7 +83,7 @@ L.geoJSON(schools, {
             icon_map.icon = Hosting;
         } */
 	
-        let NTG  = ("NTG" in geoJsonPoint.properties  && geoJsonPoint.properties.Grants.toLowerCase().trim()  === "yes");
+        let NTG  = ("Grants" in geoJsonPoint.properties  && geoJsonPoint.properties.Grants.toLowerCase().trim()  === "yes");
         let VIQC = ("VIQC" in geoJsonPoint.properties && geoJsonPoint.properties.VIQC.toLowerCase().trim() === "yes");
         let VRC  = ("VRC" in geoJsonPoint.properties  && geoJsonPoint.properties.VRC.toLowerCase().trim()  === "yes");
         let code = (NTG << 2) | (VIQC << 1) | VRC;
