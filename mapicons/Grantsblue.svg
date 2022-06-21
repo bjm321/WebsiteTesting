@@ -25,15 +25,15 @@
      inkscape:document-units="mm"
      showgrid="false"
      showguides="true"
-     inkscape:zoom="4.2179991"
-     inkscape:cx="78.354688"
-     inkscape:cy="119.01378"
-     inkscape:window-width="2560"
-     inkscape:window-height="1017"
-     inkscape:window-x="1220"
+     inkscape:zoom="1.4912879"
+     inkscape:cx="182.0574"
+     inkscape:cy="301.08204"
+     inkscape:window-width="1280"
+     inkscape:window-height="961"
+     inkscape:window-x="3780"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer2">
+     inkscape:current-layer="layer1">
     <sodipodi:guide
        position="70.612902,246.96775"
        orientation="0,-1"
@@ -53,31 +53,25 @@
   <defs
      id="defs2" />
   <g
-     inkscape:groupmode="layer"
-     id="layer2"
-     inkscape:label="background">
-    <path
-       id="path640"
-       style="stroke-width:0.264583;fill:#0000ff"
-       inkscape:transform-center-x="-0.18818142"
-       inkscape:transform-center-y="2.2049817"
-       transform="translate(7.8409018,-0.50181772)"
-       d="m 17.061803,50.558132 -3.819142,-7.266827 -3.819141,-7.266827 8.202827,0.32594 8.202827,0.32594 -4.383685,6.940887 z M -7.8194922,11.536701 H 41.152202 c 0.07334,0 0.132378,0.05904 0.132378,0.132378 v 27.816868 c 0,0.07334 -0.05904,0.132379 -0.132378,0.132379 H -7.8194922 c -0.073337,0 -0.132378,-0.05904 -0.132378,-0.132379 V 11.669079 c 0,-0.07334 0.059041,-0.132378 0.132378,-0.132378 z" />
-  </g>
-  <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
+    <path
+       id="path640"
+       style="fill:#0000ff;stroke-width:0.53805"
+       inkscape:transform-center-x="-0.3826807"
+       inkscape:transform-center-y="4.4839981"
+       d="M 50.756245,90.387941 42.989729,75.610294 35.223214,60.832647 51.904288,61.49547 68.585364,62.158295 59.670805,76.273118 Z M 0.15823227,11.034883 H 99.745911 c 0.149142,0 0.269199,0.120063 0.269199,0.269201 v 56.567724 c 0,0.149143 -0.120061,0.269203 -0.269199,0.269203 H 0.15823227 c -0.14913639,0 -0.26920077,-0.120062 -0.26920077,-0.269203 V 11.304084 c 0,-0.149142 0.12006438,-0.269201 0.26920077,-0.269201 z" />
     <text
        xml:space="preserve"
-       style="font-size:26.8838px;fill:#ffffff;stroke-width:2.24031"
-       x="3.8873146"
-       y="35.589226"
+       style="font-size:54.6702px;fill:#ffffff;stroke-width:4.55584"
+       x="8.019845"
+       y="60.968014"
        id="text63"><tspan
          sodipodi:role="line"
          id="tspan61"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Impact;-inkscape-font-specification:Impact;fill:#ffffff;stroke-width:2.24031"
-         x="3.8873146"
-         y="35.589226">NGT</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Impact;-inkscape-font-specification:Impact;fill:#ffffff;stroke-width:4.55584"
+         x="8.019845"
+         y="60.968014">NGT</tspan></text>
   </g>
 </svg>

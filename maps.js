@@ -14,7 +14,7 @@ var SchoolIcon = L.Icon.extend({
     options: {
         iconSize:     [100, 100], // size of the icon
         iconAnchor:   [25, 25], // point of the icon which will correspond to marker's location
-        popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+        popupAnchor:  [8, 0] // point from which the popup should open relative to the iconAnchor
     }
 });
 
@@ -83,70 +83,70 @@ L.geoJSON(schools, {
             icon_map.icon = Hosting;
         } */
 	
-        let NTG  = ("NTG" in geoJsonPoint.properties  && geoJsonPoint.properties.NTG.toLowerCase().trim()  === "yes");
+        let NTG  = ("NTG" in geoJsonPoint.properties  && geoJsonPoint.properties.Grants.toLowerCase().trim()  === "yes");
         let VIQC = ("VIQC" in geoJsonPoint.properties && geoJsonPoint.properties.VIQC.toLowerCase().trim() === "yes");
         let VRC  = ("VRC" in geoJsonPoint.properties  && geoJsonPoint.properties.VRC.toLowerCase().trim()  === "yes");
         let code = (NTG << 2) | (VIQC << 1) | VRC;
         let data = [];
         let result = "";
 
-if (geoJsonPoint.properties.Hosting != null && geoJsonPoint.properties.Hosting != "") {
-    data = [hosting,                     // (NTG, VIQC, VRC) = 000
-            hostingred,                  // (NTG, VIQC, VRC) = 001
-            hostingblue,                 // (NTG, VIQC, VRC) = 010
-            hostingpurple,               // (NTG, VIQC, VRC) = 011
-            error,                       // (NTG, VIQC, VRC) = 100 Error
-            error,                       // (NTG, VIQC, VRC) = 101 Error
-            hostinggreen,                // (NTG, VIQC, VRC) = 110
-            hostingyellow];              // (NTG, VIQC, VRC) = 111
-} else {
-        switch (geoJsonPoint.properties.Grade) {
-            case "Elementary":
-                data = [elementary,      // (NTG, VIQC, VRC) = 000
-                        error,           // (NTG, VIQC, VRC) = 001 Error
-                        elementaryblue,  // (NTG, VIQC, VRC) = 010
-                        error,           // (NTG, VIQC, VRC) = 011
-                        error,           // (NTG, VIQC, VRC) = 100 Error
-                        error,           // (NTG, VIQC, VRC) = 101 Error
-                        grantsgreen,     // (NTG, VIQC, VRC) = 110 
-                        error];          // (NTG, VIQC, VRC) = 111 Error
-                break;
-            case "Middle":
-                data = [middle,          // (NTG, VIQC, VRC) = 000
-                        middlered,       // (NTG, VIQC, VRC) = 001
-                        middleblue,      // (NTG, VIQC, VRC) = 010
-                        middlepurple,    // (NTG, VIQC, VRC) = 011
-                        error,           // (NTG, VIQC, VRC) = 100 Error
-                        error,           // (NTG, VIQC, VRC) = 101 Error
-                        grantsgreen,     // (NTG, VIQC, VRC) = 110 
-                        grantsyellow];   // (NTG, VIQC, VRC) = 111 
-                break;
-            case "High":
-                data = [high,            // (NTG, VIQC, VRC) = 000
-                        highred,         // (NTG, VIQC, VRC) = 001
-                        error,           // (NTG, VIQC, VRC) = 010 Error
-                        error,           // (NTG, VIQC, VRC) = 011 Error
-                        error,           // (NTG, VIQC, VRC) = 100 Error
-                        error,           // (NTG, VIQC, VRC) = 101 Error
-                        error,           // (NTG, VIQC, VRC) = 110 Error
-                        error];          // (NTG, VIQC, VRC) = 111 Error
-                break;
-            default:
-                data = [span,            // (NTG, VIQC, VRC) = 000
-                        spanred,         // (NTG, VIQC, VRC) = 001
-                        spanblue,        // (NTG, VIQC, VRC) = 010
-                        spanpurple,      // (NTG, VIQC, VRC) = 011
-                        error,           // (NTG, VIQC, VRC) = 100 Error
-                        error,           // (NTG, VIQC, VRC) = 101 Error
-                        grantsgreen,     // (NTG, VIQC, VRC) = 110 
-                        grantsyellow];   // (NTG, VIQC, VRC) = 111 
-                break;
-        }
-    }
+        if (geoJsonPoint.properties.Hosting != null && geoJsonPoint.properties.Hosting != "") {
+            data = [hosting,                     // (NTG, VIQC, VRC) = 000
+                    hostingred,                  // (NTG, VIQC, VRC) = 001
+                    hostingblue,                 // (NTG, VIQC, VRC) = 010
+                    hostingpurple,               // (NTG, VIQC, VRC) = 011
+                    error,                       // (NTG, VIQC, VRC) = 100 Error
+                    error,                       // (NTG, VIQC, VRC) = 101 Error
+                    hostinggreen,                // (NTG, VIQC, VRC) = 110
+                    hostingyellow];              // (NTG, VIQC, VRC) = 111
+        } else {
+                switch (geoJsonPoint.properties.Grade) {
+                    case "Elementary":
+                        data = [elementary,      // (NTG, VIQC, VRC) = 000
+                                error,           // (NTG, VIQC, VRC) = 001 Error
+                                elementaryblue,  // (NTG, VIQC, VRC) = 010
+                                error,           // (NTG, VIQC, VRC) = 011
+                                error,           // (NTG, VIQC, VRC) = 100 Error
+                                error,           // (NTG, VIQC, VRC) = 101 Error
+                                grantsgreen,     // (NTG, VIQC, VRC) = 110 
+                                error];          // (NTG, VIQC, VRC) = 111 Error
+                        break;
+                    case "Middle":
+                        data = [middle,          // (NTG, VIQC, VRC) = 000
+                                middlered,       // (NTG, VIQC, VRC) = 001
+                                middleblue,      // (NTG, VIQC, VRC) = 010
+                                middlepurple,    // (NTG, VIQC, VRC) = 011
+                                error,           // (NTG, VIQC, VRC) = 100 Error
+                                error,           // (NTG, VIQC, VRC) = 101 Error
+                                grantsgreen,     // (NTG, VIQC, VRC) = 110 
+                                grantsyellow];   // (NTG, VIQC, VRC) = 111 
+                        break;
+                    case "High":
+                        data = [high,            // (NTG, VIQC, VRC) = 000
+                                highred,         // (NTG, VIQC, VRC) = 001
+                                error,           // (NTG, VIQC, VRC) = 010 Error
+                                error,           // (NTG, VIQC, VRC) = 011 Error
+                                error,           // (NTG, VIQC, VRC) = 100 Error
+                                error,           // (NTG, VIQC, VRC) = 101 Error
+                                error,           // (NTG, VIQC, VRC) = 110 Error
+                                error];          // (NTG, VIQC, VRC) = 111 Error
+                        break;
+                    default:
+                        data = [span,            // (NTG, VIQC, VRC) = 000
+                                spanred,         // (NTG, VIQC, VRC) = 001
+                                spanblue,        // (NTG, VIQC, VRC) = 010
+                                spanpurple,      // (NTG, VIQC, VRC) = 011
+                                error,           // (NTG, VIQC, VRC) = 100 Error
+                                error,           // (NTG, VIQC, VRC) = 101 Error
+                                grantsgreen,     // (NTG, VIQC, VRC) = 110 
+                                grantsyellow];   // (NTG, VIQC, VRC) = 111 
+                        break;
+                }
+            }
 
-    icon_map.icon = data[code];
-/* result = data[code];
-icon_map.icon = result; */
+            icon_map.icon = data[code];
+            /* result = data[code];
+            icon_map.icon = result; */
 
         let marker = L.marker(latlng, icon_map);
 
@@ -165,7 +165,7 @@ icon_map.icon = result; */
         // Make sure each school has its own unique popup.
         marker.bindPopup(`
 <p>
-  <h2>${geoJsonPoint.properties.School}</h2>
+  <h4>${geoJsonPoint.properties.School}</h4>
   <dl>
     ${teamInnerHTML}
     ${eventInnerHTML}

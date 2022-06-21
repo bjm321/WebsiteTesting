@@ -25,12 +25,12 @@
      inkscape:document-units="mm"
      showgrid="false"
      showguides="true"
-     inkscape:zoom="4.2179991"
-     inkscape:cx="78.354688"
-     inkscape:cy="119.01378"
-     inkscape:window-width="2560"
-     inkscape:window-height="1017"
-     inkscape:window-x="1220"
+     inkscape:zoom="2.1089996"
+     inkscape:cx="230.20394"
+     inkscape:cy="253.67478"
+     inkscape:window-width="1280"
+     inkscape:window-height="961"
+     inkscape:window-x="3780"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1">
@@ -53,21 +53,17 @@
   <defs
      id="defs2" />
   <g
-     inkscape:groupmode="layer"
-     id="layer2"
-     inkscape:label="background">
-    <path
-       id="path640"
-       style="stroke-width:0.264583;fill:#ffff00"
-       inkscape:transform-center-x="-0.18818142"
-       inkscape:transform-center-y="2.2049817"
-       transform="translate(7.8409018,-0.50181772)"
-       d="m 17.061803,50.558132 -3.819142,-7.266827 -3.819141,-7.266827 8.202827,0.32594 8.202827,0.32594 -4.383685,6.940887 z M -7.8194922,11.536701 H 41.152202 c 0.07334,0 0.132378,0.05904 0.132378,0.132378 v 27.816868 c 0,0.07334 -0.05904,0.132379 -0.132378,0.132379 H -7.8194922 c -0.073337,0 -0.132378,-0.05904 -0.132378,-0.132379 V 11.669079 c 0,-0.07334 0.059041,-0.132378 0.132378,-0.132378 z" />
-  </g>
-  <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="matrix(2.0352343,0,0,2.0352343,0.1148784,-11.423691)">
+    <path
+       id="path640"
+       style="fill:#ffff00;stroke-width:0.264583"
+       inkscape:transform-center-x="-0.18818142"
+       inkscape:transform-center-y="2.2049817"
+       transform="translate(7.8409017,-0.50181772)"
+       d="m 17.061803,50.558132 -3.819142,-7.266827 -3.819141,-7.266827 8.202827,0.32594 8.202827,0.32594 -4.383685,6.940887 z M -7.8194922,11.536701 H 41.152202 c 0.07334,0 0.132378,0.05904 0.132378,0.132378 v 27.816868 c 0,0.07334 -0.05904,0.132379 -0.132378,0.132379 H -7.8194922 c -0.073337,0 -0.132378,-0.05904 -0.132378,-0.132379 V 11.669079 c 0,-0.07334 0.059041,-0.132378 0.132378,-0.132378 z" />
     <text
        xml:space="preserve"
        style="font-size:26.8838px;fill:#000000;stroke-width:2.24031"

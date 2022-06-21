@@ -26,12 +26,12 @@
      inkscape:deskcolor="#505050"
      showgrid="false"
      showguides="true"
-     inkscape:zoom="12.21"
-     inkscape:cx="14.127764"
-     inkscape:cy="22.686322"
-     inkscape:window-width="2560"
-     inkscape:window-height="1017"
-     inkscape:window-x="1220"
+     inkscape:zoom="4.3168869"
+     inkscape:cx="20.500885"
+     inkscape:cy="83.625077"
+     inkscape:window-width="1280"
+     inkscape:window-height="961"
+     inkscape:window-x="3780"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer4">
@@ -59,16 +59,12 @@
   <g
      inkscape:groupmode="layer"
      id="layer4"
-     inkscape:label="Image 2">
+     inkscape:label="Image 2"
+     transform="matrix(3.086046,0,0,3.086046,-28.493186,-23.175255)">
     <path
        id="rect917"
        style="fill:#808080;stroke-width:0.695323"
-       d="M 9.6953125 11.220703 C 9.4912943 11.220703 9.328125 11.383872 9.328125 11.587891 L 9.328125 40.570312 C 9.328125 40.774331 9.4912943 40.939453 9.6953125 40.939453 L 20.421875 40.939453 L 22.507812 44.552734 L 25.060547 48.976562 L 27.615234 44.552734 L 29.701172 40.939453 L 41.236328 40.939453 C 41.440346 40.939453 41.605469 40.774331 41.605469 40.570312 L 41.605469 11.587891 C 41.605469 11.383872 41.440346 11.220703 41.236328 11.220703 L 9.6953125 11.220703 z " />
-  </g>
-  <g
-     inkscape:groupmode="layer"
-     id="layer3"
-     inkscape:label="Image 1">
+       d="m 9.6953125,11.220703 c -0.2040182,0 -0.3671875,0.163169 -0.3671875,0.367188 v 28.982421 c 0,0.204019 0.1631693,0.369141 0.3671875,0.369141 H 20.421875 l 2.085937,3.613281 2.552735,4.423828 2.554687,-4.423828 2.085938,-3.613281 h 11.535156 c 0.204018,0 0.369141,-0.165122 0.369141,-0.369141 V 11.587891 c 0,-0.204019 -0.165123,-0.367188 -0.369141,-0.367188 z" />
     <path
        id="path852"
        style="display:inline;fill:#ffffff;stroke-width:0.10734"

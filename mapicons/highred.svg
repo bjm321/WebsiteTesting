@@ -26,14 +26,14 @@
      showgrid="false"
      showguides="true"
      inkscape:zoom="2.1089995"
-     inkscape:cx="42.437183"
-     inkscape:cy="108.10813"
-     inkscape:window-width="1228"
-     inkscape:window-height="621"
-     inkscape:window-x="-8"
+     inkscape:cx="428.40219"
+     inkscape:cy="236.13092"
+     inkscape:window-width="2560"
+     inkscape:window-height="1017"
+     inkscape:window-x="1220"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer2">
+     inkscape:current-layer="layer1">
     <sodipodi:guide
        position="49.677418,284.58065"
        orientation="1,0"
@@ -60,16 +60,18 @@
   <g
      inkscape:groupmode="layer"
      id="layer2"
-     inkscape:label="Layer 2">
+     inkscape:label="Layer 2"
+     transform="matrix(2.1335325,0,0,2.1335325,-1.7063456,-5.8307462)">
     <path
        id="rect406"
        style="fill:#ff0000;stroke-width:0.253596"
-       d="M 1.633492 5.1438721 C 1.5626407 5.1438721 1.5053345 5.2006615 1.5053345 5.2715129 L 1.5053345 40.770121 C 1.5053345 40.840973 1.5626407 40.898279 1.633492 40.898279 L 19.986894 40.898279 L 22.123714 44.598828 L 24.839827 49.303451 L 27.555941 44.598828 L 29.692761 40.898279 L 47.544902 40.898279 C 47.615753 40.898279 47.672542 40.840973 47.672542 40.770121 L 47.672542 5.2715129 C 47.672542 5.2006615 47.615753 5.1438721 47.544902 5.1438721 L 1.633492 5.1438721 z " />
+       d="m 1.633492,5.1438721 c -0.070851,0 -0.1281575,0.056789 -0.1281575,0.1276408 V 40.770121 c 0,0.07085 0.057306,0.128158 0.1281575,0.128158 h 18.353402 l 2.13682,3.700549 2.716113,4.704623 2.716114,-4.704623 2.13682,-3.700549 h 17.852141 c 0.07085,0 0.12764,-0.05731 0.12764,-0.128158 V 5.2715129 c 0,-0.070851 -0.05679,-0.1276408 -0.12764,-0.1276408 z" />
   </g>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="matrix(2.1335325,0,0,2.1335325,-1.7063456,-5.8307462)">
     <path
        id="rect180"
        style="fill:#ffffff;stroke-width:0.0519378"
