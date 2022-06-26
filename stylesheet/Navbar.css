@@ -1,0 +1,45 @@
+.Nav-top{
+	position:fixed;
+	width:100%;
+	z-index:1;
+	top:0
+}
+
+
+
+.navbartheme {
+    
+    color:#fff !important;
+    background:linear-gradient(to bottom, #33ccff 0%, #000066 100%) !important;
+}
+@media (max-width:685px){
+	#home{
+		
+		width: 215px !important;
+		height:46px;
+	}
+}
+@media (min-width:686px){
+	#home{
+		
+		width: 250px !important;
+		height:46px;
+	}
+}
+.laroboticshomelogo{
+	width:100px;
+	height:30px;
+}
+#pick{
+    
+    color:#000000; 
+    background: linear-gradient(to bottom, #ffcc00 0%, #cd7f32 100%);
+	height:46px;
+}
+
+.hover-navbar:hover{
+    
+    color:#000!important;
+    background: linear-gradient(to bottom, #ffcc00 0%, #cd7f32 100%);
+	height:46px;
+}

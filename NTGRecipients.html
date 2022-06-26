@@ -1,0 +1,1376 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="author" content="LeRoy Nelson">
+    <meta name="description" content="Nelson Team Grants (NTG) is a division of Los Angeles Robotics (LARobotics), a nonprofit corporation which supports several youth robotics programs in Southern California">
+    <meta name="keywords" content="Nelson Team Grants, NTG, VEX IQ Challenge, VEX Robotics, VEX, Robotics, Elementary Schools, Middle Schools, Los Angeles Unified School District, LAUSD, Local, Recipient, Recipients, League, Leagues, Workshops, Workshop, Team, Teams, Maps, Lists, LeRoy Nelson, Treasurer, Los Angeles Robotics, Los Angeles, Los Angeles County, California">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nelson Team Grant Recipients - Los Angeles Robotics (LARobotics)</title>
+    
+	<link rel="stylesheet" href="stylesheet/WebsiteTheme.css">
+	<link rel="stylesheet" href="stylesheet/main.css">
+	<link rel="stylesheet" href="stylesheet/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="stylesheet/Navbar.css">
+	<link rel="stylesheet" href="stylesheet/sidebar.css">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css">
+  </head>
+    <body>
+
+      <!--Navbar-->
+		<div class="w3-top">
+			<div class="w3-bar navbartheme w3-top w3-left-align w3-large">
+				<a class="w3-bar-item w3-button w3-right w3-hide-large hover-navbar w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+				<a id="home" href="index.html" class="w3-bar-item w3-button w3-theme-l1">
+					<img src="Images/LARoboticsLogo500x278.png" alt="LA Robotics logo" class="laroboticshomelogo">
+				</a>
+				<a id="pick" class="w3-bar-item w3-button hover-navbar">Team Grants</a>
+				<a href="VEX.html" class="w3-bar-item w3-button w3-hide-small w3-hide-medium hover-navbar">VEX</a>
+				<a href="FRC.html" class="w3-bar-item w3-button w3-hide-small w3-hide-medium hover-navbar">FIRST</a>
+				<a href="SCRRF.html" class="w3-bar-item w3-button w3-hide-small w3-hide-medium hover-navbar">SCRRF</a>
+				<a href="JSMScholarship.html" class="w3-bar-item w3-button w3-hide-small w3-hide-medium hover-navbar">Scholarships</a>
+				<a href="Other.html" class="w3-bar-item w3-button w3-hide-small w3-hide-medium hover-navbar">Other</a>
+			</div>
+		</div>
+
+      <!-- Sidebar -->
+      <nav class="w3-sidebar w3-bar-block w3-collapse w3-theme-l5 w3-animate-left" id="mySidebar">
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+          <i class="fa fa-remove"></i>
+        </a>
+        <h5 class="w3-bar-item menuName w3-hide-large">
+				<b>
+					Menu
+				</b>
+			</h5>
+        <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large whover-sidebar">Nelson Team Grants</a>
+        <a class="w3-bar-item w3-button hover-sidebar" href="NelsonTeamGrants.html"><span class="sub">Grants</span></a>
+        <a class="w3-bar-item w3-button hover-sidebar" id="pick2"><span class="sub">Recipients</span></a>
+        <a class="w3-bar-item w3-button hover-sidebar" href="NTGLeagues.html"><span class="sub">Leagues and Workshops</span></a>
+        <a class="w3-bar-item w3-button hover-sidebar" href="NTGHandouts.html"><span class="sub">Coach Training Handouts</span></a>
+        <a class="w3-bar-item w3-button hover-sidebar" href="NTGSponsors.html"><span class="sub">Sponsors</span></a>
+        <a href="VEX.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-large hover-sidebar">VEX</a>
+		    <a href="FRC.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-large hover-sidebar">FIRST</a>
+        <a href="SCRRF.html" class="w3-bar-item w3-button w3-hide-large hover-sidebar">SCRRF</a>
+        <a href="JSMScholarship.html" class="w3-bar-item w3-button w3-hide-large hover-sidebar">Scholarships</a>
+        <a href="Other.html" class="w3-bar-item w3-button w3-hide-large hover-sidebar">Other</a>
+      </nav>
+
+      <!-- Overlay effect when opening sidebar on small screens -->
+      <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+      <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+      <div class="w3-main" style="margin-left:250px">
+
+        <!-- LAUSD Local District Maps and Lists of Schools-->
+        <div class="w3-row w3-padding-64">
+          <div class=" w3-container">
+            <h2>LAUSD Local District Maps and Lists of Schools</h2>
+            <p>
+              Schools that have received Nelson Team Grants to participate in VEX IQ Challenge are highlighted in
+              <span style="background-color:#14FBF5">light blue</span>.
+              Schools that host leagues are highlighted in
+              <span style="background-color:#3064ff">dark blue</span>.
+              Other schools that participate in VEX IQ Challenge are highlighted in
+              <span style="background-color:#0EEF09">green</span>.
+              Middle Schools and High Schools that participate in VEX Robotics Competition are highlighted in
+              <span style="background-color:#F9090A">red</span>.
+              Schools that participate in both the VEX Robotics Competition and the VEX IQ Challenge are highlighted in
+              <span style="background-color:#C8A0EA">light purple</span>.
+              Schools that host leagues that participate in both the VEX Robotics Competition and the VEX IQ Challenge are highlighted in
+              <span style="background-color:#953765">dark purple</span>.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- maps-->
+        <div class="w3-row">
+          <div class="w3-container">
+            <h2>Maps</h2>
+
+            <div id="map"></div>
+            <ul>
+              <li><a href="maptest.html">test map</a> </li>
+              <li><a href="Documents/LD_Central_Map.pdf" target="_blank">Central</a> (PDF, 1 page, 7.0 MB)</li>
+              <li><a href="Documents/LD_East_Map.pdf" target="_blank">East</a> (PDF, 1 page, 2.8 MB)</li>
+              <li><a href="Documents/LD_Northeast_Map.pdf" target="_blank">Northeast</a> (PDF, 1 page, 10.0 MB)</li>
+              <li><a href="Documents/LD_Northwest_Map.pdf" target="_blank">Northwest</a> (PDF, 1 page, 6.2 MB)</li>
+              <li><a href="Documents/LD_South_Map.pdf" target="_blank">South</a> (PDF, 1 page, 5.3MB)</li>
+              <li><a href="Documents/LD_West_Map.pdf" target="_blank">West</a> (PDF, 1 page, 18.3 MB)</li>
+          </ul></div>
+
+        </div>
+
+        <!-- Lists of Schools by Network or Community of Schools-->
+        <div class="w3-row">
+          <div class="w3-container">
+            <h2>Lists of Schools by Network or Community of Schools</h2>
+            <ul>
+              <li><a href="Documents/LD_Central_Schools.pdf" target="_blank">Central</a> (PDF, 1 page, 114 KB)</li>
+              <li><a href="Documents/LD_East_Schools.pdf" target="_blank">East</a> (PDF, 1 page, 111 KB)</li>
+              <li><a href="Documents/LD_Northeast_Schools.pdf" target="_blank">Northeast</a> (PDF, 1 page, 120 KB)</li>
+              <li><a href="Documents/LD_Northwest_Schools.pdf" target="_blank">Northwest</a> (PDF, 1 page, 448 KB)</li>
+              <li><a href="Documents/LD_South_Schools.pdf" target="_blank">South</a> (PDF, 1 page, 392 KB)</li>
+              <li><a href="Documents/LD_West_Schools.pdf" target="_blank">West</a> (PDF, 1 page, 179 KB)</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Heading-->
+        <div class="w3-row">
+          <div class="w3-container">
+          <button id="expand-all">Expand all</button>   
+            <button class="collapsible TitleYear">
+              2021 Nelson Team Grant Recipients
+            </button>
+            <div class="content">
+
+              <h3>46 Recipient Schools, 8 New Teams, 21 Additional Teams, 59 Returning Teams</h3>
+              <table id="2021Table">
+                <tr>
+                  <th onclick="sortTable(0, '2021Table')">School</th>
+                  <th onclick="sortTable(1, '2021Table')">City</th>
+                  <th onclick="sortTable(2, '2021Table')">LAUSD Local District</th>
+                </tr>
+                <tr>
+                  <td>122nd St Elementary School</td>
+                  <td>Los Angeles</td>
+                  <td><span class="LAUSDSouth">South</span></td>
+                </tr>
+                <tr>
+                  <td>61st Street Elementary School</td>
+                  <td>Los Angeles</td>
+                  <td><span class="LAUSDWest">West</span></td>
+                </tr>
+                <tr>
+                  <td>95th Street Elementary School</td>
+                  <td>Los Angeles</td>
+                  <td><span class="LAUSDWest">West</span></td>
+                </tr>
+                <tr>
+                  <td>Beachy Avenue Elementary School</td>
+                  <td>Arleta</td>
+                  <td><span class="LAUSDNortheast">Northeast</span></td>
+                </tr>
+                <tr>
+                  <td>Beethoven Street Elementary School</td>
+                  <td>Los Angeles</td>
+                  <td><span class="LAUSDWest">West</span></td>
+                </tr>
+                <tr>
+                  <td>Boys Academic Leadership Academy (BALA)</td>
+                  <td>Los Angeles</td>
+                  <td><span class="LAUSDWest">West</span></td>
+                </tr>
+                <tr>
+                  <td>Broad Avenue Elementary School</td>
+                  <td>Wilmington</td>
+                  <td><span class="LAUSDSouth">South</span></td>
+                </tr>
+                <tr>
+                  <td>Bryson Ave Elementary School/STEM Magnet</td>
+                  <td>South Gate</td>
+                  <td><span class="LAUSDEast">East</span></td>
+                </tr>
+                <tr>
+                  <td>Charles W. Barrett Elementary School</td>
+                  <td>Los Angeles</td>
+                  <td><span class="LAUSDSouth">South</span></td>
+                </tr>
+                <tr>
+                  <td>Dr. Julian Nava Learning Academy</td>
+                  <td>Los Angeles</td>
+                  <td><span class="LAUSDCentral">Central</span></td>
+                </tr>
+                <tr>
+                  <td>Ellen Ochoa Learning Center</td>
+                  <td>Cudahy</td>
+                  <td><span class="LAUSDEast">East</span></td>
+                </tr>
+                <tr>
+                  <td>Estrella Elementary School</td>
+                  <td>Los Angeles</td>
+                  <td><span class="LAUSDCentral">Central</span></td>
+                </tr>
+                <tr>
+                  <td>Glen Alta Elementary School</td>
+                  <td>Los Angeles</td>
+                  <td><span class="LAUSDEast">East</span></td>
+                </tr>
+                <tr>
+                  <td>Hooper Avenue Elementary School</td>
+                  <td>Los Angeles</td>
+                  <td><span class="LAUSDCentral">Central</span></td>
+                </tr>
+                <tr>
+                  <td>Independence Elementary School/MST Magnet</td>
+                  <td>South Gate</td>
+                  <td><span class="LAUSDEast">East</span></td>
+                </tr>
+                <tr>
+                  <td>John Adams Middle School</td>
+                  <td>Los Angeles</td>
+                  <td><span class="LAUSDCentral">Central</span></td>
+                </tr>
+                <tr>
+                  <td>Kentwood Elementary School</td>
+                  <td>Los Angeles</td>
+                  <td><span class="LAUSDWest">West</span></td>
+                </tr>
+                <tr>
+                  <td>Leapwood Avenue Elementary School</td>
+                  <td>Carson</td>
+                  <td><span class="LAUSDSouth">South</span></td>
+                </tr>
+                <tr>
+                  <td>Los Angeles Elementary School</td>
+                  <td>Los Angeles</td>
+                  <td><span class="LAUSDCentral">Central</span></td>
+                </tr>
+                <tr>
+                  <td>Los Feliz STEMM Magnet</td>
+                  <td>Los Angeles</td>
+                  <td><span class="LAUSDCentral">Central</span></td>
+                </tr>
+                <tr>
+                  <td>Loyola Village Fine and Performing Arts Magnet</td>
+                  <td>Los Angeles</td>
+                  <td><span class="LAUSDWest">West</span></td>
+                </tr>
+                <tr>
+                  <td>Manhattan Place Elementary School</td>
+                  <td>Los Angeles</td>
+                  <td><span class="LAUSDWest">West</span></td>
+                </tr>
+                <tr>
+                  <td>Marquez Charter Elementary School</td>
+                  <td>Pacific Palisades</td>
+                  <td><span class="LAUSDWest">West</span></td>
+                </tr>
+                <tr>
+                  <td>Mary Mcleod Bethune Middle School</td>
+                  <td>Los Angeles</td>
+                  <td><span class="LAUSDSouth">South</span></td>
+                </tr>
+                <tr>
+                  <td>Maywood Elementary School</td>
+                  <td>Maywood</td>
+                  <td><span class="LAUSDEast">East</span></td>
+                </tr>
+                <tr>
+                  <td>Orchard Academies 2C</td>
+                  <td>Bell</td>
+                  <td><span class="LAUSDEast">East</span></td>
+                </tr>
+                <tr>
+                  <td>Palisades Charter Elementary School</td>
+                  <td>Pacific Palisades</td>
+                  <td><span class="LAUSDWest">West</span></td>
+                </tr>
+                <tr>
+                  <td>Palms Elementary School</td>
+                  <td>Los Angeles</td>
+                  <td><span class="LAUSDWest">West</span></td>
+                </tr>
+                <tr>
+                  <td>Park Western Place Elementary School</td>
+                  <td>San Pedro</td>
+                  <td><span class="LAUSDSouth">South</span></td>
+                </tr>
+                <tr>
+                  <td>Paseo del Rey Elementary Natural Science Magnet</td>
+                  <td>Playa Del Rey</td>
+                  <td><span class="LAUSDWest">West</span></td>
+                </tr>
+                <tr>
+                  <td>Pinewood Ave Elementary School</td>
+                  <td>Tujunga</td>
+                  <td><span class="LAUSDNortheast">Northeast</span></td>
+                </tr>
+                <tr>
+                  <td>Robert Frost Middle School</td>
+                  <td>Granada Hills</td>
+                  <td><span class="LAUSDNorthwest">Northwest</span></td>
+                </tr>
+                <tr>
+                  <td>Russell Elementary School</td>
+                  <td>Los Angeles</td>
+                  <td><span class="LAUSDSouth">South</span></td>
+                </tr>
+                <tr>
+                  <td>San Fernando Elementary School</td>
+                  <td>San Fernando</td>
+                  <td><span class="LAUSDNortheast">Northeast</span></td>
+                </tr>
+                <tr>
+                  <td>San Pascual Elementary STEAM Magnet</td>
+                  <td>Los Angeles</td>
+                  <td><span class="LAUSDCentral">Central</span></td>
+                </tr>
+                <tr>
+                  <td>Sara Coughlin Elementary School</td>
+                  <td>Pacoima</td>
+                  <td><span class="LAUSDNortheast">Northeast</span></td>
+                </tr>
+                <tr>
+                  <td>Sierra Park Elementary School</td>
+                  <td>Los Angeles</td>
+                  <td><span class="LAUSDEast">East</span></td>
+                </tr>
+                <tr>
+                  <td>Solano Avenue Elementary School</td>
+                  <td>Los Angeles</td>
+                  <td><span class="LAUSDEast">East</span></td>
+                </tr>
+                <tr>
+                  <td>Stephen M. White Middle School and STEAM Magnet</td>
+                  <td>Carson</td>
+                  <td><span class="LAUSDSouth">South</span></td>
+                </tr>
+                <tr>
+                  <td>Stoner Avenue Elementary School</td>
+                  <td>Culver City</td>
+                  <td><span class="LAUSDWest">West</span></td>
+                </tr>
+                <tr>
+                  <td>Union Avenue Elementary School</td>
+                  <td>Los Angeles</td>
+                  <td><span class="LAUSDCentral">Central</span></td>
+                </tr>
+                <tr>
+                  <td>Victoria Avenue Elementary School</td>
+                  <td>South Gate</td>
+                  <td><span class="LAUSDEast">East</span></td>
+                </tr>
+                <tr>
+                  <td>Virginia Road Elementary School</td>
+                  <td>Los Angeles</td>
+                  <td><span class="LAUSDWest">West</span></td>
+                </tr>
+                <tr>
+                  <td>William Mulholland Middle School</td>
+                  <td>Van Nuys</td>
+                  <td><span class="LAUSDNorthwest">Northwest</span></td>
+                </tr>
+                <tr>
+                  <td>118th St Elementary School</td>
+                  <td>Los Angeles</td>
+                  <td><span class="LAUSDSouth">South</span></td>
+                </tr>
+                <tr>
+                  <td>Ascot Avenue Elementary School</td>
+                  <td>Los Angeles</td>
+                  <td><span class="LAUSDCentral">Central</span></td>
+                </tr>
+              </table>
+            </div>
+            <button class="collapsible TitleYear">
+              2020 Nelson Team Grant Recipients
+            </button>
+            <div class="content">
+              <h3>0 Recipient Schools</h3>
+            </div>
+           <button class="collapsible TitleYear">
+              2019 Nelson Team Grant Recipients
+            </button>
+            <div class="content">
+
+              <h3>46 Recipient Schools, 42 New Teams, 40 Additional Teams</h3>
+              <table id="2019Table">
+                <tr>
+                  <th onclick="sortTable(0, '2019Table')">School</th>
+                  <th onclick="sortTable(1, '2019Table')">City</th>
+                  <th onclick="sortTable(2, '2019Table')">LAUSD Local District</th>
+                </tr>
+
+                <tr>
+                  <td>186th Street Elementary School</td><td>Gardena</td> <td><span class="LAUSDSouth">South</span></td></tr>
+
+                <tr>
+                  <td><s>32nd Street USC Performing Arts Magnet*</s> (withdrew)</td><td>Los Angeles</td> <td><span class="LAUSDCentral">Central</span></td></tr>
+
+                <tr>
+                  <td><s>Alta Loma Elementary School</s> (withdrew)</td><td>Los Angeles</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+                <tr>
+                  <td>Annalee Avenue Elementary School</td><td>Carson</td> <td><span class="LAUSDSouth">South</span></td></tr>
+
+                <tr>
+                  <td>Beachy Avenue Elementary School</td><td>Arleta</td> <td><span class="LAUSDNortheast">Northeast</span></td></tr>
+
+                <tr>
+                  <td>Bonita Street STEAM Academy</td><td>Carson</td> <td><span class="LAUSDSouth">South</span></td></tr>
+
+                <tr>
+                  <td>Breed Street Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+                <tr>
+                  <td><s>Broad Avenue Elementary School</s> (withdrew)</td><td>Wilmington</td> <td><span class="LAUSDSouth">South</span></td></tr>
+
+                <tr>
+                  <td>Broadacres Avenue Elementary School</td><td>Carson</td> <td><span class="LAUSDSouth">South</span></td></tr>
+
+                <tr>
+                  <td>Carson Street STEAM Academy</td><td>Carson</td> <td><span class="LAUSDSouth">South</span></td></tr>
+
+                <tr>
+                  <td>Cesar <b>Chavez</b> Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+                <tr>
+                  <td>Del Amo Elementary School</td><td>Carson</td> <td><span class="LAUSDSouth">South</span></td></tr>
+
+                <tr>
+                  <td>Delores Street Elementary School</td><td>Carson</td> <td><span class="LAUSDSouth">South</span></td></tr>
+
+                <tr>
+                  <td>Dominguez Elementary STEAM Academy</td><td>Carson</td><td><span class="LAUSDSouth">South</span></td></tr>
+
+                <tr>
+                  <td>El Dorado Avenue Elementary School</td><td>Sylmar</td> <td><span class="LAUSDNortheast">Northeast</span></td></tr>
+
+                <tr>
+                  <td>Ellen <b>Ochoa</b> Learning Center</td><td>Cudahy</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+                <tr>
+                  <td>Esperanza Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDCentral">Central</span></td></tr>
+
+                <tr>
+                  <td>Estrella Elementary School*</td><td>Los Angeles</td> <td><span class="LAUSDSouth">South</span></td></tr>
+
+                <tr>
+                  <td>Glen Alta Span School* (ES)</td><td>Los Angeles</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+                <tr>
+                  <td>Glenn Hammond <b>Curtiss</b> Middle School</td><td>Carson</td> <td><span class="LAUSDSouth">South</span></td></tr>
+
+                <tr>
+                  <td>Haddon Avenue STEAM Academy and Magnet</td><td>Pacoima</td><td><span class="LAUSDNortheast">Northeast</span></td></tr>
+
+                <tr>
+                  <td>Halldale Avenue Elementary School</td><td>Torrance</td><td><span class="LAUSDSouth">South</span></td></tr>
+
+                <tr>
+                  <td>Henry T <b>Gage</b> Middle School</td><td>Huntingon Park</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+                <tr>
+                  <td>Hillerty T <b>Broadous</b> Elementary School and STEAM Magnet</td><td>Pacoima</td><td><span class="LAUSDNortheast">Northeast</span></td></tr>
+
+                <tr>
+                  <td><s>Hillside Elementary School*</s> (withdrew)</td><td>Los Angeles</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+                <tr>
+                  <td>Hollenbeck Middle School</td><td>Los Angeles</td><td><span class="LAUSDEast">East</span></td></tr>
+
+                <tr>
+                  <td>Johnnie L <b>Cochran</b>,/ Jr Middle School</td><td>Los Angeles</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+                <tr>
+                  <td>Latona Avenue Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+                <tr>
+                  <td>Leapwood Avenue Elementary School</td><td>Carson</td> <td><span class="LAUSDSouth">South</span></td></tr>
+
+                <tr>
+                  <td>Loren <b>Miller</b> Elementary School (4 teams)</td><td>Los Angeles</td> <td><span class="LAUSDSouth">South</span></td></tr>
+
+                <tr>
+                  <td>Main Street Elementary School</td><td>Los Angeles</td><td><span class="LAUSDCentral">Central</span></td></tr>
+
+                <tr>
+                  <td>Melvin Avenue Elementary School</td><td>Reseda</td> <td><span class="LAUSDNorthwest">Northwest</span></td></tr>
+
+                <tr>
+                  <td>Montague Charter Academy</td>
+                  <td>Arleta</td>
+                  <td><span class="LAUSDNortheast">Northeast</span></td>
+                </tr>
+
+                <tr>
+                  <td>Park Western Place Elementary School</td><td>San Pedro</td> <td><span class="LAUSDSouth">South</span></td></tr>
+
+                <tr>
+                  <td>Pinewood Ave Elementary School*</td><td>Tujunga</td> <td><span class="LAUSDNortheast">Northeast</span></td></tr>
+
+                <tr>
+                  <td>Ranchito Avenue Elementary School</td><td>Panorama City</td> <td><span class="LAUSDNortheast">Northeast</span></td></tr>
+
+                <tr>
+                  <td>Rancho Dominguez Preparatory School</td><td>Long Beach</td> <td><span class="LAUSDSouth">South</span></td></tr>
+
+                <tr>
+                  <td>San Fernando Elementary School</td><td>San Fernando</td> <td><span class="LAUSDNortheast">Northeast</span></td></tr>
+
+                <tr>
+                  <td>San Fernando Institute of Applied Media</td><td>San Fernando</td> <td><span class="LAUSDNortheast">Northeast</span></td></tr>
+
+                <tr>
+                  <td>Sara <b>Coughlin</b> Elementary School</td><td>Pacoima</td> <td><span class="LAUSDNortheast">Northeast</span></td></tr>
+
+                <tr>
+                  <td>Solano Avenue Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+                <tr>
+                  <td>Southeast DREAMS Magnet Middle School</td><td>Los Angeles</td><td><span class="LAUSDEast">East</span></td></tr>
+
+                <tr>
+                  <td>Stephen M. <b>White</b> Middle School and STEAM Magnet</td><td>Carson</td><td><span class="LAUSDSouth">South</span></td></tr>
+
+                <tr>
+                  <td>Stonehurst STEAM Magnet*</td><td>Sun Valley</td><td><span class="LAUSDNortheast">Northeast</span></td></tr>
+
+                <tr>
+                  <td>Van Ness Avenue Elementary School*</td><td>Los Angeles</td><td><span class="LAUSDWest">West</span></td></tr>
+
+                <tr>
+                  <td>Vena Avenue Elementary School & Gifted/High-Ability Magnet</td><td>Arleta</td><td><span class="LAUSDNortheast">Northeast</span></td></tr>
+
+                <tr>
+                  <td>Western Avenue Technology Magnet*</td><td>Los Angeles</td><td><span class="LAUSDWest">West</span></td></tr>
+
+              </table>
+
+              <p>  * These schools requested One-Team Awards. Other schools requested Two-Team Awards. The second teams of Two-Team Awards were partially supported by the Robotics Education & Competion Foundation.
+              </p>
+            </div>
+            <button class="collapsible TitleYear">
+              2018 Nelson Team Grant Recipients
+            </button>
+            <div class="content">
+              <h3>120 Recipient Schools, 117 New Teams, 14 Additional Teams</h3>
+<table id="2018Table">
+  <tr>
+    <th onclick="sortTable(0, '2018Table')">School</th>
+    <th onclick="sortTable(1, '2018Table')">City</th>
+    <th onclick="sortTable(2, '2018Table')">LAUSD Local District</th>
+  </tr>
+
+  <tr>
+    <td>1st Street Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>3rd Street Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>10th Street Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDCentral">Central</span></td></tr>
+
+  <tr>
+    <td>42nd Street Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td><s>49th Street Elementary School</s> (withdrew)</td><td>Los Angeles</td> <td><span class="LAUSDCentral">Central</span></td></tr>
+
+  <tr>
+    <td>52nd Street Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td><s>54th Street Elementary School</s> (withdrew)</td><td>Los Angeles</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>61st Street Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>92nd Street Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDSouth">South</span></td></tr>
+
+  <tr>
+    <td>93rd Street Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDSouth">South</span></td></tr>
+
+  <tr>
+    <td>95th Street Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>96th Street Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDSouth">South</span></td></tr>
+
+  <tr>
+    <td>109th Street Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDSouth">South</span></td></tr>
+
+  <tr>
+    <td>112th Street Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDSouth">South</span></td></tr>
+
+  <tr>
+    <td>116th Street Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDSouth">South</span></td></tr>
+
+  <tr>
+    <td>Albion Street Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td> Angeles Mesa Elementary School and Dreams Magnet</td><td>Los Angeles</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td><s>Arlington Heights Elementary School</s> (withdrew)</td><td>Los Angeles</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>Ascot Avenue Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDCentral">Central</span></td></tr>
+
+  <tr>
+    <td>Atwater Avenue Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDCentral">Central</span></td></tr>
+
+  <tr>
+    <td>Baldwin Hills Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>Barack <strong>Obama</strong> Global Preparation Academy</td><td>Los Angeles</td><td><span class="LAUSDCentral">Central</span></td></tr>
+
+  <tr>
+    <td>Beethoven Street Elementary School</td><td>Los Angeles</td><td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>Belvedere Elementary School</td><td>City Terrace</td><td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Belvedere Middle School</td><td>Los Angeles</td><td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Boys Academic Leadership Academy</td><td>Los Angeles</td><td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>Tom <strong>Bradley</strong> Global Awareness Magnet</td><td>Los Angeles</td><td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>Brockton Avenue Elementary School</td><td>Los Angeles</td><td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>Brooklyn Avenue Span School</td><td>Los Angeles</td><td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td> Budlong Avenue Elementary School</td><td>Los Angeles</td><td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td><s>Canfield Avenue Elementary School</s> (withdrew)</td><td>Los Angeles</td><td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td><s>Canyon Charter Elementary School</s> (withdrew)</td><td>Santa Monica</td><td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>Carpenter Community Charter School</td><td>Studio City</td><td><span class="LAUSDNortheast">Northeast</span></td></tr>
+
+  <tr>
+    <td>Castelar Street Elementary School</td><td>Los Angeles</td><td><span class="LAUSDCentral">Central</span></td></tr>
+
+  <tr>
+    <td>Charles W. <strong>Barrett</strong> Elementary School</td><td>Los Angeles</td><td><span class="LAUSDSouth">South</span></td></tr>
+
+  <tr>
+    <td>Charnock Road Elementary School</td><td>Los Angeles</td><td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>Cimarron Avenue Elementary School STEAM Magnet</td><td>Hawthorne</td><td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>Clifford Math and Technology Magnet</td><td>Los Angeles</td><td><span class="LAUSDCentral">Central</span></td></tr>
+
+  <tr>
+    <td><s>Clover Avenue Elementary School</s> (withdrew)</td><td>Los Angeles</td><td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td> Compton Avenue Elementary School</td><td>Los Angeles</td><td><span class="LAUSDSouth">South</span></td></tr>
+
+  <tr>
+    <td>Corona Avenue Elementary School</td><td>Bell</td><td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Cowan Avenue Elementary School</td><td>Los Angeles</td><td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>Crescent Heights Boulevard LA/SJ Magnet</td><td>Los Angeles</td><td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>Christopher <strong>Dena</strong> Elementary School</td><td>Los Angeles</td><td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Delevan Drive Elementary School</td><td>Los Angeles</td><td><span class="LAUSDCentral">Central</span></td></tr>
+
+  <tr>
+    <td>Dr. Lawrence H. <strong>Moore</strong> Math, Science, Technology Academy</td><td>Los Angeles</td> <td><span class="LAUSDSouth">South</span></td></tr>
+
+  <tr>
+    <td><s>Eastman Avenue Elementary School</s> (withdrew)</td><td>Los Angeles</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>El Sereno Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>El Sereno Middle School</td><td>Los Angeles</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td><s>Elysian Heights Elementary School</s> (withdrew)</td><td>Los Angeles</td><td><span class="LAUSDCentral">Central</span></td></tr>
+
+  <tr>
+    <td>Estrella Elementary School</td><td>Los Angeles</td><td><span class="LAUSDCentral">Central</span></td></tr>
+
+  <tr>
+    <td>Euclid Avenue Elementary School</td><td>Los Angeles</td><td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Fairburn Avenue Elementary School</td><td>Los Angeles</td><td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>Farmdale Elementary School</td><td>Los Angeles</td><td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Fletcher Drive Elementary School</td><td>Los Angeles</td><td><span class="LAUSDCentral">Central</span></td></tr>
+
+  <tr>
+    <td>Florence <strong>Griffith-Joyner</strong> Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDSouth">South</span></td></tr>
+
+  <tr>
+    <td>Florence <strong>Nightingale</strong> Middle School</td><td>Los Angeles</td><td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Ford Boulevard Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Frank <strong>del Olmo</strong> Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDCentral">Central</span></td></tr>
+
+  <tr>
+    <td>Gaspar De <strong>Portola</strong> Middle School and Highly Gifted Magnet</td><td>Tarzana</td> <td><span class="LAUSDNorthwest">Northwest</span></td></tr>
+
+  <tr>
+    <td>Gates Street Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Gerald A. <strong>Lawson</strong> Academy of the Arts, Math, and Science</td><td>Los Angeles</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td><s>Glen Alta Elementary School</s> (withdrew)</td><td>Los Angeles</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Glen Alta Middle School</td><td>Los Angeles</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Grand View Boulevard Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>Grape Street Elementary School</td><td>Los Angeles</td><td><span class="LAUSDSouth">South</span></td></tr>
+
+  <tr>
+    <td>Gratts Learning Academy for Young Scholars</td><td>Los Angeles</td> <td><span class="LAUSDCentral">Central</span></td></tr>
+
+  <tr>
+    <td>Hancock Park Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>Hillcrest Drive Elementary School</td><td>Los Angeles</td><td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>Hooper Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDCentral">Central</span></td></tr>
+
+  <tr>
+    <td>Jaime <strong>Escalante</strong> Elementary School</td><td>Cudahy</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td><s>John W <strong>Mack</strong> Elementary School</s> (withdrew)</td><td>Los Angeles</td> <td><span class="LAUSDCentral">Central</span></td></tr>
+
+  <tr>
+    <td>Kingsley Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>Lorena Street Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Loreto Street Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Los Feliz STEMM Magnet</td><td>Los Angeles</td> <td><span class="LAUSDCentral">Central</span></td></tr>
+
+  <tr>
+    <td>Lovelia P Flournoy Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDSouth">South</span></td></tr>
+
+  <tr>
+    <td>Malabar Street Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Manhattan Place Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>Mark Twain Middle School</td><td>Los Angeles</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>Marquez Charter Elementary School</td><td>Pacific Palisades</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>Marvin Avenue Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>Mary Mcleod <strong>Bethune</strong> Middle School </td><td>Los Angeles</td> <td><span class="LAUSDSouth">South</span></td></tr>
+
+  <tr>
+    <td>Melrose Avenue Elementary Math, Science, Technology Magnet</td><td>Los Angeles</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td> Mid-City's <strong>Prescott</strong> School of Enriched Sciences</td>
+    <td>Los Angeles</td>
+    <td><span class="LAUSDWest">West</span></td>
+  </tr>
+  <tr>
+    <td>Nevin Avenue Elementary School</td><td>Los Angeles</td><td><span class="LAUSDCentral">Central</span></td></tr>
+
+  <tr>
+    <td> Normandie Avenue Elementary School</td><td>Los Angeles</td><td><span class="LAUSDCentral">Central</span></td></tr>
+
+  <tr>
+    <td> Orville <strong>Wright</strong> Engineering and Design Magnet</td><td>Los Angeles</td><td><span class="LAUSDCentral">Central</span></td></tr>
+
+  <tr>
+    <td><s>Overland Avenue Elementary School</s> (withdrew)</td><td>Los Angeles</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>Pacific Boulevard Elementary School</td><td>Huntington Park</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Palisades Charter Elementary School</td><td>Pacific Palisades</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>Palms Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>Playa del Rey Elementary School</td><td>Culver City</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td><s>PUC Santa Rosa Charter Academy</s> (withdrew)</td><td>Los Angeles</td> <td><span class="LAUSDCentral">Central</span></td></tr>
+
+  <tr>
+    <td>Queen Anne Place Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>Ramona Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>Raymond Avenue Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>Ricardo <strong>Lizarraga</strong> Elementary School</td><td>Los Angeles</td><td><span class="LAUSDCentral">Central</span></td></tr>
+
+  <tr>
+    <td>Ritter Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDSouth">South</span></td></tr>
+
+  <tr>
+    <td><s>Robert F. <strong>Kennedy</strong> Elementary School</s> (withdrew)</td><td>Los Angeles</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Robert Hill <strong>Lane</strong> Elementary School</td><td>Monterey Park</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Roscomare Road Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>Rosemont Avenue Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDCentral">Central</span></td></tr>
+
+  <tr>
+    <td> Rowan Avenue Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Samuel <strong>Gompers</strong> Middle School</td><td>Los Angeles</td><td><span class="LAUSDSouth">South</span></td></tr>
+
+  <tr>
+    <td>San Pascual STEAM Magnet</td><td>Los Angeles</td> <td><span class="LAUSDCentral">Central</span></td></tr>
+
+  <tr>
+    <td>Sheridan Street Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Short Avenue Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>Sierra Park Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Sierra Vista Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Soto Street Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td><s>South Park Elementary School</s> (withdrew)</td><td>Los Angeles</td> <td><span class="LAUSDSouth">South</span></td></tr>
+
+  <tr>
+    <td>Stanford Avenue Elementary School</td><td>South Gate</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Stoner Avenue Elementary School</td><td>Culver City</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td> Summit Preparatory Charter School</td><td>Los Angeles</td> <td><span class="LAUSDSouth">South</span></td></tr>
+
+  <tr>
+    <td><s>Sunrise Elementary School</s> (withdrew)</td><td>Los Angeles</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Thomas Starr <strong>King</strong> Middle School</td><td>Los Angeles</td> <td><span class="LAUSDCentral">Central</span></td></tr>
+
+  <tr>
+    <td>Toland Way Elementary School</td><td>Los Angeles</td><td><span class="LAUSDCentral">Central</span></td></tr>
+
+  <tr>
+    <td>Torch Middle School</td><td>City of Industry</td> <td><span class="OtherUSD">Bassett USD</span></td></tr>
+
+  <tr>
+    <td>Trinity Street Elementary School</td><td>Los Angeles</td><td><span class="LAUSDCentral">Central</span></td></tr>
+
+  <tr>
+    <td>Valley View Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>Victoria Avenue Elementary School</td><td>South Gate</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Virginia Road Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>Walnut Park Middle School</td><td>Walnut Park</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>West Athens Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>Westport Heights Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>Wilmington Middle School</td><td>Wilmington</td><td><span class="LAUSDSouth">South</span></td></tr>
+
+  <tr>
+    <td>Wilshire Park Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td> Wilton Place Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td><s>Wonderland Avenue Elementary School</s> (withdrew)</td><td>Los Angeles</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>Yorkdale Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td><s>Young Empowered Scholars (YES) Academy</s> (withdrew)</td><td>Los Angeles</td><td><span class="LAUSDWest">West</span></td></tr>
+
+
+</table>
+</div>
+<button class="collapsible TitleYear">
+  2017 Nelson Team Grant Recipients
+</button>
+<div class="content">
+  <h3>68 Recipient Schools</h3>
+<table id="2017Table">
+  <tr>
+    <th onclick="sortTable(0, '2017Table')">School</th>
+    <th onclick="sortTable(1, '2017Table')">City</th>
+    <th onclick="sortTable(2, '2017Table')">LAUSD Local District</th>
+  </tr>
+
+  <tr>
+    <td>118th Street Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDSouth">South</span></td></tr>
+
+  <tr>
+    <td>122nd Street Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDSouth">South</span></td></tr>
+
+  <tr>
+    <td>Andasol Avenue Elementary School</td><td>Northridge</td> <td><span class="LAUSDNorthwest">Northwest</span></td></tr>
+
+  <tr>
+    <td>Blythe Street Elementary School</td><td>Reseda</td> <td><span class="LAUSDNorthwest">Northwest</span></td></tr>
+
+  <tr>
+    <td>Bryson Avenue Elementary/STEM Magnet School</td><td>South Gate</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Calabash Charter Academy</td><td>Woodland Hills</td> <td><span class="LAUSDNorthwest">Northwest</span></td></tr>
+
+  <tr>
+    <td>Canterbury Avenue Elementary School</td><td>Arleta</td><td><span class="LAUSDNortheast">Northeast</span></td></tr>
+
+  <tr>
+    <td>Chester W <strong>Nimitz</strong> STEM Magnet Middle School</td><td>Huntington Park</td>
+    <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Crestwood Elementary School</td><td>Rancho Palos Verdes</td> <td><span class="LAUSDSouth">South</span></td></tr>
+
+  <tr>
+    <td><s>Danube Avenue Elementary School</s> (withdrew)</td><td>Granada Hills</td><td><span class="LAUSDNorthwest">Northwest</span></td></tr>
+
+  <tr>
+    <td>Dearborn Elementary Charter Academy</td><td>Northridge</td> <td><span class="LAUSDNorthwest">Northwest</span></td></tr>
+
+  <tr>
+    <td>Eagle Rock Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDCentral">Central</span></td></tr>
+
+  <tr>
+    <td>El Oro Way Charter (Elementary)</td><td>Granada Hills</td> <td><span class="LAUSDNorthwest">Northwest</span></td></tr>
+
+  <tr>
+    <td>Elizabeth Learning Center (Elementary)</td><td>Cudahy</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Elizabeth Learning Center (Middle School)</td><td>Cudahy</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Emelita Academy Charter (Elementary)</td><td>Encino</td><td><span class="LAUSDNorthwest">Northwest</span></td></tr>
+
+  <tr>
+    <td>Ernest <strong>Lawrence</strong> Middle School</td><td>Chatsworth</td> <td><span class="LAUSDNorthwest">Northwest</span></td></tr>
+
+  <tr>
+    <td>Fishburn Avenue Elementary School</td><td>Maywood</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Florence Avenue Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Fullbright Elementary School</td><td>Winnetka</td> <td><span class="LAUSDNorthwest">Northwest</span></td></tr>
+
+  <tr>
+    <td>Garvanza Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDCentral">Central</span></td></tr>
+
+  <tr>
+    <td>Granada Elementary Community Charter School</td><td>Granada Hills</td> <td><span class="LAUSDNorthwest">Northwest</span></td></tr>
+
+  <tr>
+    <td>Hamlin Charter Academy (Elementary)</td><td>West Hills</td> <td><span class="LAUSDNorthwest">Northwest</span></td></tr>
+
+  <tr>
+    <td>Hart Street Elementary School</td><td>Canoga Park</td> <td><span class="LAUSDNorthwest">Northwest</span></td></tr>
+
+  <tr>
+    <td>Haynes Charter for Enriched Studies</td><td>West Hills</td><td><span class="LAUSDNorthwest">Northwest</span></td></tr>
+
+  <tr>
+    <td>Heliotrope Avenue Elementary School</td><td>Maywood</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Holmes Avenue Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Hope Street Elementary School</td><td>Huntington Park</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Huntington Park Elementary School</td><td>Huntington Park</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Independence Elementary/Magnet School</td><td>South Gate</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>International Studies Learning Center (Middle School)</td><td>South Gate</td>
+    <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Kentwood Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDWest">West</span></td></tr>
+
+  <tr>
+    <td>Knollwood Preparatory Academy</td><td>Granada Hills</td> <td><span class="LAUSDNorthwest">Northwest</span></td></tr>
+
+  <tr>
+    <td>Lassen Elementary School</td><td>North Hills</td> <td><span class="LAUSDNorthwest">Northwest</span></td></tr>
+
+  <tr>
+    <td>Liberty Boulevard Elementary School</td><td>South Gate</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Lillian Street Elementary School</td><td>Los Angeles</td> <td><span class="LAUSDEast">East</span></td></tr>
+
+  <tr>
+    <td>Loma Vista Elementary School</td><td> Maywood</td> <td><span class="LAUSDEast">East</span></td></tr>
+  <tr>
+    <td>Lucille <strong>Roybal-Allard</strong> Elementary School</td><td>Huntington Park</td>
+    <td><span class="LAUSDEast">East</span></td></tr>
+  <tr>
+    <td> Mary R. <strong>Stauffer</strong> Middle School</td><td>Downey</td> <td><span class="OtherUSD">Downey USD</span></td></tr>
+  <tr>
+    <td> Maywood Center for Enriched Studies (CES)</td><td>Maywood</td> <td><span class="LAUSDEast">East</span></td></tr>
+  <tr>
+    <td> Maywood Elementary School</td><td>Maywood</td> <td><span class="LAUSDEast">East</span></td></tr>
+  <tr>
+    <td>Miles Avenue Elementary/Math/Science/Technology Magnet</td><td>Huntington Park</td>
+    <td><span class="LAUSDEast">East</span></td></tr>
+  <tr>
+    <td>Montara Avenue Elementary/Magnet School</td><td>South Gate</td> <td><span class="LAUSDEast">East</span></td></tr>
+  <tr>
+    <td>Napa Street Elementary School</td><td>Northridge</td> <td><span class="LAUSDNorthwest">Northwest</span></td></tr>
+  <tr>
+    <td>Old River Elementary School</td><td>Downey</td> <td><span class="OtherUSD">Downey USD</span></td></tr>
+  <tr>
+    <td>Orchard Academies 2C - Global Studies &amp; Technology Academy</td><td>Bell</td>
+    <td><span class="LAUSDEast">East</span></td></tr>
+  <tr>
+    <td>Park Avenue Elementary School</td><td>Cudahy</td> <td><span class="LAUSDEast">East</span></td></tr>
+  <tr>
+    <td>Plummer Elementary School</td><td>North Hills</td> <td><span class="LAUSDNorthwest">Northwest</span></td></tr>
+  <tr>
+    <td>Pomelo Community Charter (Elementary)</td><td>West Hills</td> <td><span class="LAUSDNorthwest">Northwest</span></td></tr>
+  <tr>
+    <td>Porter Ranch Community School</td><td>Porter Ranch</td> <td><span class="LAUSDNorthwest">Northwest</span></td></tr>
+  <tr>
+    <td>Russell Elementary School</td><td>Los Angeles</td><td><span class="LAUSDSouth">South</span></td></tr>
+  <tr>
+    <td>San Antonio Elementary School</td><td>Huntington Park</td> <td><span class="LAUSDEast">East</span></td></tr>
+  <tr>
+    <td>San Gabriel Avenue Elementary School</td><td>South Gate</td> <td><span class="LAUSDEast">East</span></td></tr>
+  <tr>
+    <td>San Miguel Avenue Math/Science/Technology Magnet (Elementary)</td><td>South Gate</td>
+    <td><span class="LAUSDEast">East</span></td></tr>
+  <tr>
+    <td>Serrania Charter for Enriched Studies</td><td>Woodland Hills</td><td><span class="LAUSDNorthwest">Northwest</span></td></tr>
+  <tr>
+    <td>South Gate Middle School</td><td>South Gate</td> <td><span class="LAUSDEast">East</span></td></tr>
+  <tr>
+    <td> State Street Elementary School</td><td>South Gate</td> <td><span class="LAUSDEast">East</span></td></tr>
+  <tr>
+    <td>Sunny Brae Avenue Elementary School</td><td>Canoga Park</td> <td><span class="LAUSDNorthwest">Northwest</span></td></tr>
+  <tr>
+    <td>Teresa <strong>Hughes</strong> Elementary/Magnet School</td>
+    <td>Cudahy</td>
+    <td><span class="LAUSDEast">East</span></td>
+  </tr>
+  <tr>
+    <td>Valley Charter Middle School</td><td>Van Nuys</td> <td><span class="LAUSDNorthwest">Northwest</span></td></tr>
+  <tr>
+    <td>Van Gogh Charter (Elementary School)</td><td>Granada Hills</td> <td><span class="LAUSDNorthwest">Northwest</span></td></tr>
+  <tr>
+    <td>Vernon City Elementary School</td><td>Vernon</td> <td><span class="LAUSDEast">East</span></td></tr>
+  <tr>
+    <td>Walnut Park Elementary School</td><td>Huntington Park</td><td><span class="LAUSDSouth">South</span></td></tr>
+  <tr>
+    <td>Walnut Park Middle School STEM Academy</td><td>Walnut Park</td><td><span class="LAUSDEast">East</span></td></tr>
+  <tr>
+    <td>Weigand Avenue Elementary School</td>
+    <td>Los Angeles</td>
+    <td><span class="LAUSDSouth">South</span></td>
+  </tr>
+  <tr>
+    <td>Winnetka Avenue Elementary School</td>
+    <td>Canoga Park</td>
+    <td><span class="LAUSDNorthwest">Northwest</span></td>
+  </tr>
+  <tr>
+    <td>Woodlake Elementary Community Charter</td>
+    <td>Woodland Hills</td>
+    <td><span class="LAUSDNorthwest">Northwest</span></td>
+  </tr>
+  <tr>
+    <td>Woodlawn Avenue Elementary School</td>
+    <td>Bell</td>
+    <td><span class="LAUSDEast">East</span></td>
+  </tr>
+</table>
+</div>
+<button class="collapsible TitleYear">
+  2016 Nelson Team Grant Recipient
+</button>
+<div class="content">
+  <h3>16 Recipient Schools</h3>
+<table id="2016Table">
+  <tr>
+    <th onclick="sortTable(0, '2016Table')">School</th>
+    <th onclick="sortTable(1, '2016Table')">City</th>
+    <th onclick="sortTable(2, '2016Table')">LAUSD Local District</th>
+  </tr>
+  <tr>
+    <td>Arroyo Seco Museum Science Magnet</td>
+    <td>Los Angeles</td>
+    <td><span class="LAUSDCentral">Central</span></td>
+  </tr>
+  <tr>
+    <td>Christopher <strong>Columbus</strong> Middle School</td>
+    <td>Canoga Park</td>
+    <td><span class="LAUSDNorthwest">Northwest</span></td>
+  </tr>
+  <tr>
+    <td>Ernest <strong>Lawrence</strong> Middle School</td>
+    <td>Chatsworth</td>
+    <td><span class="LAUSDNorthwest">Northwest</span></td>
+  </tr>
+  <tr>
+    <td>Graham Elementary School</td>
+    <td>Los Angeles</td>
+    <td><span class="LAUSDSouth">South</span></td>
+  </tr>
+  <tr>
+    <td>Hale Charter Academy (Middle School)</td>
+    <td>Woodland Hills</td>
+    <td><span class="LAUSDNorthwest">Northwest</span></td>
+  </tr>
+  <tr>
+    <td>Hesby Oaks Leadership Charter</td>
+    <td>Encino</td>
+    <td><span class="LAUSDNorthwest">Northwest(Partial)</span></td>
+  </tr>
+  <tr>
+    <td>Holmes International Middle School</td>
+    <td>Northridge</td>
+    <td><span class="LAUSDNorthwest">Northwest</span></td>
+  </tr>
+  <tr>
+    <td>James <strong>Jordan</strong> Middle School</td>
+    <td>Winnetka</td>
+    <td><span class="LAUSDNorthwest">Northwest</span></td>
+  </tr>
+  <tr>
+    <td>Nobel Middle School</td>
+    <td>Northridge</td>
+    <td><span class="LAUSDNorthwest">Northwest</span></td>
+  </tr>
+  <tr>
+    <td>Porter Middle School</td>
+    <td>Granada Hills</td>
+    <td><span class="LAUSDNorthwest">Northwest</span></td>
+  </tr>
+  <tr>
+    <td>Porter Ranch Community School (Middle School)</td>
+    <td>Porter Ranch</td>
+    <td><span class="LAUSDNorthwest">Northwest</span></td>
+  </tr>
+  <tr>
+    <td>Portola Middle School and Highly Gifted Magnet</td>
+    <td>Tarzana</td>
+    <td><span class="LAUSDNorthwest">Northwest</span></td>
+  </tr>
+  <tr>
+    <td>Reseda Elementary School</td>
+    <td>Reseda</td>
+    <td><span class="LAUSDNorthwest">Northwest(Partial)</span></td>
+  </tr>
+  <tr>
+    <td>Robert <strong>Frost</strong> Middle School</td>
+    <td>Granada Hills</td>
+    <td><span class="LAUSDNorthwest">Northwest</span></td>
+  </tr>
+  <tr>
+    <td>Sepulveda Middle School</td>
+    <td>North Hills</td>
+    <td><span class="LAUSDNorthwest">Northwest</span></td>
+  </tr>
+  <tr>
+    <td>Vintage Magnet (Elementary)</td>
+    <td>North Hills</td>
+    <td><span class="LAUSDNorthwest">Northwest</span></td>
+  </tr>
+
+</table>
+</div>
+<button class="collapsible TitleYear">
+  2015 Nelson Team Grant Recipients
+</button>
+<div class="content">
+  <h3>19 Recipient Schools</h3>
+  <table id="2015Table">
+    <tr>
+      <th onclick="sortTable(0, '2015Table')">School</th>
+      <th onclick="sortTable(1, '2015Table')">City</th>
+      <th onclick="sortTable(2, '2015Table')">LAUSD Local District</th>
+    </tr>
+    <tr>
+      <td>Anatola Avenue Elementary School</td>
+      <td>Van Nuys</td>
+      <td><span class="LAUSDNorthwest">Northwest</span></td>
+    </tr>
+    <tr>
+      <td>Bassett Street Elementary School</td>
+      <td>Lake Balboa</td>
+      <td><span class="LAUSDNorthwest">Northwest</span></td>
+    </tr>
+    <tr>
+      <td>Bertrand Avenue Elementary School</td>
+      <td>Northridge</td>
+      <td><span class="LAUSDNorthwest">Northwest</span></td>
+    </tr>
+    <tr>
+      <td>Calahan Community Charter</td>
+      <td>Northridge</td>
+      <td><span class="LAUSDNorthwest">Northwest</span></td>
+    </tr>
+    <tr>
+      <td>Cantara Street Elementary School</td>
+      <td>Reseda</td>
+      <td><span class="LAUSDNorthwest">Northwest</span></td>
+    </tr>
+    <tr>
+      <td>Columbus Avenue Elementary School</td>
+      <td>Van Nuys</td>
+      <td><span class="LAUSDNorthwest">Northwest</span></td>
+    </tr>
+    <tr>
+      <td>Gault Street Elementary School</td>
+      <td>Lake Balboa</td>
+      <td><span class="LAUSDNorthwest">Northwest</span></td>
+    </tr>
+    <tr>
+      <td>Lemay Street Elementary School</td>
+      <td>Lake Balboa</td>
+      <td><span class="LAUSDNorthwest">Northwest</span></td>
+    </tr>
+    <tr>
+      <td>Mulholland Middle School/Robotics Magnet</td>
+      <td>Van Nuys</td>
+      <td><span class="LAUSDNorthwest">Northwest</span></td>
+    </tr>
+    <tr>
+      <td>Newcastle Elementary School</td>
+      <td>Reseda</td>
+      <td><span class="LAUSDNorthwest">Northwest</span></td>
+    </tr>
+    <tr>
+      <td>Noble Avenue Elementary School</td>
+      <td>North Hills</td>
+      <td><span class="LAUSDNorthwest">Northwest</span></td>
+    </tr>
+    <tr>
+      <td>Northridge Middle School</td>
+      <td>Northridge</td>
+      <td><span class="LAUSDNorthwest">Northwest</span></td>
+    </tr>
+    <tr>
+      <td>Patrick <strong>Henry</strong> Middle School</td>
+      <td>Granada Hills</td>
+      <td><span class="LAUSDNorthwest">Northwest</span></td>
+    </tr>
+    <tr>
+      <td>Shirley Avenue School</td>
+      <td>Reseda</td>
+      <td><span class="LAUSDNorthwest">Northwest</span></td>
+    </tr>
+    <tr>
+      <td>Stagg Street Elementary School</td>
+      <td>Lake Balboa</td>
+      <td><span class="LAUSDNorthwest">Northwest</span></td>
+    </tr>
+    <tr>
+      <td>Stanley <strong>Mosk</strong> Elementary School</td>
+      <td>Winnetka</td>
+      <td><span class="LAUSDNorthwest">Northwest</span></td>
+    </tr>
+    <tr>
+      <td>Sutter Middle School</td>
+      <td>Winnetka</td>
+      <td><span class="LAUSDNorthwest">Northwest</span></td>
+    </tr>
+    <tr>
+      <td>Woodland Hills Academy</td>
+      <td>Woodland Hills</td>
+      <td><span class="LAUSDNorthwest">Northwest</span></td>
+    </tr>
+  </table>
+</div>
+
+</div>
+
+</div>
+
+	 <footer id="myFooter">
+	<div class="w3-container w3-theme-l2 w3-padding-32">
+	  Los Angeles Robotics is a 501(c)(3) nonprofit corporation. Last updated on 01/10/22.<br>
+	  For additional information or to report problems, please contact: <a href="mailto:LeRoy@larobotics.org" title="Send email">LeRoy@LARobotics.org</a>.	  
+	</div>
+      </footer>
+
+<!-- END MAIN -->
+</div>
+<script src="script/sidebar.js"></script>
+<script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"></script>
+<script src="script/BorderData.js"></script>
+<script src="script/SchoolsData.js"></script>
+<script src="script/maps.js"></script>
+</body>
+</html>

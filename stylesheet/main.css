@@ -1,0 +1,236 @@
+html,body,h1,h2,h3,h4,h5,h6 {
+	font-family: "Roboto", sans-serif;
+}
+
+.collapsible {
+    cursor: pointer;
+    padding: 1px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 5px;
+}
+
+
+.collapsible:after {
+	font-size: 5px;
+  content: '\002B';
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+
+.active:after {
+	font-size: 5px;
+  content: "\2212";
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  
+}
+
+.w3-sidebar{
+	height:100%;
+	width:200px;
+	position:fixed!important;
+	z-index:1;
+	overflow:auto
+}
+
+.sub {
+	margin-left: 1em;
+}
+.sub2 {
+	margin-left: 2em;
+}
+@media print {
+	.w3-top {
+		display: none;
+	}
+	#myFooter{
+		display: none;
+	}
+	.NbedVideo{
+		display: none; 
+	}
+
+	.LAUSDSouth{
+		
+		font-weight: 900;
+	}
+
+	.LAUSDCentral{
+		
+		font-weight: 900;
+	}
+
+	.LAUSDEast{
+		
+		font-weight: 900;
+	}
+
+	.LAUSDNortheast{
+		
+		font-weight: 900;
+	}
+
+	.LAUSDWest{
+		
+		font-weight: 900;
+	}
+
+	.LAUSDNorthwest{
+		
+		font-weight: 900;
+	}
+
+	.OtherUSD{
+		
+		font-weight: 900;
+	}
+
+}
+
+@media (prefers-color-scheme: light) {
+
+	
+	.TitleYear {
+		font-size:20px;
+	
+	}
+
+
+	.LAUSDSouth{
+		
+		font-weight: 900;
+	}
+
+	.LAUSDCentral{
+		
+		font-weight: 900;
+	}
+
+	.LAUSDEast{
+		
+		font-weight: 900;
+	}
+
+	.LAUSDNortheast{
+		
+		font-weight: 900;
+	}
+
+	.LAUSDWest{
+		
+		font-weight: 900;
+	}
+
+	.LAUSDNorthwest{
+		
+		font-weight: 900;
+	}
+
+	.OtherUSD{
+		
+		font-weight: 900;
+	}
+	
+}
+
+@media (prefers-color-scheme: dark) {
+
+	
+	.TitleYear {
+		
+		font-size:20px;
+	}
+
+	
+	.LAUSDSouth{
+		
+		font-weight: 900;
+	}
+
+	.LAUSDCentral {
+		
+		font-weight: 900;
+	}
+
+	.LAUSDEast{
+		
+		font-weight: 900;
+	}
+
+	.LAUSDNortheast{
+		
+		font-weight: 900;
+	}
+
+	.LAUSDWest{
+		
+		font-weight: 900;
+	}
+
+	.LAUSDNorthwest{
+	
+		font-weight: 900;
+	}
+
+	.OtherUSD{
+		
+		font-weight: 900;
+	}	
+		
+}
+
+
+table, th, td {
+    border: 1px solid black;
+    
+}
+
+table {
+    border-spacing: 0;
+    width: 100%;
+    border-collapse: collapse
+}
+
+th {
+    text-align: center;
+    cursor: pointer;
+}
+
+td {
+    text-align: center;
+}
+
+#map{ 
+    height: 800px;
+    width: 100%;
+    margin: 5rem auto;
+	z-index: 0;
+}
+
+.transparent-tooltip {
+	background: rgb(255, 255, 255);
+	border: 1px solid rgb(0, 0, 0);
+	box-shadow: none;
+  }
+  
+  .transparent-tooltip::before {
+	border: none;
+  }
+
+  .text-below-marker {
+	min-width: 100px;
+	left: -50px;
+	text-align: center;
+	min-height: 1.2em;
+	border: 1px solid rgb(0, 0, 0);
+  }
