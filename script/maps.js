@@ -4,6 +4,7 @@ const mymap = L.map('map').setView([34.056203918518236, -118.25736731890913], 10
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     maxZoom: 18,
+    attribution: '© OpenStreetMap',
     id: 'mapbox/streets-v11',
     tileSize: 512,
     zoomOffset: -1,
@@ -21,27 +22,31 @@ var SchoolIcon = L.Icon.extend({
     }
 });
 
-var elementary     = new SchoolIcon({iconUrl: 'Images/mapicons/elementary.svg'}),
-    high           = new SchoolIcon({iconUrl: 'Images/mapicons/high.svg'}),
-    span           = new SchoolIcon({iconUrl: 'Images/mapicons/span.svg'}),
-    hosting        = new SchoolIcon({iconUrl: 'Images/mapicons/hosting.svg'}),
-    hostingred     = new SchoolIcon({iconUrl: 'Images/mapicons/hostingred.svg'}),
-    hostingblue    = new SchoolIcon({iconUrl: 'Images/mapicons/hostingblue.svg'}),
-    hostingpurple  = new SchoolIcon({iconUrl: 'Images/mapicons/hostingpurple.svg'}),
-    hostinggreen   = new SchoolIcon({iconUrl: 'Images/mapicons/hostinggreen.svg'}),
-    hostingyellow  = new SchoolIcon({iconUrl: 'Images/mapicons/hostingyellow.svg'}),
-    middle         = new SchoolIcon({iconUrl: 'Images/mapicons/middle.svg'}),
-    elementaryblue = new SchoolIcon({iconUrl: 'Images/mapicons/elementaryblue.svg'}),
-    highred        = new SchoolIcon({iconUrl: 'Images/mapicons/highred.svg'}),
-    spanblue       = new SchoolIcon({iconUrl: 'Images/mapicons/spanblue.svg'}),
-    spanred        = new SchoolIcon({iconUrl: 'Images/mapicons/spanred.svg'}),
-    spanpurple     = new SchoolIcon({iconUrl: 'Images/mapicons/spanpurple.svg'}),
-    middleblue     = new SchoolIcon({iconUrl: 'Images/mapicons/middleblue.svg'}),
-    middlered      = new SchoolIcon({iconUrl: 'Images/mapicons/middlered.svg'}),
-    middlepurple   = new SchoolIcon({iconUrl: 'Images/mapicons/middlepurple.svg'}),
-    grantsgreen    = new SchoolIcon({iconUrl: 'Images/mapicons/grantsgreen.svg'}),
-    grantsyellow   = new SchoolIcon({iconUrl: 'Images/mapicons/grantsyellow.svg'}),
-    error          = new SchoolIcon({iconUrl: 'Images/mapicons/error.svg'});
+var elementary        = new SchoolIcon({iconUrl: 'Images/mapicons/elementary.svg'}),
+    high              = new SchoolIcon({iconUrl: 'Images/mapicons/high.svg'}),
+    span              = new SchoolIcon({iconUrl: 'Images/mapicons/span.svg'}),
+    hosting           = new SchoolIcon({iconUrl: 'Images/mapicons/hosting.svg'}),
+    hostingred        = new SchoolIcon({iconUrl: 'Images/mapicons/hostingred.svg'}),
+    hostingblue       = new SchoolIcon({iconUrl: 'Images/mapicons/hostingblue.svg'}),
+    hostingpurple     = new SchoolIcon({iconUrl: 'Images/mapicons/hostingpurple.svg'}),
+    hostinggreen      = new SchoolIcon({iconUrl: 'Images/mapicons/hostinggreen.svg'}),
+    hostingyellow     = new SchoolIcon({iconUrl: 'Images/mapicons/hostingyellow.svg'}),
+    middle            = new SchoolIcon({iconUrl: 'Images/mapicons/middle.svg'}),
+    elementaryblue    = new SchoolIcon({iconUrl: 'Images/mapicons/elementaryblue.svg'}),
+    elementarygreen   = new SchoolIcon({iconUrl: 'Images/mapicons/elementarygreen.svg'}),
+    elementaryyellow  = new SchoolIcon({iconUrl: 'Images/mapicons/elementaryyellow.svg'}),
+    highred           = new SchoolIcon({iconUrl: 'Images/mapicons/highred.svg'}),
+    spanblue          = new SchoolIcon({iconUrl: 'Images/mapicons/spanblue.svg'}),
+    spanyellow        = new SchoolIcon({iconUrl: 'Images/mapicons/spanyellow.svg'}),
+    spangreen         = new SchoolIcon({iconUrl: 'Images/mapicons/spangreen.svg'}),
+    spanred           = new SchoolIcon({iconUrl: 'Images/mapicons/spanred.svg'}),
+    spanpurple        = new SchoolIcon({iconUrl: 'Images/mapicons/spanpurple.svg'}),
+    middleblue        = new SchoolIcon({iconUrl: 'Images/mapicons/middleblue.svg'}),
+    middlered         = new SchoolIcon({iconUrl: 'Images/mapicons/middlered.svg'}),
+    middlepurple      = new SchoolIcon({iconUrl: 'Images/mapicons/middlepurple.svg'}),
+    middlegreen       = new SchoolIcon({iconUrl: 'Images/mapicons/middlegreen.svg'}),
+    middleyellow      = new SchoolIcon({iconUrl: 'Images/mapicons/middleyellow.svg'}),
+    error             = new SchoolIcon({iconUrl: 'Images/mapicons/error.svg'});
 
 function onEachFeature(feature, layer) {
     // does this feature have a property named popupContent?
@@ -90,7 +95,7 @@ L.geoJSON(schools, {
                                 error,           // (NTG, VIQC, VRC) = 011
                                 error,           // (NTG, VIQC, VRC) = 100 Error
                                 error,           // (NTG, VIQC, VRC) = 101 Error
-                                grantsgreen,     // (NTG, VIQC, VRC) = 110 
+                                elementarygreen, // (NTG, VIQC, VRC) = 110 
                                 error];          // (NTG, VIQC, VRC) = 111 Error
                         break;
                     case "Middle":
@@ -100,8 +105,8 @@ L.geoJSON(schools, {
                                 middlepurple,    // (NTG, VIQC, VRC) = 011
                                 error,           // (NTG, VIQC, VRC) = 100 Error
                                 error,           // (NTG, VIQC, VRC) = 101 Error
-                                grantsgreen,     // (NTG, VIQC, VRC) = 110 
-                                grantsyellow];   // (NTG, VIQC, VRC) = 111 
+                                middlegreen,     // (NTG, VIQC, VRC) = 110 
+                                middleyellow];   // (NTG, VIQC, VRC) = 111 
                         break;
                     case "High":
                         data = [high,            // (NTG, VIQC, VRC) = 000
@@ -120,8 +125,8 @@ L.geoJSON(schools, {
                                 spanpurple,      // (NTG, VIQC, VRC) = 011
                                 error,           // (NTG, VIQC, VRC) = 100 Error
                                 error,           // (NTG, VIQC, VRC) = 101 Error
-                                grantsgreen,     // (NTG, VIQC, VRC) = 110 
-                                grantsyellow];   // (NTG, VIQC, VRC) = 111 
+                                spangreen,       // (NTG, VIQC, VRC) = 110 
+                                spanyellow];     // (NTG, VIQC, VRC) = 111 
                         break;
                 }
             }
@@ -196,8 +201,7 @@ L.geoJSON(schools, {
 
         return marker;
 
-      onEachFeature: onEachFeature
+     
     }
 }).addTo(mymap);
 
-// geoJsonPoint.properties.School
