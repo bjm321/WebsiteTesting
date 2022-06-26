@@ -10,35 +10,38 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     accessToken: apikey
 }).addTo(mymap);
 
+var iconSizeLength = 75, 
+    iconSizeWidth  = iconSizeLength/2;
+
 var SchoolIcon = L.Icon.extend({
     options: {
-        iconSize:     [100, 100], // size of the icon
-        iconAnchor:   [25, 25], // point of the icon which will correspond to marker's location
-        popupAnchor:  [8, 0] // point from which the popup should open relative to the iconAnchor
+        iconSize:     [iconSizeLength, iconSizeWidth], // size of the icon
+        iconAnchor:   [iconSizeWidth, iconSizeWidth + 10], // point of the icon which will correspond to marker's location
+        popupAnchor:  [0, -iconSizeWidth] // point from which the popup should open relative to the iconAnchor
     }
 });
 
-var elementary     = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/elementary.svg'}),
-    high           = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/high.svg'}),
-    span           = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/span.svg'}),
-    hosting        = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/hosting.svg'}),
-    hostingred     = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/hostingred.svg'}),
-    hostingblue    = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/hostingblue.svg'}),
-    hostingpurple  = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/hostingpurple.svg'}),
-    hostinggreen   = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/hostinggreen.svg'}),
-    hostingyellow  = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/hostingyellow.svg'}),
-    middle         = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/middle.svg'}),
-    elementaryblue = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/elementaryblue.svg'}),
-    highred        = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/highred.svg'}),
-    spanblue       = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/spanblue.svg'}),
-    spanred        = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/spanred.svg'}),
-    spanpurple     = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/spanpurple.svg'}),
-    middleblue     = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/middleblue.svg'}),
-    middlered      = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/middlered.svg'}),
-    middlepurple   = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/middlepurple.svg'}),
-    grantsgreen    = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/grantsgreen.svg'}),
-    grantsyellow   = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/grantsyellow.svg'}),
-    error          = new SchoolIcon({iconUrl: 'script/maptesting/mapicons/error.svg'});
+var elementary     = new SchoolIcon({iconUrl: 'Images/mapicons/elementary.svg'}),
+    high           = new SchoolIcon({iconUrl: 'Images/mapicons/high.svg'}),
+    span           = new SchoolIcon({iconUrl: 'Images/mapicons/span.svg'}),
+    hosting        = new SchoolIcon({iconUrl: 'Images/mapicons/hosting.svg'}),
+    hostingred     = new SchoolIcon({iconUrl: 'Images/mapicons/hostingred.svg'}),
+    hostingblue    = new SchoolIcon({iconUrl: 'Images/mapicons/hostingblue.svg'}),
+    hostingpurple  = new SchoolIcon({iconUrl: 'Images/mapicons/hostingpurple.svg'}),
+    hostinggreen   = new SchoolIcon({iconUrl: 'Images/mapicons/hostinggreen.svg'}),
+    hostingyellow  = new SchoolIcon({iconUrl: 'Images/mapicons/hostingyellow.svg'}),
+    middle         = new SchoolIcon({iconUrl: 'Images/mapicons/middle.svg'}),
+    elementaryblue = new SchoolIcon({iconUrl: 'Images/mapicons/elementaryblue.svg'}),
+    highred        = new SchoolIcon({iconUrl: 'Images/mapicons/highred.svg'}),
+    spanblue       = new SchoolIcon({iconUrl: 'Images/mapicons/spanblue.svg'}),
+    spanred        = new SchoolIcon({iconUrl: 'Images/mapicons/spanred.svg'}),
+    spanpurple     = new SchoolIcon({iconUrl: 'Images/mapicons/spanpurple.svg'}),
+    middleblue     = new SchoolIcon({iconUrl: 'Images/mapicons/middleblue.svg'}),
+    middlered      = new SchoolIcon({iconUrl: 'Images/mapicons/middlered.svg'}),
+    middlepurple   = new SchoolIcon({iconUrl: 'Images/mapicons/middlepurple.svg'}),
+    grantsgreen    = new SchoolIcon({iconUrl: 'Images/mapicons/grantsgreen.svg'}),
+    grantsyellow   = new SchoolIcon({iconUrl: 'Images/mapicons/grantsyellow.svg'}),
+    error          = new SchoolIcon({iconUrl: 'Images/mapicons/error.svg'});
 
 function onEachFeature(feature, layer) {
     // does this feature have a property named popupContent?
@@ -62,34 +65,13 @@ L.geoJSON(schools, {
             icon: span
         };
 
-       /*  switch(geoJsonPoint.properties.Grade) {
-            case "Elementary":
-                icon_map.icon = (geoJsonPoint.properties.Teams != "" ? Elementaryteam : Elementary);
-                break;
-            case "Middle":
-                icon_map.icon = (geoJsonPoint.properties.Teams != "" ? Middleteam : Middle);
-                break;
-            case "High":
-                icon_map.icon = (geoJsonPoint.properties.Teams != "" ? Highteam : High);
-                break;
-            case "span": // Fallback for non-primary schools
-            default:
-                icon_map.icon = (geoJsonPoint.properties.Teams != "" ? spanteam : span);
-                break;
-        }
-
-        // When a school hosts, its icon is different.
-        if (geoJsonPoint.properties.Hosting != null && geoJsonPoint.properties.Hosting != "") {
-            icon_map.icon = Hosting;
-        } */
-	
         let NTG  = ("Grants" in geoJsonPoint.properties  && geoJsonPoint.properties.Grants.toLowerCase().trim()  === "yes");
         let VIQC = ("VIQC" in geoJsonPoint.properties && geoJsonPoint.properties.VIQC.toLowerCase().trim() === "yes");
         let VRC  = ("VRC" in geoJsonPoint.properties  && geoJsonPoint.properties.VRC.toLowerCase().trim()  === "yes");
         let code = (NTG << 2) | (VIQC << 1) | VRC;
         let data = [];
-        let result = "";
-
+        
+        //Nelson Team Grants(NTG) are only avable for Elementary & Middle School Vex IQ Teams.
         if (geoJsonPoint.properties.Hosting != null && geoJsonPoint.properties.Hosting != "") {
             data = [hosting,                     // (NTG, VIQC, VRC) = 000
                     hostingred,                  // (NTG, VIQC, VRC) = 001
@@ -145,35 +127,77 @@ L.geoJSON(schools, {
             }
 
             icon_map.icon = data[code];
-            /* result = data[code];
-            icon_map.icon = result; */
+            
 
         let marker = L.marker(latlng, icon_map);
-
+        
         // If there are teams, list them.
         let teamInnerHTML = "";
-        if (geoJsonPoint.properties.Teams) {
-            teamInnerHTML = `<dt>Team numbers</dt><dd>${geoJsonPoint.properties.Teams}</dd>`;
+        if (geoJsonPoint.properties.ActiveTeams) {
+            teamInnerHTML = `<dt>Team numbers</dt><dd>${geoJsonPoint.properties.ActiveTeams}</dd>`;
+        }
+
+        let inactiveTeamInnerHTML = "";
+        if (geoJsonPoint.properties.InactiveTeams) {
+            inactiveTeamInnerHTML = `<dt>Inactive Team numbers</dt><dd>${geoJsonPoint.properties.InactiveTeams}</dd>`;
         }
 
         // If there are events (in a <ul>...</ul>), list them.
-        let eventInnerHTML = "";
-        if (geoJsonPoint.properties.Events != null && geoJsonPoint.properties.Events != "") {
-            eventInnerHTML = `<dt>Events</dt><dd>${geoJsonPoint.properties.Events}</dd>`;
+        let VEXIQESLeagueeventInnerHTML = "";
+        if (geoJsonPoint.properties.EventDatesVEXIQESLeague != null && geoJsonPoint.properties.EventDatesVEXIQESLeague != "") {
+            VEXIQESLeagueeventInnerHTML = `<dt>VEX IQ Elementary School League</dt><dd><a href="${geoJsonPoint.properties.EventWebsiteVEXIQESLeague}" title="Open in new window" target="_blank">${geoJsonPoint.properties.NumberofteamsVEXIQESLeague} Teams ${geoJsonPoint.properties.EventDatesVEXIQESLeague}</a></dd>`;
         }
 
+        let VEXIQMSLeagueeventInnerHTML = "";
+        if (geoJsonPoint.properties.EventDatesVEXIQMSLeague != null && geoJsonPoint.properties.EventDatesVEXIQMSLeague != "") {
+            VEXIQMSLeagueeventInnerHTML = `<dt>VEX IQ Middle School League</dt><dd><a href="${geoJsonPoint.properties.EventWebsiteVEXIQMSLeague}" title="Open in new window" target="_blank">${geoJsonPoint.properties.NumberofteamsVEXIQMSLeague} Teams Teams ${geoJsonPoint.properties.EventDatesVEXIQMSLeague}</a></dd>`;
+        }
+
+        let VEXIQESMSLeagueeventInnerHTML = "";
+        if (geoJsonPoint.properties.EventDatesVEXIQESMSLeague != null && geoJsonPoint.properties.EventDatesVEXIQESMSLeague != "") {
+            VEXIQESMSLeagueeventInnerHTML = `<dt>VEX IQ Elementary/Middle School League</dt><dd><a href="${geoJsonPoint.properties.EventWebsiteVEXIQESMSLeague}" title="Open in new window" target="_blank">${geoJsonPoint.properties.NumberofteamsVEXIQESMSLeague} Teams ${geoJsonPoint.properties.EventDatesVEXIQESMSLeague}</a></dd>`;
+        }
+
+        let VEXIQESTournamenteventInnerHTML = "";
+        if (geoJsonPoint.properties.EventDatesVEXIQESTournament != null && geoJsonPoint.properties.EventDatesVEXIQESTournament != "") {
+            VEXIQESTournamenteventInnerHTML = `<dt>VEX IQ Elementary School Tournament</dt><dd><a href="${geoJsonPoint.properties.EventWebsiteVEXIQESTournament}" title="Open in new window" target="_blank">${geoJsonPoint.properties.NumberofteamsVEXIQESTournament} Teams ${geoJsonPoint.properties.EventDatesVEXIQESTournament}</a></dd>`;
+        }
+
+        let VEXIQMSTournamenteventInnerHTML = "";
+        if (geoJsonPoint.properties.EventDatesVEXIQMSTournament != null && geoJsonPoint.properties.EventDatesVEXIQMSTournament != "") {
+            VEXIQMSTournamenteventInnerHTML = `<dt>VEX IQ Middle School Tournament</dt><dd><a href="${geoJsonPoint.properties.EventWebsiteVEXIQMSTournament}" title="Open in new window" target="_blank">${geoJsonPoint.properties.NumberofteamsVEXIQMSTournament} Teams ${geoJsonPoint.properties.EventDatesVEXIQMSTournament}</a></dd>`;
+        }
+
+        let VEXIQESMSTournamenteventInnerHTML = "";
+        if (geoJsonPoint.properties.EventDatesVEXIQESMSTournament != null && geoJsonPoint.properties.EventDatesVEXIQESMSTournament != "") {
+            VEXIQESMSTournamenteventInnerHTML = `<dt>VEX IQ Elementary/Middle School Tournament</dt><dd><a href="${geoJsonPoint.properties.EventWebsiteVEXIQESMSTournament}" title="Open in new window" target="_blank">${geoJsonPoint.properties.NumberofteamsVEXIQESMSTournament} Teams ${geoJsonPoint.properties.EventDatesVEXIQESMSTournament}</a></dd>`;
+        }
+        marker.bindTooltip(geoJsonPoint.properties.School,
+            {
+            permanent: true,
+            direction: 'center',
+            className: 'transparent-tooltip' 
+    })
         // Make sure each school has its own unique popup.
         marker.bindPopup(`
 <p>
   <h4>${geoJsonPoint.properties.School}</h4>
   <dl>
     ${teamInnerHTML}
-    ${eventInnerHTML}
+    ${inactiveTeamInnerHTML}
+    ${VEXIQESLeagueeventInnerHTML}
+    ${VEXIQMSLeagueeventInnerHTML}
+    ${VEXIQESMSLeagueeventInnerHTML}
+    ${VEXIQESTournamenteventInnerHTML}
+    ${VEXIQMSTournamenteventInnerHTML}
+    ${VEXIQESMSTournamenteventInnerHTML}
   </dl>
 </p>`);
 
         return marker;
-    },
-    onEachFeature: onEachFeature
 
+      onEachFeature: onEachFeature
+    }
 }).addTo(mymap);
+
+// geoJsonPoint.properties.School
