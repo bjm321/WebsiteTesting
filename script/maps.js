@@ -193,15 +193,6 @@ L.geoJSON(schools, {
         if (geoJsonPoint.properties.EventDatesVEXIQESMSTournament != null && geoJsonPoint.properties.EventDatesVEXIQESMSTournament != "") {
             VEXIQESMSTournamenteventInnerHTML = `<dt>VEX IQ Elementary/Middle School Tournament</dt><dd><a href="${geoJsonPoint.properties.EventWebsiteVEXIQESMSTournament}" title="Open in new window" target="_blank">${geoJsonPoint.properties.NumberofteamsVEXIQESMSTournament} Teams ${geoJsonPoint.properties.EventDatesVEXIQESMSTournament}</a></dd>`;
         }
-        if (mymap.getZoom() <6){
-        marker.bindTooltip(geoJsonPoint.properties.School,
-            {
-            permanent: true,
-            direction: 'center',
-            className: 'transparent-tooltip' 
-            
-            })
-        }
 
         // Make sure each school has its own unique popup.
         marker.bindPopup(`
@@ -220,6 +211,16 @@ L.geoJSON(schools, {
             </p>`);
 
         return marker; 
+
+        if (mymap.getZoom() <6){
+            marker.bindTooltip(geoJsonPoint.properties.School,
+                {
+                permanent: true,
+                direction: 'center',
+                className: 'transparent-tooltip' 
+                
+                })
+            }
     }
 }).addTo(mymap);
 
@@ -242,12 +243,17 @@ mymap.on('zoomend', function() {
 
 var baseLayers = {
     'OpenStreetMap': osm,
-   
   };
 var layerControl = L.control.layers(baseLayers, overlays).addTo(mymap);
 var overlays = {
     'Elementary': Elementary
   };
-layerControl.addOverlay(Middle, 'Middle');
-layerControl.addOverlay(High, 'High');
-layerControl.addOverlay(Span, 'Span');
+
+layerControl.addOverlay(hostLayer, 'Hosting');
+layerControl.addOverlay(grantLayer, 'Grants');
+layerControl.addOverlay(elementaryLayer, 'Elementary');  
+layerControl.addOverlay(middleLayer, 'Middle');
+layerControl.addOverlay(highLayer, 'High');
+layerControl.addOverlay(multiStageLayer, 'MultiStage');
+layerControl.addOverlay(vIQCLayer, 'VIQC');
+layerControl.addOverlay(vRCLayer, 'VRC');
