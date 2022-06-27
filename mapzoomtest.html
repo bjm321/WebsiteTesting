@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="LeRoy Nelson">
+        <meta name="description" content="Nelson Team Grants (NTG) is a division of Los Angeles Robotics (LARobotics), a nonprofit corporation which supports several youth robotics programs in Southern California">
+        <meta name="keywords" content="Nelson Team Grants, NTG, VEX IQ Challenge, VEX Robotics, VEX, Robotics, Elementary Schools, Middle Schools, Los Angeles Unified School District, LAUSD, Local, Recipient, Recipients, League, Leagues, Workshops, Workshop, Team, Teams, Maps, Lists, LeRoy Nelson, Treasurer, Los Angeles Robotics, Los Angeles, Los Angeles County, California">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Map zoom Test - Los Angeles Robotics (LARobotics)</title>
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css">
+        <link rel="stylesheet" href="stylesheet/WebsiteTheme.css">
+        <link rel="stylesheet" href="stylesheet/main.css">
+        <link rel="stylesheet" href="stylesheet/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="stylesheet/Navbar.css">
+        <link rel="stylesheet" href="stylesheet/sidebar.css">
+        <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+    
+      <style>
+        html, body {
+          height: 100%;
+          margin: 0;
+        }
+        .leaflet-container {
+          height: 400px;
+          width: 600px;
+          max-width: 100%;
+          max-height: 100%;
+        }
+      </style>
+    
+    </head>
+<body>
+     <!--Navbar-->
+		<div class="w3-top">
+			<div class="w3-bar navbartheme w3-top w3-left-align w3-large">
+				<a class="w3-bar-item w3-button w3-right w3-hide-large hover-navbar w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+				<a id="home" href="index.html" class="w3-bar-item w3-button w3-theme-l1">
+					<img src="Images/LARoboticsLogo500x278.png" alt="LA Robotics logo" class="laroboticshomelogo">
+				</a>
+				<a id="pick" class="w3-bar-item w3-button hover-navbar">Team Grants</a>
+				<a href="VEX.html" class="w3-bar-item w3-button w3-hide-small w3-hide-medium hover-navbar">VEX</a>
+				<a href="FRC.html" class="w3-bar-item w3-button w3-hide-small w3-hide-medium hover-navbar">FIRST</a>
+				<a href="SCRRF.html" class="w3-bar-item w3-button w3-hide-small w3-hide-medium hover-navbar">SCRRF</a>
+				<a href="JSMScholarship.html" class="w3-bar-item w3-button w3-hide-small w3-hide-medium hover-navbar">Scholarships</a>
+				<a href="Other.html" class="w3-bar-item w3-button w3-hide-small w3-hide-medium hover-navbar">Other</a>
+			</div>
+		</div>
+
+      <!-- Sidebar -->
+      <nav class="w3-sidebar w3-bar-block w3-collapse w3-theme-l5 w3-animate-left" id="mySidebar">
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+          <i class="fa fa-remove"></i>
+        </a>
+        <h5 class="w3-bar-item menuName w3-hide-large">
+				<b>
+					Menu
+				</b>
+			</h5>
+        <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large whover-sidebar">Nelson Team Grants</a>
+        <a class="w3-bar-item w3-button hover-sidebar" href="NelsonTeamGrants.html"><span class="sub">Grants</span></a>
+        <a class="w3-bar-item w3-button hover-sidebar" id="pick2"><span class="sub">Recipients</span></a>
+        <a class="w3-bar-item w3-button hover-sidebar" href="NTGLeagues.html"><span class="sub">Leagues and Workshops</span></a>
+        <a class="w3-bar-item w3-button hover-sidebar" href="NTGHandouts.html"><span class="sub">Coach Training Handouts</span></a>
+        <a class="w3-bar-item w3-button hover-sidebar" href="NTGSponsors.html"><span class="sub">Sponsors</span></a>
+        <a href="VEX.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-large hover-sidebar">VEX</a>
+		    <a href="FRC.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-large hover-sidebar">FIRST</a>
+        <a href="SCRRF.html" class="w3-bar-item w3-button w3-hide-large hover-sidebar">SCRRF</a>
+        <a href="JSMScholarship.html" class="w3-bar-item w3-button w3-hide-large hover-sidebar">Scholarships</a>
+        <a href="Other.html" class="w3-bar-item w3-button w3-hide-large hover-sidebar">Other</a>
+      </nav>
+
+      <!-- Overlay effect when opening sidebar on small screens -->
+      <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+      <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+      <div class="w3-main" style="margin-left:250px">
+
+        <div class="w3-row w3-padding-64">
+            <div class="w3-row">
+                <div class="w3-twothird w3-container">
+              
+
+    <div id="map"></div>
+	
+				</div>
+				<div class="w3-third w3-container">
+                    
+                  </div>
+			</div>
+            <footer id="myFooter">
+                <div class="w3-container w3-theme-l2 w3-padding-32">
+                  Los Angeles Robotics is a 501(c)(3) nonprofit corporation. Last updated on 01/10/22.<br>
+                  For additional information or to report problems, please contact: <a href="mailto:LeRoy@larobotics.org" title="Send email">LeRoy@LARobotics.org</a>.	  
+                </div>
+                  </footer>
+            
+            <!-- END MAIN -->
+        </div>
+        <!-- Make sure you put this AFTER Leaflet's CSS -->
+        <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"></script>
+        <script>
+          var cities = L.layerGroup();
+        
+          var mLittleton = L.marker([39.61, -105.02]).bindPopup('This is Littleton, CO.').addTo(cities);
+          var mDenver = L.marker([39.74, -104.99]).bindPopup('This is Denver, CO.').addTo(cities);
+          var mAurora = L.marker([39.73, -104.8]).bindPopup('This is Aurora, CO.').addTo(cities);
+          var mGolden = L.marker([39.77, -105.23]).bindPopup('This is Golden, CO.').addTo(cities);
+        
+          var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>';
+          var mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
+         
+          var streets = L.tileLayer(mbUrl, {id: 'mapbox/streets-v11', tileSize: 512, zoomOffset: -1, attribution: mbAttr});
+        
+          var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+          });
+        
+          var map = L.map('map', {
+            center: [39.73, -104.99],
+            zoom: 10,
+            layers: [osm, cities]
+          });
+        
+          var baseLayers = {
+            'OpenStreetMap': osm,
+            'Streets': streets
+          };
+        
+          var overlays = {
+            'Cities': cities
+          };
+        
+          var layerControl = L.control.layers(baseLayers, overlays).addTo(map);
+          var crownHill = L.marker([39.75, -105.09]).bindPopup('This is Crown Hill Park.');
+          var rubyHill = L.marker([39.68, -105.00]).bindPopup('This is Ruby Hill Park.');
+        
+          var parks = L.layerGroup([crownHill, rubyHill]);
+        
+          var satellite = L.tileLayer(mbUrl, {id: 'mapbox/satellite-v9', tileSize: 512, zoomOffset: -1, attribution: mbAttr});
+          layerControl.addBaseLayer(satellite, 'Satellite');
+          layerControl.addOverlay(parks, 'Parks');
+        </script>
+    </body>
+</html>

@@ -1,8 +1,11 @@
 const apikey = 'pk.eyJ1IjoiYmptMzIxIiwiYSI6ImNsM3FodXFqejB0OHgzY3JzMDUyanVpcGUifQ.HpARsm_UCTbOTdmTeyQyfQ';
 
-const mymap = L.map('map').setView([34.056203918518236, -118.25736731890913], 10);
+const mymap = L.map('map').setView(
+    [34.056203918518236, -118.25736731890913],
+    10
+    );
 
-L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+var osm =L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     maxZoom: 18,
     attribution: '© OpenStreetMap',
     id: 'mapbox/streets-v11',
@@ -21,6 +24,10 @@ var SchoolIcon = L.Icon.extend({
         popupAnchor:  [0, -iconSizeWidth] // point from which the popup should open relative to the iconAnchor
     }
 });
+var Elementary = L.layerGroup();
+var Middle = L.layerGroup();
+var High = L.layerGroup();
+var Span = L.layerGroup();
 
 var elementary        = new SchoolIcon({iconUrl: 'Images/mapicons/elementary.svg'}),
     high              = new SchoolIcon({iconUrl: 'Images/mapicons/high.svg'}),
@@ -69,6 +76,15 @@ L.geoJSON(schools, {
         let icon_map = {
             icon: span
         };
+
+        let multiStageLayer = { filter: function(feature, layer) { (feature.properties.Grade === "Span");}}
+        let highLayer = {filter: function(feature, layer) {(feature.properties.Grade === "High");}}
+        let middleLayer = {filter: function(feature, layer) { (feature.properties.Grade === "Middle");}}
+        let elementaryLayer = {filter: function(feature, layer) {(feature.properties.Grade === "Elementary");}}
+        let vRCLayer = {filter: function(feature, layer) {("VRC" in feature.properties  && feature.properties.VRC.toLowerCase().trim()  === "yes");}}
+        let vIQCLayer = {filter: function(feature, layer) {("VIQC" in feature.properties && feature.properties.VIQC.toLowerCase().trim() === "yes");}}
+        let grantLayer = {filter: function(feature, layer) {("Grants" in feature.properties  && feature.properties.Grants.toLowerCase().trim()  === "yes");}}
+        let hostLayer = {filter: function(feature, layer) {("Hosting" in feature.properties  && feature.properties.Hosting.toLowerCase().trim()  === "yes");}}
 
         let NTG  = ("Grants" in geoJsonPoint.properties  && geoJsonPoint.properties.Grants.toLowerCase().trim()  === "yes");
         let VIQC = ("VIQC" in geoJsonPoint.properties && geoJsonPoint.properties.VIQC.toLowerCase().trim() === "yes");
@@ -183,25 +199,35 @@ L.geoJSON(schools, {
             direction: 'center',
             className: 'transparent-tooltip' 
     })
+
+
         // Make sure each school has its own unique popup.
         marker.bindPopup(`
-<p>
-  <h4>${geoJsonPoint.properties.School}</h4>
-  <dl>
-    ${teamInnerHTML}
-    ${inactiveTeamInnerHTML}
-    ${VEXIQESLeagueeventInnerHTML}
-    ${VEXIQMSLeagueeventInnerHTML}
-    ${VEXIQESMSLeagueeventInnerHTML}
-    ${VEXIQESTournamenteventInnerHTML}
-    ${VEXIQMSTournamenteventInnerHTML}
-    ${VEXIQESMSTournamenteventInnerHTML}
-  </dl>
-</p>`);
+            <p>
+            <h4>${geoJsonPoint.properties.School}</h4>
+            <dl>
+                ${teamInnerHTML}
+                ${inactiveTeamInnerHTML}
+                ${VEXIQESLeagueeventInnerHTML}
+                ${VEXIQMSLeagueeventInnerHTML}
+                ${VEXIQESMSLeagueeventInnerHTML}
+                ${VEXIQESTournamenteventInnerHTML}
+                ${VEXIQMSTournamenteventInnerHTML}
+                ${VEXIQESMSTournamenteventInnerHTML}
+            </dl>
+            </p>`);
 
-        return marker;
-
-     
+        return marker; 
     }
 }).addTo(mymap);
-
+var baseLayers = {
+    'OpenStreetMap': osm,
+   
+  };
+var layerControl = L.control.layers(baseLayers, overlays).addTo(mymap);
+var overlays = {
+    'Elementary': Elementary
+  };
+layerControl.addOverlay(Middle, 'Middle');
+layerControl.addOverlay(High, 'High');
+layerControl.addOverlay(Span, 'Span');
