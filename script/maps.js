@@ -193,13 +193,15 @@ L.geoJSON(schools, {
         if (geoJsonPoint.properties.EventDatesVEXIQESMSTournament != null && geoJsonPoint.properties.EventDatesVEXIQESMSTournament != "") {
             VEXIQESMSTournamenteventInnerHTML = `<dt>VEX IQ Elementary/Middle School Tournament</dt><dd><a href="${geoJsonPoint.properties.EventWebsiteVEXIQESMSTournament}" title="Open in new window" target="_blank">${geoJsonPoint.properties.NumberofteamsVEXIQESMSTournament} Teams ${geoJsonPoint.properties.EventDatesVEXIQESMSTournament}</a></dd>`;
         }
+        if (mymap.getZoom() <6){
         marker.bindTooltip(geoJsonPoint.properties.School,
             {
             permanent: true,
             direction: 'center',
             className: 'transparent-tooltip' 
-    })
-
+            
+            })
+        }
 
         // Make sure each school has its own unique popup.
         marker.bindPopup(`
@@ -220,6 +222,24 @@ L.geoJSON(schools, {
         return marker; 
     }
 }).addTo(mymap);
+
+mymap.on('zoomend', function() {
+    if (mymap.getZoom() <6){
+        mymap.removeLayer(Span);//1st geoJSON layer
+   }
+   if (mymap.getZoom() <8){
+    mymap.removeLayer(Middle);//2nd geoJSON layer
+   }
+   if (mymap.getZoom() <10){
+    mymap.removeLayer(Elementary);//3rd geoJSON layer
+   }
+   else {
+    mymap.addLayer(Span);
+    mymap.addLayer(Middle);
+    mymap.addLayer(Elementary);
+    } //all layers are to be switched on, when zoom level reach 10
+   });
+
 var baseLayers = {
     'OpenStreetMap': osm,
    
