@@ -29,6 +29,10 @@ var Middle = L.layerGroup();
 var High = L.layerGroup();
 var Span = L.layerGroup();
 
+var baseLayers = {'OpenStreetMap': osm,};
+var overlays = {'Elementary': Elementary};
+var layerControl = L.control.layers(baseLayers, overlays).addTo(mymap);
+
 var elementary        = new SchoolIcon({iconUrl: 'Images/mapicons/elementary.svg'}),
     high              = new SchoolIcon({iconUrl: 'Images/mapicons/high.svg'}),
     span              = new SchoolIcon({iconUrl: 'Images/mapicons/span.svg'}),
@@ -85,6 +89,15 @@ L.geoJSON(schools, {
         let vIQCLayer = {filter: function(feature, layer) {("VIQC" in feature.properties && feature.properties.VIQC.toLowerCase().trim() === "yes");}}
         let grantLayer = {filter: function(feature, layer) {("Grants" in feature.properties  && feature.properties.Grants.toLowerCase().trim()  === "yes");}}
         let hostLayer = {filter: function(feature, layer) {("Hosting" in feature.properties  && feature.properties.Hosting.toLowerCase().trim()  === "yes");}}
+
+        layerControl.addOverlay(hostLayer, 'Hosting');
+        layerControl.addOverlay(grantLayer, 'Grants');
+        layerControl.addOverlay(elementaryLayer, 'Elementary');  
+        layerControl.addOverlay(middleLayer, 'Middle');
+        layerControl.addOverlay(highLayer, 'High');
+        layerControl.addOverlay(multiStageLayer, 'MultiStage');
+        layerControl.addOverlay(vIQCLayer, 'VIQC');
+        layerControl.addOverlay(vRCLayer, 'VRC');
 
         let NTG  = ("Grants" in geoJsonPoint.properties  && geoJsonPoint.properties.Grants.toLowerCase().trim()  === "yes");
         let VIQC = ("VIQC" in geoJsonPoint.properties && geoJsonPoint.properties.VIQC.toLowerCase().trim() === "yes");
@@ -241,15 +254,3 @@ mymap.on('zoomend', function() {
     } //all layers are to be switched on, when zoom level reach 10
    });
 
-var baseLayers = {'OpenStreetMap': osm,};
-var layerControl = L.control.layers(baseLayers, overlays).addTo(mymap);
-var overlays = {'Elementary': Elementary};
-
-layerControl.addOverlay(hostLayer, 'Hosting');
-layerControl.addOverlay(grantLayer, 'Grants');
-layerControl.addOverlay(elementaryLayer, 'Elementary');  
-layerControl.addOverlay(middleLayer, 'Middle');
-layerControl.addOverlay(highLayer, 'High');
-layerControl.addOverlay(multiStageLayer, 'MultiStage');
-layerControl.addOverlay(vIQCLayer, 'VIQC');
-layerControl.addOverlay(vRCLayer, 'VRC');
