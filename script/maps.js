@@ -226,13 +226,13 @@ L.geoJSON(schools, {
 
 mymap.on('zoomend', function() {
     if (mymap.getZoom() <6){
-        mymap.removeLayer(Span);//1st geoJSON layer
+        mymap.removeLayer(multiStageLayer);//1st geoJSON layer
    }
    if (mymap.getZoom() <8){
-    mymap.removeLayer(Middle);//2nd geoJSON layer
+    mymap.removeLayer(middleLayer);//2nd geoJSON layer
    }
    if (mymap.getZoom() <10){
-    mymap.removeLayer(Elementary);//3rd geoJSON layer
+    mymap.removeLayer(elementaryLayer);//3rd geoJSON layer
    }
    else {
     mymap.addLayer(Span);
@@ -241,13 +241,9 @@ mymap.on('zoomend', function() {
     } //all layers are to be switched on, when zoom level reach 10
    });
 
-var baseLayers = {
-    'OpenStreetMap': osm,
-  };
+var baseLayers = {'OpenStreetMap': osm,};
 var layerControl = L.control.layers(baseLayers, overlays).addTo(mymap);
-var overlays = {
-    'Elementary': Elementary
-  };
+var overlays = {'Elementary': Elementary};
 
 layerControl.addOverlay(hostLayer, 'Hosting');
 layerControl.addOverlay(grantLayer, 'Grants');
