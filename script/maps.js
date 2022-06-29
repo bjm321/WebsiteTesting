@@ -81,23 +81,23 @@ L.geoJSON(schools, {
             icon: span
         };
 
-        let multiStageLayer = { filter: function(feature, layer) { (feature.properties.Grade === "Span");}}
-        let highLayer = {filter: function(feature, layer) {(feature.properties.Grade === "High");}}
-        let middleLayer = {filter: function(feature, layer) { (feature.properties.Grade === "Middle");}}
-        let elementaryLayer = {filter: function(feature, layer) {(feature.properties.Grade === "Elementary");}}
-        let vRCLayer = {filter: function(feature, layer) {("VRC" in feature.properties  && feature.properties.VRC.toLowerCase().trim()  === "yes");}}
-        let vIQCLayer = {filter: function(feature, layer) {("VIQC" in feature.properties && feature.properties.VIQC.toLowerCase().trim() === "yes");}}
-        let grantLayer = {filter: function(feature, layer) {("Grants" in feature.properties  && feature.properties.Grants.toLowerCase().trim()  === "yes");}}
-        let hostLayer = {filter: function(feature, layer) {("Hosting" in feature.properties  && feature.properties.Hosting.toLowerCase().trim()  === "yes");}}
+        // let multiStageLayer = { filter: function(feature, layer) { (feature.properties.Grade === "Span");}}
+        // let highLayer = {filter: function(feature, layer) {(feature.properties.Grade === "High");}}
+        // let middleLayer = {filter: function(feature, layer) { (feature.properties.Grade === "Middle");}}
+        // let elementaryLayer = {filter: function(feature, layer) {(feature.properties.Grade === "Elementary");}}
+        // let vRCLayer = {filter: function(feature, layer) {("VRC" in feature.properties  && feature.properties.VRC.toLowerCase().trim()  === "yes");}}
+        // let vIQCLayer = {filter: function(feature, layer) {("VIQC" in feature.properties && feature.properties.VIQC.toLowerCase().trim() === "yes");}}
+        // let grantLayer = {filter: function(feature, layer) {("Grants" in feature.properties  && feature.properties.Grants.toLowerCase().trim()  === "yes");}}
+        // let hostLayer = {filter: function(feature, layer) {("Hosting" in feature.properties  && feature.properties.Hosting.toLowerCase().trim()  === "yes");}}
 
-        layerControl.addOverlay(hostLayer, 'Hosting');
-        layerControl.addOverlay(grantLayer, 'Grants');
-        layerControl.addOverlay(elementaryLayer, 'Elementary');  
-        layerControl.addOverlay(middleLayer, 'Middle');
-        layerControl.addOverlay(highLayer, 'High');
-        layerControl.addOverlay(multiStageLayer, 'MultiStage');
-        layerControl.addOverlay(vIQCLayer, 'VIQC');
-        layerControl.addOverlay(vRCLayer, 'VRC');
+        // layerControl.addOverlay(hostLayer, 'Hosting');
+        // layerControl.addOverlay(grantLayer, 'Grants');
+        // layerControl.addOverlay(elementaryLayer, 'Elementary');  
+        // layerControl.addOverlay(middleLayer, 'Middle');
+        // layerControl.addOverlay(highLayer, 'High');
+        // layerControl.addOverlay(multiStageLayer, 'MultiStage');
+        // layerControl.addOverlay(vIQCLayer, 'VIQC');
+        // layerControl.addOverlay(vRCLayer, 'VRC');
 
         let NTG  = ("Grants" in geoJsonPoint.properties  && geoJsonPoint.properties.Grants.toLowerCase().trim()  === "yes");
         let VIQC = ("VIQC" in geoJsonPoint.properties && geoJsonPoint.properties.VIQC.toLowerCase().trim() === "yes");
