@@ -211,9 +211,9 @@ td {
 }
 
 #map{ 
-    height: 800px;
+    height: 900px;
     width: 100%;
-    margin: 5rem auto;
+    margin: 3rem auto;
 	z-index: 0;
 }
 
@@ -234,3 +234,31 @@ td {
 	min-height: 1.2em;
 	border: 1px solid rgb(0, 0, 0);
   }
+
+  #overlay {
+	position: absolute;
+    z-index: 1000;
+    background: rgba(255,255,255,0.7);
+    padding: 10px;
+    right: 0;
+    margin-top: 44px;
+    margin-right: 0px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px #808080;
+    min-height: 200px;
+    max-width: 229px;
+}
+
+#slide-in {
+    position: absolute;
+    width: 250px;
+    z-index: 100;
+    background: #ffffff;
+    margin-left: -500px;
+    transition: 1.5s;
+    margin-top: 44px;
+}
+
+#slide-in.in {
+	margin-left: 0px;
+}
