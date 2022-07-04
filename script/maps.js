@@ -2,7 +2,7 @@ const apiKey = 'pk.eyJ1IjoiYmptMzIxIiwiYSI6ImNsM3FodXFqejB0OHgzY3JzMDUyanVpcGUif
 
 $(document).ready(function () {
 
-    $('#mymap').height(window.innerHeight);
+    $('#map').height(window.innerHeight);
     $('#slide-in').height(window.innerHeight);
 
     $(document).on('click', '#advanced', function () {
