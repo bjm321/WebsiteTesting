@@ -238,7 +238,6 @@ $(document).on('keyup', '#search',function(e){
         }else{
             mymap.removeLayer(layer);
         }
-        console.log(layer);
     });
 });
 
