@@ -7,4 +7,4 @@ Nelson Team Grants
 VEX IQ Challenge Participant
 VEX Robotics Competition Participant
 
-var districtborders = 
+var districtBorders = 
