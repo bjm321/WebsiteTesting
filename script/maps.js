@@ -228,12 +228,17 @@ var addedSchools = L.geoJSON(schools, {
 }).addTo(mymap);
 
 //adding search bar for school names
-
+function matchInputAtStartOfWord(text, searchTerm) {
+    const escapedInput = searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+    const searchExpression = RegExp("\\b" + escapedInput, "i");
+    const match = text.match(searchExpression);
+    return (match !== null);
+}
 
 $(document).on('keyup', '#search',function(e){
     var userInput = e.target.value;
     addedSchools.eachLayer(function(layer){
-        if (layer.feature.properties.School.toLowerCase().indexOf(userInput.toLowerCase())>-1) {
+        if (matchInputAtStartOfWord(layer.feature.properties.School, userInput)) {
           layer.addTo(mymap);  
         }else{
             mymap.removeLayer(layer);
