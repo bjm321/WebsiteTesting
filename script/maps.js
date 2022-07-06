@@ -30,7 +30,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 }).addTo(mymap);
 
 var iconSizeLength = 75,
-    iconSizeWidth  = iconSizeLength / 2;
+    iconSizeWidth = iconSizeLength / 2;
 
 var SchoolIcon = L.Icon.extend({
     options: {
@@ -41,44 +41,45 @@ var SchoolIcon = L.Icon.extend({
 });
 
 
-var elementary        = new SchoolIcon({ iconUrl: 'Images/mapicons/elementary.svg' }),
-    high              = new SchoolIcon({ iconUrl: 'Images/mapicons/high.svg' }),
-    span              = new SchoolIcon({ iconUrl: 'Images/mapicons/span.svg' }),
-    hosting           = new SchoolIcon({ iconUrl: 'Images/mapicons/hosting.svg' }),
-    hostingRed        = new SchoolIcon({ iconUrl: 'Images/mapicons/hostingRed.svg' }),
-    hostingBlue       = new SchoolIcon({ iconUrl: 'Images/mapicons/hostingBlue.svg' }),
-    hostingPurple     = new SchoolIcon({ iconUrl: 'Images/mapicons/hostingPurple.svg' }),
-    hostingGreen      = new SchoolIcon({ iconUrl: 'Images/mapicons/hostingGreen.svg' }),
-    hostingYellow     = new SchoolIcon({ iconUrl: 'Images/mapicons/hostingYellow.svg' }),
-    middle            = new SchoolIcon({ iconUrl: 'Images/mapicons/middle.svg' }),
-    elementaryBlue    = new SchoolIcon({ iconUrl: 'Images/mapicons/elementaryBlue.svg' }),
-    elementaryGreen   = new SchoolIcon({ iconUrl: 'Images/mapicons/elementaryGreen.svg' }),
-    elementaryYellow  = new SchoolIcon({ iconUrl: 'Images/mapicons/elementaryYellow.svg' }),
-    highRed           = new SchoolIcon({ iconUrl: 'Images/mapicons/highRed.svg' }),
-    spanBlue          = new SchoolIcon({ iconUrl: 'Images/mapicons/spanBlue.svg' }),
-    spanYellow        = new SchoolIcon({ iconUrl: 'Images/mapicons/spanYellow.svg' }),
-    spanGreen         = new SchoolIcon({ iconUrl: 'Images/mapicons/spanGreen.svg' }),
-    spanRed           = new SchoolIcon({ iconUrl: 'Images/mapicons/spanRed.svg' }),
-    spanPurple        = new SchoolIcon({ iconUrl: 'Images/mapicons/spanPurple.svg' }),
-    middleBlue        = new SchoolIcon({ iconUrl: 'Images/mapicons/middleBlue.svg' }),            
-    middleRed         = new SchoolIcon({ iconUrl: 'Images/mapicons/middleRed.svg' }),
-    middlePurple      = new SchoolIcon({ iconUrl: 'Images/mapicons/middlePurple.svg' }),
-    middleGreen       = new SchoolIcon({ iconUrl: 'Images/mapicons/middleGreen.svg' }),
-    middleYellow      = new SchoolIcon({ iconUrl: 'Images/mapicons/middleYellow.svg' }),
-    error             = new SchoolIcon({ iconUrl: 'Images/mapicons/error.svg' });
+var elementary = new SchoolIcon({ iconUrl: 'Images/mapicons/elementary.svg' }),
+    high = new SchoolIcon({ iconUrl: 'Images/mapicons/high.svg' }),
+    span = new SchoolIcon({ iconUrl: 'Images/mapicons/span.svg' }),
+    hosting = new SchoolIcon({ iconUrl: 'Images/mapicons/hosting.svg' }),
+    hostingRed = new SchoolIcon({ iconUrl: 'Images/mapicons/hostingRed.svg' }),
+    hostingBlue = new SchoolIcon({ iconUrl: 'Images/mapicons/hostingBlue.svg' }),
+    hostingPurple = new SchoolIcon({ iconUrl: 'Images/mapicons/hostingPurple.svg' }),
+    hostingGreen = new SchoolIcon({ iconUrl: 'Images/mapicons/hostingGreen.svg' }),
+    hostingYellow = new SchoolIcon({ iconUrl: 'Images/mapicons/hostingYellow.svg' }),
+    middle = new SchoolIcon({ iconUrl: 'Images/mapicons/middle.svg' }),
+    elementaryBlue = new SchoolIcon({ iconUrl: 'Images/mapicons/elementaryBlue.svg' }),
+    elementaryGreen = new SchoolIcon({ iconUrl: 'Images/mapicons/elementaryGreen.svg' }),
+    elementaryYellow = new SchoolIcon({ iconUrl: 'Images/mapicons/elementaryYellow.svg' }),
+    highRed = new SchoolIcon({ iconUrl: 'Images/mapicons/highRed.svg' }),
+    spanBlue = new SchoolIcon({ iconUrl: 'Images/mapicons/spanBlue.svg' }),
+    spanYellow = new SchoolIcon({ iconUrl: 'Images/mapicons/spanYellow.svg' }),
+    spanGreen = new SchoolIcon({ iconUrl: 'Images/mapicons/spanGreen.svg' }),
+    spanRed = new SchoolIcon({ iconUrl: 'Images/mapicons/spanRed.svg' }),
+    spanPurple = new SchoolIcon({ iconUrl: 'Images/mapicons/spanPurple.svg' }),
+    middleBlue = new SchoolIcon({ iconUrl: 'Images/mapicons/middleBlue.svg' }),
+    middleRed = new SchoolIcon({ iconUrl: 'Images/mapicons/middleRed.svg' }),
+    middlePurple = new SchoolIcon({ iconUrl: 'Images/mapicons/middlePurple.svg' }),
+    middleGreen = new SchoolIcon({ iconUrl: 'Images/mapicons/middleGreen.svg' }),
+    middleYellow = new SchoolIcon({ iconUrl: 'Images/mapicons/middleYellow.svg' }),
+    error = new SchoolIcon({ iconUrl: 'Images/mapicons/error.svg' });
 
 function onEachFeature(feature, layer) {
     // does this feature have a property named popupContent?
     if (feature.properties && feature.properties.popupContent) {
         layer.bindPopup(feature.properties.School);
-    } 
+    }
 }
 
 L.geoJSON(districtBorders, {
     style: function (feature) {
-        return {color: feature.properties.stroke,
+        return {
+            color: feature.properties.stroke,
 
-               };
+        };
     }
 }).addTo(mymap);
 
@@ -89,63 +90,63 @@ var addedSchools = L.geoJSON(schools, {
             icon: span
         };
 
-        let NTG   = ("Grants" in geoJsonPoint.properties && geoJsonPoint.properties.Grants.toLowerCase().trim() === "yes");
-        let VIQC  = ("VIQC" in geoJsonPoint.properties && geoJsonPoint.properties.VIQC.toLowerCase().trim() === "yes");
-        let VRC   = ("VRC" in geoJsonPoint.properties && geoJsonPoint.properties.VRC.toLowerCase().trim() === "yes");
-        let code  = (NTG << 2) | (VIQC << 1) | VRC;
-        let data  = [];
+        let NTG = ("Grants" in geoJsonPoint.properties && geoJsonPoint.properties.Grants.toLowerCase().trim() === "yes");
+        let VIQC = ("VIQC" in geoJsonPoint.properties && geoJsonPoint.properties.VIQC.toLowerCase().trim() === "yes");
+        let VRC = ("VRC" in geoJsonPoint.properties && geoJsonPoint.properties.VRC.toLowerCase().trim() === "yes");
+        let code = (NTG << 2) | (VIQC << 1) | VRC;
+        let data = [];
 
         //Nelson Team Grants(NTG) are only available for Elementary & Middle School Vex IQ Teams.
         if (geoJsonPoint.properties.Hosting != null && geoJsonPoint.properties.Hosting != "") {
             data = [hosting,                     // (NTG, VIQC, VRC) = 000
-                    hostingRed,                  // (NTG, VIQC, VRC) = 001
-                    hostingBlue,                 // (NTG, VIQC, VRC) = 010
-                    hostingPurple,               // (NTG, VIQC, VRC) = 011
-                    error,                       // (NTG, VIQC, VRC) = 100 Error
-                    error,                       // (NTG, VIQC, VRC) = 101 Error
-                    hostingGreen,                // (NTG, VIQC, VRC) = 110
-                    hostingYellow];              // (NTG, VIQC, VRC) = 111
+                hostingRed,                  // (NTG, VIQC, VRC) = 001
+                hostingBlue,                 // (NTG, VIQC, VRC) = 010
+                hostingPurple,               // (NTG, VIQC, VRC) = 011
+                error,                       // (NTG, VIQC, VRC) = 100 Error
+                error,                       // (NTG, VIQC, VRC) = 101 Error
+                hostingGreen,                // (NTG, VIQC, VRC) = 110
+                hostingYellow];              // (NTG, VIQC, VRC) = 111
         } else {
             switch (geoJsonPoint.properties.Grade) {
                 case "Elementary":
                     data = [elementary,      // (NTG, VIQC, VRC) = 000
-                            error,           // (NTG, VIQC, VRC) = 001 Error
-                            elementaryBlue,  // (NTG, VIQC, VRC) = 010
-                            error,           // (NTG, VIQC, VRC) = 011
-                            error,           // (NTG, VIQC, VRC) = 100 Error
-                            error,           // (NTG, VIQC, VRC) = 101 Error
-                            elementaryGreen, // (NTG, VIQC, VRC) = 110 
-                            error];          // (NTG, VIQC, VRC) = 111 Error
+                        error,           // (NTG, VIQC, VRC) = 001 Error
+                        elementaryBlue,  // (NTG, VIQC, VRC) = 010
+                        error,           // (NTG, VIQC, VRC) = 011
+                        error,           // (NTG, VIQC, VRC) = 100 Error
+                        error,           // (NTG, VIQC, VRC) = 101 Error
+                        elementaryGreen, // (NTG, VIQC, VRC) = 110 
+                        error];          // (NTG, VIQC, VRC) = 111 Error
                     break;
                 case "Middle":
                     data = [middle,          // (NTG, VIQC, VRC) = 000
-                            middleRed,       // (NTG, VIQC, VRC) = 001
-                            middleBlue,      // (NTG, VIQC, VRC) = 010
-                            middlePurple,    // (NTG, VIQC, VRC) = 011
-                            error,           // (NTG, VIQC, VRC) = 100 Error
-                            error,           // (NTG, VIQC, VRC) = 101 Error
-                            middleGreen,     // (NTG, VIQC, VRC) = 110 
-                            middleYellow];   // (NTG, VIQC, VRC) = 111 
+                        middleRed,       // (NTG, VIQC, VRC) = 001
+                        middleBlue,      // (NTG, VIQC, VRC) = 010
+                        middlePurple,    // (NTG, VIQC, VRC) = 011
+                        error,           // (NTG, VIQC, VRC) = 100 Error
+                        error,           // (NTG, VIQC, VRC) = 101 Error
+                        middleGreen,     // (NTG, VIQC, VRC) = 110 
+                        middleYellow];   // (NTG, VIQC, VRC) = 111 
                     break;
                 case "High":
                     data = [high,            // (NTG, VIQC, VRC) = 000
-                            highRed,         // (NTG, VIQC, VRC) = 001
-                            error,           // (NTG, VIQC, VRC) = 010 Error
-                            error,           // (NTG, VIQC, VRC) = 011 Error
-                            error,           // (NTG, VIQC, VRC) = 100 Error
-                            error,           // (NTG, VIQC, VRC) = 101 Error
-                            error,           // (NTG, VIQC, VRC) = 110 Error
-                            error];          // (NTG, VIQC, VRC) = 111 Error
+                        highRed,         // (NTG, VIQC, VRC) = 001
+                        error,           // (NTG, VIQC, VRC) = 010 Error
+                        error,           // (NTG, VIQC, VRC) = 011 Error
+                        error,           // (NTG, VIQC, VRC) = 100 Error
+                        error,           // (NTG, VIQC, VRC) = 101 Error
+                        error,           // (NTG, VIQC, VRC) = 110 Error
+                        error];          // (NTG, VIQC, VRC) = 111 Error
                     break;
                 default:
                     data = [span,            // (NTG, VIQC, VRC) = 000
-                            spanRed,         // (NTG, VIQC, VRC) = 001
-                            spanBlue,        // (NTG, VIQC, VRC) = 010
-                            spanPurple,      // (NTG, VIQC, VRC) = 011
-                            error,           // (NTG, VIQC, VRC) = 100 Error
-                            error,           // (NTG, VIQC, VRC) = 101 Error
-                            spanGreen,       // (NTG, VIQC, VRC) = 110 
-                            spanYellow];     // (NTG, VIQC, VRC) = 111 
+                        spanRed,         // (NTG, VIQC, VRC) = 001
+                        spanBlue,        // (NTG, VIQC, VRC) = 010
+                        spanPurple,      // (NTG, VIQC, VRC) = 011
+                        error,           // (NTG, VIQC, VRC) = 100 Error
+                        error,           // (NTG, VIQC, VRC) = 101 Error
+                        spanGreen,       // (NTG, VIQC, VRC) = 110 
+                        spanYellow];     // (NTG, VIQC, VRC) = 111 
                     break;
             }
         }
@@ -235,18 +236,70 @@ function matchInputAtStartOfWord(text, searchTerm) {
     return (match !== null);
 }
 
-$(document).on('keyup', '#search',function(e){
+$(document).on('keyup', '#search', function (e) {
     var userInput = e.target.value;
-    addedSchools.eachLayer(function(layer){
+    addedSchools.eachLayer(function (layer) {
         if (matchInputAtStartOfWord(layer.feature.properties.School, userInput)) {
-          layer.addTo(mymap);  
-        }else{
+            layer.addTo(mymap);
+        } else {
             mymap.removeLayer(layer);
         }
     });
+});
+
+//School filter
+$(document).on('change', '#filter-select', function (e) {
+    var filterSelect = e.target.value;
+    if (filterSelect !== '') {
+        addedSchools.eachLayer(function (layer) {
+            if (filterSelect === layer.feature.properties.Grade) {
+                layer.addTo(mymap);
+            } else if (filterSelect === "NTG") {
+                if (layer.feature.properties.Grants.toLowerCase().trim() === "yes") {
+                    layer.addTo(mymap);
+                }else {
+                    mymap.removeLayer(layer);
+                }
+            } else if (filterSelect === "VIQC") {
+                if (layer.feature.properties.VIQC.toLowerCase().trim() === "yes") {
+                    layer.addTo(mymap);
+                }else {
+                    mymap.removeLayer(layer);
+                }
+            } else if (filterSelect === "VRC") {
+                if (layer.feature.properties.VRC.toLowerCase().trim() === "yes") {
+                    layer.addTo(mymap);
+                }else {
+                    mymap.removeLayer(layer);
+                }
+            } else if (filterSelect === "Hosting") {
+                if (layer.feature.properties.Hosting.toLowerCase().trim() === "yes") {
+                    layer.addTo(mymap);
+                }else {
+                    mymap.removeLayer(layer);
+                }
+            } /* else if (filterSelect === "Workshop") {
+                if (layer.feature.properties.Workshop.toLowerCase().trim() === "yes") {
+                    layer.addTo(mymap);
+                }else {
+                    mymap.removeLayer(layer);
+                }
+            } */ else {
+                mymap.removeLayer(layer);
+            }
+        });
+
+    } else {
+        addedSchools.eachLayer(function (layer) {
+            layer.addTo(mymap);
+        });
+
+    }
 });
 
 // This fits all of LAUSD in to the screen.
 mymap.fitBounds(addedSchools.getBounds(), {
     padding: [10, 10]
 });
+
+//filter-select

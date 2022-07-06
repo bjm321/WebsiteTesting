@@ -7,7 +7,7 @@
    width="200"
    height="100"
    viewBox="0 0 200 100"
-   sodipodi:docname="Middleblue.svg"
+   sodipodi:docname="middleBlue.svg"
    inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -27,12 +27,12 @@
      showgrid="false"
      showguides="true"
      inkscape:zoom="6.105"
-     inkscape:cx="101.9656"
+     inkscape:cx="102.0475"
      inkscape:cy="52.743653"
-     inkscape:window-width="1280"
-     inkscape:window-height="961"
-     inkscape:window-x="3780"
-     inkscape:window-y="-8"
+     inkscape:window-width="3840"
+     inkscape:window-height="2066"
+     inkscape:window-x="3829"
+     inkscape:window-y="-11"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer4">
     <sodipodi:guide
@@ -84,7 +84,7 @@
      style="opacity:0.4">
     <path
        id="rect10336"
-       style="fill:#0000ff;stroke-width:0.71486"
+       style="fill:#0000ff;stroke-width:0.97211772;stroke:#000000;stroke-opacity:1;stroke-dasharray:none"
        d="M 25.772202 7.5407036 C 25.590323 7.5407036 25.443733 7.6872943 25.443733 7.869173 L 25.443733 31.503152 C 25.443733 31.685031 25.590323 31.831622 25.772202 31.831622 L 36.99396 31.831622 L 38.066074 33.697379 L 41.641265 39.918046 L 45.217088 33.697379 L 46.289202 31.831622 L 57.517289 31.831622 C 57.699167 31.831622 57.845758 31.685031 57.845758 31.503152 L 57.845758 7.869173 C 57.845758 7.6872943 57.699167 7.5407036 57.517289 7.5407036 L 25.772202 7.5407036 z " />
     <path
        id="path852"

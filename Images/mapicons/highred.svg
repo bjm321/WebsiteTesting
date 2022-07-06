@@ -8,7 +8,7 @@
    version="1.1"
    id="svg5"
    inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
-   sodipodi:docname="highred.svg"
+   sodipodi:docname="highRed.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -26,12 +26,12 @@
      showgrid="false"
      showguides="true"
      inkscape:zoom="5.9651514"
-     inkscape:cx="82.562867"
+     inkscape:cx="82.646687"
      inkscape:cy="58.003557"
-     inkscape:window-width="1280"
-     inkscape:window-height="961"
-     inkscape:window-x="3780"
-     inkscape:window-y="-8"
+     inkscape:window-width="3840"
+     inkscape:window-height="2066"
+     inkscape:window-x="3829"
+     inkscape:window-y="-11"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1">
     <sodipodi:guide
@@ -85,7 +85,7 @@
      style="opacity:0.4">
     <path
        id="rect8414"
-       style="fill:#ff0000;stroke-width:0.845401"
+       style="fill:#ff0000;stroke-width:1.57872885;stroke:#000000;stroke-opacity:1;stroke-dasharray:none"
        d="M 1.7633907,5.143019 C 1.5498115,5.143019 1.37802,5.315714 1.37802,5.5292932 V 43.669106 c 0,0.213579 0.1717915,0.385271 0.3853707,0.385271 H 20.969806 l 1.660464,2.740038 5.811096,9.590637 5.811096,-9.590637 1.660464,-2.740038 h 18.734705 c 0.213579,0 0.38537,-0.171692 0.38537,-0.385271 V 5.5292932 c 0,-0.2135792 -0.171791,-0.3862742 -0.38537,-0.3862742 z" />
     <path
        id="rect180"
