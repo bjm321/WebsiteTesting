@@ -211,7 +211,8 @@ td {
 }
 
 #map{ 
-    width: 100%;
+	width: 100%;
+	height: 2000px;
     margin-top: 44px;
 	z-index: 0;
 }
@@ -253,7 +254,7 @@ td {
     position: absolute;
     width: 250px;
     z-index: 100;
-	color: #0000;
+	color: #000000;
     background: #ffffff;
     margin-left: -500px;
     transition: 0.5s;

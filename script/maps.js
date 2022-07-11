@@ -1,4 +1,4 @@
-const apiKey = 'pk.eyJ1IjoiYmptMzIxIiwiYSI6ImNsM3FodXFqejB0OHgzY3JzMDUyanVpcGUifQ.HpARsm_UCTbOTdmTeyQyfQ';
+//const apiKey = 'xOQpyGkGTzSHBro5TZPFO3TPHGttq6N1OPA7Cb1UYWBosKceq5EsludW7QnStYcq';
 
 $(document).ready(function () {
 
@@ -16,18 +16,9 @@ $(document).ready(function () {
     })
 })
 
-const mymap = L.map('map').setView(
-    [34.056203918518236, -118.25736731890913],
-    12
-);
-
-L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    maxZoom: 18,
-    id: 'mapbox/streets-v11',
-    tileSize: 512,
-    zoomOffset: -1,
-    accessToken: apiKey
-}).addTo(mymap);
+const mymap = L.map('map').setView([34.0087328034, -118.3281857501], 12);
+L.tileLayer('https://tile.jawg.io/jawg-streets/{z}/{x}/{y}{r}.png?access-token=p1HMoLi6SX7usNwdzkU6J1PnYtsuT25ADYWmud4QlN5t9vNbOtDeLbbgBQHGP3CB', {}).addTo(mymap);
+mymap.attributionControl.addAttribution("<a href=\"https://www.jawg.io\" target=\"_blank\">&copy; Jawg</a> - <a href=\"https://www.openstreetmap.org\" target=\"_blank\">&copy; OpenStreetMap</a>&nbsp;contributors")
 
 var iconSizeLength = 75,
     iconSizeWidth = iconSizeLength / 2;
@@ -74,7 +65,7 @@ function onEachFeature(feature, layer) {
     }
 }
 
-L.geoJSON(districtBorders, {
+var addedDistrictBorders = L.geoJSON(districtBorders, {
     style: function (feature) {
         return {
             color: feature.properties.stroke,
@@ -214,17 +205,20 @@ var addedSchools = L.geoJSON(schools, {
             </dl>
             </p>`);
 
-        return marker;
+
 
         if (mymap.getZoom() < 6) {
+            console.log(mymap.getZoom());
             marker.bindTooltip(geoJsonPoint.properties.School,
                 {
                     permanent: true,
                     direction: 'center',
                     className: 'transparent-tooltip'
 
-                })
+                });
+            layer.addTo(mymap);
         }
+        return marker;
     }
 }).addTo(mymap);
 
@@ -257,25 +251,25 @@ $(document).on('change', '#filter-select', function (e) {
             } else if (filterSelect === "NTG") {
                 if (layer.feature.properties.Grants.toLowerCase().trim() === "yes") {
                     layer.addTo(mymap);
-                }else {
+                } else {
                     mymap.removeLayer(layer);
                 }
             } else if (filterSelect === "VIQC") {
                 if (layer.feature.properties.VIQC.toLowerCase().trim() === "yes") {
                     layer.addTo(mymap);
-                }else {
+                } else {
                     mymap.removeLayer(layer);
                 }
             } else if (filterSelect === "VRC") {
                 if (layer.feature.properties.VRC.toLowerCase().trim() === "yes") {
                     layer.addTo(mymap);
-                }else {
+                } else {
                     mymap.removeLayer(layer);
                 }
             } else if (filterSelect === "Hosting") {
                 if (layer.feature.properties.Hosting.toLowerCase().trim() === "yes") {
                     layer.addTo(mymap);
-                }else {
+                } else {
                     mymap.removeLayer(layer);
                 }
             } /* else if (filterSelect === "Workshop") {
@@ -295,11 +289,6 @@ $(document).on('change', '#filter-select', function (e) {
         });
 
     }
-});
 
-// This fits all of LAUSD in to the screen.
-mymap.fitBounds(addedSchools.getBounds(), {
-    padding: [10, 10]
-});
 
-//filter-select
+});
