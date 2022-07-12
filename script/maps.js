@@ -74,6 +74,30 @@ var addedDistrictBorders = L.geoJSON(districtBorders, {
     }
 }).addTo(mymap);
 
+/**
+ * Returns true if the given school geoJSON object represents a school that is a Nelson Team Grant recipient.
+ */
+function isNTG(schoolFeature) {
+    return "Grants" in schoolFeature.properties &&
+           schoolFeature.properties.Grants.toLowerCase().trim() === "yes";
+}
+
+/**
+ * Returns true if the given school geoJSON object has a VEX IQ Challenge program.
+ */
+function isVIQC(schoolFeature) {
+    return "VIQC" in schoolFeature.properties &&
+        schoolFeature.properties.VIQC.toLowerCase().trim() === "yes";
+}
+
+/**
+ * Returns true if the given school geoJSON object has a VEX Robotics Competition program.
+ */
+function isVRC(schoolFeature) {
+    return "VRC" in schoolFeature.properties &&
+        schoolFeature.properties.VRC.toLowerCase().trim() === "yes";
+}
+
 var addedSchools = L.geoJSON(schools, {
     pointToLayer: function (geoJsonPoint, latLng) {
         // Determine what icon to use for the schools.
@@ -81,9 +105,9 @@ var addedSchools = L.geoJSON(schools, {
             icon: span
         };
 
-        let NTG = ("Grants" in geoJsonPoint.properties && geoJsonPoint.properties.Grants.toLowerCase().trim() === "yes");
-        let VIQC = ("VIQC" in geoJsonPoint.properties && geoJsonPoint.properties.VIQC.toLowerCase().trim() === "yes");
-        let VRC = ("VRC" in geoJsonPoint.properties && geoJsonPoint.properties.VRC.toLowerCase().trim() === "yes");
+        let NTG = isNTG(geoJsonPoint);
+        let VIQC = isVIQC(geoJsonPoint);
+        let VRC = isVRC(geoJsonPoint);
         let code = (NTG << 2) | (VIQC << 1) | VRC;
         let data = [];
 
@@ -106,7 +130,7 @@ var addedSchools = L.geoJSON(schools, {
                         error,           // (NTG, VIQC, VRC) = 011
                         error,           // (NTG, VIQC, VRC) = 100 Error
                         error,           // (NTG, VIQC, VRC) = 101 Error
-                        elementaryGreen, // (NTG, VIQC, VRC) = 110 
+                        elementaryGreen, // (NTG, VIQC, VRC) = 110
                         error];          // (NTG, VIQC, VRC) = 111 Error
                     break;
                 case "Middle":
@@ -116,8 +140,8 @@ var addedSchools = L.geoJSON(schools, {
                         middlePurple,    // (NTG, VIQC, VRC) = 011
                         error,           // (NTG, VIQC, VRC) = 100 Error
                         error,           // (NTG, VIQC, VRC) = 101 Error
-                        middleGreen,     // (NTG, VIQC, VRC) = 110 
-                        middleYellow];   // (NTG, VIQC, VRC) = 111 
+                        middleGreen,     // (NTG, VIQC, VRC) = 110
+                        middleYellow];   // (NTG, VIQC, VRC) = 111
                     break;
                 case "High":
                     data = [high,            // (NTG, VIQC, VRC) = 000
@@ -136,8 +160,8 @@ var addedSchools = L.geoJSON(schools, {
                         spanPurple,      // (NTG, VIQC, VRC) = 011
                         error,           // (NTG, VIQC, VRC) = 100 Error
                         error,           // (NTG, VIQC, VRC) = 101 Error
-                        spanGreen,       // (NTG, VIQC, VRC) = 110 
-                        spanYellow];     // (NTG, VIQC, VRC) = 111 
+                        spanGreen,       // (NTG, VIQC, VRC) = 110
+                        spanYellow];     // (NTG, VIQC, VRC) = 111
                     break;
             }
         }
@@ -241,6 +265,44 @@ $(document).on('keyup', '#search', function (e) {
     });
 });
 
+/**
+ * This function filters the list of schools by two criteria: the value of
+ * the dropdown control in the Advanced Toggle menu, and one of the
+ * statistics listed below the drop-down.
+ *
+ * @param {string} dropdownValue One of the following strings: `NTG`, `VIQC`,
+ *                               `VRC`, or an empty string to represent all
+ *                               schools.
+ * @param {string} statValue     One of the following strings: `Workshop`.
+ *                               This represents a statistic row that we are
+ *                               trying to obtain the list for.
+ * @return Returns a filtered array.
+ */
+function testFilter(dropdownValue, statValue) {
+
+    return schools["features"].filter(function(currentElement) {
+        let dropdownMatched = false;
+        let statValueMatched = false;
+
+        if (dropdownValue === "" ||
+            ((dropdownValue === "VIQC" && isVIQC(currentElement)) ||
+             (dropdownValue === "VRC"  && isVRC(currentElement)) ||
+             (dropdownValue === "NTG"  && isNTG(currentElement)))) {
+
+            dropdownMatched = true;
+        }
+
+        if (statValue == "Workshop" && "Workshop" in currentElement.properties) {
+            statValueMatched = true;
+        } else if (["Elementary", "Middle", "High", "Span"].includes(statValue) &&
+                   currentElement.properties.Grade === statValue) {
+            statValueMatched = true;
+        }
+
+        return statValueMatched && dropdownMatched;
+    });
+}
+
 //School filter
 $(document).on('change', '#filter-select', function (e) {
     var filterSelect = e.target.value;
@@ -249,19 +311,19 @@ $(document).on('change', '#filter-select', function (e) {
             if (filterSelect === layer.feature.properties.Grade) {
                 layer.addTo(mymap);
             } else if (filterSelect === "NTG") {
-                if (layer.feature.properties.Grants.toLowerCase().trim() === "yes") {
+                if (isNTG(layer.feature)) {
                     layer.addTo(mymap);
                 } else {
                     mymap.removeLayer(layer);
                 }
             } else if (filterSelect === "VIQC") {
-                if (layer.feature.properties.VIQC.toLowerCase().trim() === "yes") {
+                if (isVIQC(layer.feature)) {
                     layer.addTo(mymap);
                 } else {
                     mymap.removeLayer(layer);
                 }
             } else if (filterSelect === "VRC") {
-                if (layer.feature.properties.VRC.toLowerCase().trim() === "yes") {
+                if (isVRC(layer.feature)) {
                     layer.addTo(mymap);
                 } else {
                     mymap.removeLayer(layer);
@@ -273,7 +335,7 @@ $(document).on('change', '#filter-select', function (e) {
                     mymap.removeLayer(layer);
                 }
             } /* else if (filterSelect === "Workshop") {
-                if (layer.feature.properties.Workshop.toLowerCase().trim() === "yes") {
+                 if (layer.feature.properties.Workshop.toLowerCase().trim() === "yes") {
                     layer.addTo(mymap);
                 }else {
                     mymap.removeLayer(layer);
