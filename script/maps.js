@@ -79,7 +79,7 @@ var addedDistrictBorders = L.geoJSON(districtBorders, {
  */
 function isNTG(schoolFeature) {
     return "Grants" in schoolFeature.properties &&
-           schoolFeature.properties.Grants.toLowerCase().trim() === "yes";
+        schoolFeature.properties.Grants.toLowerCase().trim() === "yes";
 }
 
 /**
@@ -280,22 +280,24 @@ $(document).on('keyup', '#search', function (e) {
  */
 function testFilter(dropdownValue, statValue) {
 
-    return schools["features"].filter(function(currentElement) {
+    return schools["features"].filter(function (currentElement) {
         let dropdownMatched = false;
         let statValueMatched = false;
+        const schoolTypes = ["elementary", "middle", "high", "span"];
 
         if (dropdownValue === "" ||
             ((dropdownValue === "VIQC" && isVIQC(currentElement)) ||
-             (dropdownValue === "VRC"  && isVRC(currentElement)) ||
-             (dropdownValue === "NTG"  && isNTG(currentElement)))) {
+             (dropdownValue === "VRC" && isVRC(currentElement)) ||
+             (dropdownValue === "NTG" && isNTG(currentElement))) ||
+            (schoolTypes.includes(dropdownValue.toLowerCase()) && currentElement.properties.Grade.toLowerCase() === dropdownValue.toLowerCase())) {
 
             dropdownMatched = true;
         }
 
         if (statValue == "Workshop" && "Workshop" in currentElement.properties) {
             statValueMatched = true;
-        } else if (["Elementary", "Middle", "High", "Span"].includes(statValue) &&
-                   currentElement.properties.Grade === statValue) {
+        } else if (schoolTypes.includes(statValue.toLowerCase()) &&
+            currentElement.properties.Grade.toLowerCase() === statValue.toLowerCase()) {
             statValueMatched = true;
         }
 
