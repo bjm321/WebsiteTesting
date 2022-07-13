@@ -287,8 +287,8 @@ function testFilter(dropdownValue, statValue) {
 
         if (dropdownValue === "" ||
             ((dropdownValue === "VIQC" && isVIQC(currentElement)) ||
-             (dropdownValue === "VRC" && isVRC(currentElement)) ||
-             (dropdownValue === "NTG" && isNTG(currentElement))) ||
+                (dropdownValue === "VRC" && isVRC(currentElement)) ||
+                (dropdownValue === "NTG" && isNTG(currentElement))) ||
             (schoolTypes.includes(dropdownValue.toLowerCase()) && currentElement.properties.Grade.toLowerCase() === dropdownValue.toLowerCase())) {
 
             dropdownMatched = true;
@@ -306,8 +306,8 @@ function testFilter(dropdownValue, statValue) {
 }
 
 //School filter
-$(document).on('change', '#filter-select', function (e) {
-    var filterSelect = e.target.value;
+$(document).on('change', '#filter-select', function (currentElement) {
+    var filterSelect = currentElement.target.value;
     if (filterSelect !== '') {
         addedSchools.eachLayer(function (layer) {
             if (filterSelect === layer.feature.properties.Grade) {
@@ -355,4 +355,27 @@ $(document).on('change', '#filter-select', function (e) {
     }
 
 
+});
+
+/* List of the Div on the slide-in
+    id="#Schools"
+    id="#HighSchools"
+    id="#MiddleSchools"
+    id="#ElementarySchools"
+    id="#SpanSchools"
+    id="#Workshops"
+    id="#VEXIQprograms"
+    id="#VRCprograms"
+    id="#HostingVEXIQEvents"
+    id="#NTGRecipients" */
+
+//school stat display
+
+$(document).on('change', '#filter-select', function (currentElement) {
+    var filterSelect = currentElement.target.value;
+    if (testFilter(filterSelect, "High").length <= 0) {
+        $("#Schools").hide();
+    } else {
+        $("#Schools").text("Hello world!");
+    }
 });
