@@ -374,17 +374,20 @@ $(document).on('change', '#filter-select', function (currentElement) {
 $(document).on('change', '#filter-select', function (currentElement) {
     var filterSelect = currentElement.target.value,
         selectedSchools = testFilter(filterSelect, "high").length + testFilter(filterSelect, "middle").length + testFilter(filterSelect, "elementary").length + testFilter(filterSelect, "span").length;
-        
-        $("#Schools").text( selectedSchools + ' Schools');
-        $("#ElementarySchools").text( testFilter(filterSelect, "elementary").length + ' Elementary Schools');
-        $("#MiddleSchools").text( testFilter(filterSelect, "middle").length + ' Middle School');
-        $("#HighSchools").text( testFilter(filterSelect, "high").length + ' High Schools');
-        $("#SpanSchools").text( testFilter(filterSelect, "span").length + ' Span Schools');
-        $("#NTGRecipients").text( testFilter(filterSelect, "high").length + ' NTGRecipients');
-        $("#Workshops").text( testFilter(filterSelect, "high").length + ' Workshops');
-        $("#HostingVEXIQEvents").text( testFilter(filterSelect, "middle").length + ' Hosting VEX IQ Events');
-        $("#VEXIQprograms").text( testFilter(filterSelect, "high").length + ' VEX IQ programs');
-        $("#VRCprograms").text( testFilter(filterSelect, "high").length + ' VRC programs');
+
+    // count of the schools
+    $("#Schools").text(selectedSchools + ' Schools');
+    $("#ElementarySchools").text(testFilter(filterSelect, "elementary").length + ' Elementary Schools');
+    $("#MiddleSchools").text(testFilter(filterSelect, "middle").length + ' Middle School');
+    $("#HighSchools").text(testFilter(filterSelect, "high").length + ' High Schools');
+    $("#SpanSchools").text(testFilter(filterSelect, "span").length + ' Span Schools');
+    $("#NTGRecipients").text(testFilter(filterSelect, "high").length + ' NTGRecipients');
+    $("#Workshops").text(testFilter(filterSelect, "high").length + ' Workshops');
+    $("#HostingVEXIQEvents").text(testFilter(filterSelect, "middle").length + ' Hosting VEX IQ Events');
+    $("#VEXIQprograms").text(testFilter(filterSelect, "high").length + ' VEX IQ programs');
+    $("#VRCprograms").text(testFilter(filterSelect, "high").length + ' VRC programs');
+
+    //makes the lines disappear if it is equal to zero
     if (selectedSchools <= 0) {
         $("#Schools").hide();
     } else {
