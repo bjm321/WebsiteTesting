@@ -372,10 +372,67 @@ $(document).on('change', '#filter-select', function (currentElement) {
 //school stat display
 
 $(document).on('change', '#filter-select', function (currentElement) {
-    var filterSelect = currentElement.target.value;
-    if (testFilter(filterSelect, "High").length <= 0) {
+    var filterSelect = currentElement.target.value,
+        selectedSchools = testFilter(filterSelect, "high").length + testFilter(filterSelect, "middle").length + testFilter(filterSelect, "elementary").length + testFilter(filterSelect, "span").length;
+        
+        $("#Schools").text( selectedSchools + ' Schools');
+        $("#ElementarySchools").text( testFilter(filterSelect, "elementary").length + ' Elementary Schools');
+        $("#MiddleSchools").text( testFilter(filterSelect, "middle").length + ' Middle School');
+        $("#HighSchools").text( testFilter(filterSelect, "high").length + ' High Schools');
+        $("#SpanSchools").text( testFilter(filterSelect, "span").length + ' Span Schools');
+        $("#NTGRecipients").text( testFilter(filterSelect, "high").length + ' NTGRecipients');
+        $("#Workshops").text( testFilter(filterSelect, "high").length + ' Workshops');
+        $("#HostingVEXIQEvents").text( testFilter(filterSelect, "middle").length + ' Hosting VEX IQ Events');
+        $("#VEXIQprograms").text( testFilter(filterSelect, "high").length + ' VEX IQ programs');
+        $("#VRCprograms").text( testFilter(filterSelect, "high").length + ' VRC programs');
+    if (selectedSchools <= 0) {
         $("#Schools").hide();
     } else {
-        $("#Schools").text("Hello world!");
+        $("#Schools").show();
+    }
+    if (testFilter(filterSelect, "middle").length <= 0) {
+        $("#MiddleSchools").hide();
+    } else {
+        $("#MiddleSchools").show();
+    }
+    if (testFilter(filterSelect, "high").length <= 0) {
+        $("#HighSchools").hide();
+    } else {
+        $("#HighSchools").show();
+    }
+    if (testFilter(filterSelect, "elementary").length <= 0) {
+        $("#ElementarySchools").hide();
+    } else {
+        $("#ElementarySchools").show();
+    }
+    if (testFilter(filterSelect, "span").length <= 0) {
+        $("#SpanSchools").hide();
+    } else {
+        $("#SpanSchools").show();
+    }
+    if (testFilter(filterSelect, "NTG").length <= 0) {
+        $("#NTGRecipients").hide();
+    } else {
+        $("#NTGRecipients").show();
+    }
+    if (testFilter(filterSelect, "Workshop").length <= 0) {
+        $("#Workshops").hide();
+    } else {
+        $("#Workshops").show();
+    }
+    if (testFilter(filterSelect, "Hosting").length <= 0) {
+        $("#HostingVEXIQEvents").hide();
+    } else {
+        $("#HostingVEXIQEvents").show();
+    }
+    if (testFilter(filterSelect, "VIQC").length <= 0) {
+        $("#VEXIQprograms").hide();
+    } else {
+        $("#VEXIQprograms").show();
+    }
+    if (testFilter(filterSelect, "VRC").length <= 0) {
+        $("#VRCprograms").hide();
+    } else {
+        $("#VRCprograms").show();
     }
 });
