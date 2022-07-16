@@ -102,11 +102,19 @@ function isVRC(schoolFeature) {
 }
 
 /**
- * Returns true if the given school geoJSON object is  hosting VEX IQ Challenge Event.
+ * Returns true if the given school geoJSON object is hosting a VEX IQ Challenge Event.
  */
- function isHosting(schoolFeature) {
+function isHosting(schoolFeature) {
     return "Hosting" in schoolFeature.properties &&
         schoolFeature.properties.Hosting.toLowerCase().trim() === "yes";
+}
+
+/**
+ * Returns true if the given school geoJSON object is holding a workshop of any sort.
+ */
+function isWorkshop(schoolFeature) {
+    return "Workshop" in schoolFeature.properties &&
+        schoolFeature.properties.Workshop.toLowerCase().trim() === "yes";
 }
 
 var addedSchools = L.geoJSON(schools, {
@@ -297,9 +305,11 @@ function testFilter(dropdownValue, statValue) {
         const schoolTypes = ["elementary", "middle", "high", "span"];
 
         if (dropdownValue === "" ||
-            ((dropdownValue === "VIQC" && isVIQC(currentElement)) ||
-                (dropdownValue === "VRC" && isVRC(currentElement)) ||
-                (dropdownValue === "NTG" && isNTG(currentElement))) ||
+            ((dropdownValue === "VIQC"     && isVIQC(currentElement)) ||
+             (dropdownValue === "VRC"      && isVRC(currentElement)) ||
+             (dropdownValue === "NTG"      && isNTG(currentElement)) ||
+             (dropdownValue === "Hosting"  && isHosting(currentElement)) ||
+             (dropdownValue === "Workshop" && isWorkshop(currentElement))) ||
             (schoolTypes.includes(dropdownValue.toLowerCase()) && currentElement.properties.Grade.toLowerCase() === dropdownValue.toLowerCase())) {
 
             dropdownMatched = true;
@@ -307,15 +317,15 @@ function testFilter(dropdownValue, statValue) {
 
         if (statValue === "") {
             statValueMatched = true;
-        } else if (statValue === "Workshop" && currentElement.properties.Workshop.toLowerCase() === "yes") {
+        } else if (statValue === "Workshop" && isWorkshop(currentElement)) {
             statValueMatched = true;
-        } else if (statValue === "NTG" && currentElement.properties.Grants.toLowerCase() === "yes") {
+        } else if (statValue === "NTG" && isNTG(currentElement)) {
             statValueMatched = true;
-        } else if (statValue === "VRC" && currentElement.properties.VRC.toLowerCase() === "yes") {
+        } else if (statValue === "VRC" && isVRC(currentElement)) {
             statValueMatched = true;
-        } else if (statValue === "VIQC" && currentElement.properties.VIQC.toLowerCase() === "yes") {
+        } else if (statValue === "VIQC" && isVIQC(currentElement)) {
             statValueMatched = true;
-        } else if (statValue === "Hosting" && currentElement.properties.Hosting.toLowerCase() === "yes") {
+        } else if (statValue === "Hosting" && isHosting(currentElement)) {
             statValueMatched = true;
         } else if (schoolTypes.includes(statValue.toLowerCase()) &&
             currentElement.properties.Grade.toLowerCase() === statValue.toLowerCase()) {
