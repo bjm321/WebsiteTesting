@@ -13,8 +13,11 @@ $(document).ready(function () {
             $('#slide-in').addClass('in')
 
         }
-    })
-})
+    });
+
+    // Render the initial stats dialog.
+    $('#filter-select').trigger('change');
+});
 
 const mymap = L.map('map').setView([34.0087328034, -118.3281857501], 12);
 L.tileLayer('https://tile.jawg.io/jawg-streets/{z}/{x}/{y}{r}.png?access-token=p1HMoLi6SX7usNwdzkU6J1PnYtsuT25ADYWmud4QlN5t9vNbOtDeLbbgBQHGP3CB', {}).addTo(mymap);
