@@ -296,6 +296,14 @@ function testFilter(dropdownValue, statValue) {
 
         if (statValue == "Workshop" && "Workshop" in currentElement.properties) {
             statValueMatched = true;
+        } else if (statValue == "NTG" && "NTG" in currentElement.properties) {
+            statValueMatched = true;
+        } else if (statValue == "VRC" && "VRC" in currentElement.properties) {
+            statValueMatched = true;
+        } else if (statValue == "VIQC" && "VIQC" in currentElement.properties) {
+            statValueMatched = true;
+        } else if (statValue == "hosting" && "hosting" in geoJsonPoint.properties.Hosting) {
+            statValueMatched = true;
         } else if (schoolTypes.includes(statValue.toLowerCase()) &&
             currentElement.properties.Grade.toLowerCase() === statValue.toLowerCase()) {
             statValueMatched = true;
@@ -377,15 +385,15 @@ $(document).on('change', '#filter-select', function (currentElement) {
 
     // count of the schools
     $("#Schools").text(selectedSchools + ' Schools');
-    $("#ElementarySchools").text(testFilter(filterSelect, "elementary").length + ' Elementary Schools');
-    $("#MiddleSchools").text(testFilter(filterSelect, "middle").length + ' Middle School');
-    $("#HighSchools").text(testFilter(filterSelect, "high").length + ' High Schools');
-    $("#SpanSchools").text(testFilter(filterSelect, "span").length + ' Span Schools');
-    $("#NTGRecipients").text(testFilter(filterSelect, "high").length + ' NTGRecipients');
-    $("#Workshops").text(testFilter(filterSelect, "high").length + ' Workshops');
-    $("#HostingVEXIQEvents").text(testFilter(filterSelect, "middle").length + ' Hosting VEX IQ Events');
-    $("#VEXIQprograms").text(testFilter(filterSelect, "high").length + ' VEX IQ programs');
-    $("#VRCprograms").text(testFilter(filterSelect, "high").length + ' VRC programs');
+    $("#ElementarySchools").text(testFilter("elementary", filterSelect).length + ' Elementary Schools');
+    $("#MiddleSchools").text(testFilter("middle", filterSelect).length + ' Middle School');
+    $("#HighSchools").text(testFilter("high", filterSelect).length + ' High Schools');
+    $("#SpanSchools").text(testFilter("span", filterSelect).length + ' Span Schools');
+    $("#NTGRecipients").text(testFilter("NTG", filterSelect).length + ' NTGRecipients');
+    $("#Workshops").text(testFilter("Workshops", filterSelect).length + ' Workshops');
+    $("#HostingVEXIQEvents").text(testFilter("Hosting", filterSelect).length + ' Hosting VEX IQ Events');
+    $("#VEXIQprograms").text(testFilter("VIQC", filterSelect).length + ' VEX IQ programs');
+    $("#VRCprograms").text(testFilter("VRC", filterSelect).length + ' VRC programs');
 
     //makes the lines disappear if it is equal to zero
     if (selectedSchools <= 0) {
@@ -393,47 +401,47 @@ $(document).on('change', '#filter-select', function (currentElement) {
     } else {
         $("#Schools").show();
     }
-    if (testFilter(filterSelect, "middle").length <= 0) {
+    if (testFilter("middle", filterSelect).length <= 0) {
         $("#MiddleSchools").hide();
     } else {
         $("#MiddleSchools").show();
     }
-    if (testFilter(filterSelect, "high").length <= 0) {
+    if (testFilter("high", filterSelect).length <= 0) {
         $("#HighSchools").hide();
     } else {
         $("#HighSchools").show();
     }
-    if (testFilter(filterSelect, "elementary").length <= 0) {
+    if (testFilter("elementary", filterSelect).length <= 0) {
         $("#ElementarySchools").hide();
     } else {
         $("#ElementarySchools").show();
     }
-    if (testFilter(filterSelect, "span").length <= 0) {
+    if (testFilter("span", filterSelect).length <= 0) {
         $("#SpanSchools").hide();
     } else {
         $("#SpanSchools").show();
     }
-    if (testFilter(filterSelect, "NTG").length <= 0) {
+    if (testFilter("NTG", filterSelect).length <= 0) {
         $("#NTGRecipients").hide();
     } else {
         $("#NTGRecipients").show();
     }
-    if (testFilter(filterSelect, "Workshop").length <= 0) {
+    if (testFilter("Workshop", filterSelect).length <= 0) {
         $("#Workshops").hide();
     } else {
         $("#Workshops").show();
     }
-    if (testFilter(filterSelect, "Hosting").length <= 0) {
+    if (testFilter("Hosting", filterSelect).length <= 0) {
         $("#HostingVEXIQEvents").hide();
     } else {
         $("#HostingVEXIQEvents").show();
     }
-    if (testFilter(filterSelect, "VIQC").length <= 0) {
+    if (testFilter("VIQC", filterSelect).length <= 0) {
         $("#VEXIQprograms").hide();
     } else {
         $("#VEXIQprograms").show();
     }
-    if (testFilter(filterSelect, "VRC").length <= 0) {
+    if (testFilter("VRC", filterSelect).length <= 0) {
         $("#VRCprograms").hide();
     } else {
         $("#VRCprograms").show();
