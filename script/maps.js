@@ -305,15 +305,17 @@ function testFilter(dropdownValue, statValue) {
             dropdownMatched = true;
         }
 
-        if (statValue == "Workshop" && "Workshop" in currentElement.properties) {
+        if (statValue === "") {
             statValueMatched = true;
-        } else if (statValue == "NTG" && "NTG" in currentElement.properties) {
+        } else if (statValue === "Workshop" && currentElement.properties.Workshop.toLowerCase() === "yes") {
             statValueMatched = true;
-        } else if (statValue == "VRC" && "VRC" in currentElement.properties) {
+        } else if (statValue === "NTG" && currentElement.properties.Grants.toLowerCase() === "yes") {
             statValueMatched = true;
-        } else if (statValue == "VIQC" && "VIQC" in currentElement.properties) {
+        } else if (statValue === "VRC" && currentElement.properties.VRC.toLowerCase() === "yes") {
             statValueMatched = true;
-        } else if (statValue == "hosting" && "hosting" in geoJsonPoint.properties.Hosting) {
+        } else if (statValue === "VIQC" && currentElement.properties.VIQC.toLowerCase() === "yes") {
+            statValueMatched = true;
+        } else if (statValue === "Hosting" && currentElement.properties.Hosting.toLowerCase() === "yes") {
             statValueMatched = true;
         } else if (schoolTypes.includes(statValue.toLowerCase()) &&
             currentElement.properties.Grade.toLowerCase() === statValue.toLowerCase()) {
