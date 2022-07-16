@@ -139,7 +139,7 @@ lon,lat,Grade,ActiveTeams,InactiveTeams,School,Local District,Hosting,Grants,VIQ
 -118.6168842631,34.2174175464,Elementary,,,Capistrano Avenue Elementary School,Northwest,,,,,,,,,,,,,,,,,,,,,,,,
 -118.2828571553,33.8225334197,Elementary,,,Caroldade Learning Community School,South,,,,,,,,,,,,,,,,,,,,,,,,
 -118.3921510068,34.1412436556,Elementary,"86273E, 86273D, 86273C, 86273B, 86273A",,Carpenter Community Charter School,Northeast,,,Yes,,,,,,,,,,,,,,,,,,,,,
--118.2755807181,33.8238636688,High,,,Carson High School ,South,,,,,,,,,,,,,,,,,,,,,,,,
+-118.2755807181,33.8238636688,High,,,Carson High School ,South,,,,,Yes,,,,,,,,,,,,,,,,,,,
 -118.2751348933,33.8327521143,Elementary,"18000B, 18000A",,Carson Street Elementary School,South,,,Yes,,,,,,,,,,,,,,,,,,,,,
 -118.3195364809,34.0392921992,Elementary,,,Carson-Gore Academy of Environmental Studies,West,,,,,,,,,,,,,,,,,,,,,,,,
 -118.369197471,34.0597525194,Elementary,,,Carthay Center Elementary School,West,,,,,,,,,,,,,,,,,,,,,,,,
