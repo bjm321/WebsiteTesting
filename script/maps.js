@@ -396,69 +396,109 @@ function onDrowDownChange(currentElement) {
     var filterSelect = currentElement.target.value,
         selectedSchools = testFilter(filterSelect, "high").length + testFilter(filterSelect, "middle").length + testFilter(filterSelect, "elementary").length + testFilter(filterSelect, "span").length;
 
-    // count of the schools
-    $("#Schools").text(selectedSchools + ' Schools');
-    $("#ElementarySchools").text(testFilter("elementary", filterSelect).length + ' Elementary Schools');
-    $("#MiddleSchools").text(testFilter("middle", filterSelect).length + ' Middle School');
-    $("#HighSchools").text(testFilter("high", filterSelect).length + ' High Schools');
-    $("#SpanSchools").text(testFilter("span", filterSelect).length + ' Span Schools');
-    $("#NTGRecipients").text(testFilter("NTG", filterSelect).length + ' NTGRecipients');
-    $("#Workshops").text(testFilter("Workshops", filterSelect).length + ' Workshops');
-    $("#HostingVEXIQEvents").text(testFilter("Hosting", filterSelect).length + ' Hosting VEX IQ Events');
-    $("#VEXIQprograms").text(testFilter("VIQC", filterSelect).length + ' VEX IQ programs');
-    $("#VRCprograms").text(testFilter("VRC", filterSelect).length + ' VRC programs');
+    // Map between the stat row div IDs and the actual internal names we will
+    // filter by.
+    //
+    const idMap = {
+        "Schools": { key: "", suffix: "Total Schools" },
+        "ElementarySchools": { key: "elementary", suffix: "Elementary Schools" },
+        "MiddleSchools": { key: "middle", suffix: "Middle School" },
+        "HighSchools": { key: "high", suffix: "High Schools" },
+        "SpanSchools": { key: "span", suffix: "Span Schools" },
+        "NTGRecipients": { key: "NTG", suffix: "NTGRecipients" },
+        "Workshops": { key: "Workshop", suffix: " Workshops" },
+        "HostingVEXIQEvents": { key: "Hosting", suffix: "Hosting VEX IQ Events" },
+        "VEXIQprograms": { key: "VIQC", suffix: "VEX IQ programs" },
+        "VRCprograms": { key: "VRC", suffix: "VRC programs" }
+    };
+    // Make all stats rows visible initially; we will turn off rows as needed afterward.
+    let nodes = document.querySelectorAll("#schoolStats div");
+    for (let i = 0; i < nodes.length; i++) {
+        if (!nodes[i].hasAttribute("id")) {
+            // We don't care about rows that have no ID.
+            continue;
+        }
+        if (!(nodes[i].id in idMap)) {
+            // Unrecognized ID string; update the idMap.
+            continue;
+        }
+        const idMapEntry = idMap[nodes[i].id];
+        let key          = (idMapEntry.hasOwnProperty("key") ? idMapEntry.key : idMapEntry);
+        let suffix       = (idMapEntry.hasOwnProperty("suffix") ? idMapEntry.suffix : key);
+        let schoolCount  = testFilter(filterSelect, key).length;
 
-    //makes the lines disappear if it is equal to zero
-    if (selectedSchools <= 0) {
-        $("#Schools").hide();
-    } else {
-        $("#Schools").show();
+        nodes[i].innerText = `${suffix} (${schoolCount})`;
+
+        if (schoolCount > 0 || filterSelect === "") {
+            nodes[i].style = "display: block"; // Show the node.
+        } else {
+            nodes[i].style = "display: none";  // Hide the node.
+        }
     }
-    if (testFilter("middle", filterSelect).length <= 0) {
-        $("#MiddleSchools").hide();
-    } else {
-        $("#MiddleSchools").show();
-    }
-    if (testFilter("high", filterSelect).length <= 0) {
-        $("#HighSchools").hide();
-    } else {
-        $("#HighSchools").show();
-    }
-    if (testFilter("elementary", filterSelect).length <= 0) {
-        $("#ElementarySchools").hide();
-    } else {
-        $("#ElementarySchools").show();
-    }
-    if (testFilter("span", filterSelect).length <= 0) {
-        $("#SpanSchools").hide();
-    } else {
-        $("#SpanSchools").show();
-    }
-    if (testFilter("NTG", filterSelect).length <= 0) {
-        $("#NTGRecipients").hide();
-    } else {
-        $("#NTGRecipients").show();
-    }
-    if (testFilter("Workshop", filterSelect).length <= 0) {
-        $("#Workshops").hide();
-    } else {
-        $("#Workshops").show();
-    }
-    if (testFilter("Hosting", filterSelect).length <= 0) {
-        $("#HostingVEXIQEvents").hide();
-    } else {
-        $("#HostingVEXIQEvents").show();
-    }
-    if (testFilter("VIQC", filterSelect).length <= 0) {
-        $("#VEXIQprograms").hide();
-    } else {
-        $("#VEXIQprograms").show();
-    }
-    if (testFilter("VRC", filterSelect).length <= 0) {
-        $("#VRCprograms").hide();
-    } else {
-        $("#VRCprograms").show();
-    }
-});};
+
+    // count of the schools
+    // $("#Schools").text(selectedSchools + ' Schools');
+    // $("#ElementarySchools").text(testFilter("elementary", filterSelect).length + ' Elementary Schools');
+    // $("#MiddleSchools").text(testFilter("middle", filterSelect).length + ' Middle School');
+    // $("#HighSchools").text(testFilter("high", filterSelect).length + ' High Schools');
+    // $("#SpanSchools").text(testFilter("span", filterSelect).length + ' Span Schools');
+    // $("#NTGRecipients").text(testFilter("NTG", filterSelect).length + ' NTGRecipients');
+    // $("#Workshops").text(testFilter("Workshops", filterSelect).length + ' Workshops');
+    // $("#HostingVEXIQEvents").text(testFilter("Hosting", filterSelect).length + ' Hosting VEX IQ Events');
+    // $("#VEXIQprograms").text(testFilter("VIQC", filterSelect).length + ' VEX IQ programs');
+    // $("#VRCprograms").text(testFilter("VRC", filterSelect).length + ' VRC programs');
+    //
+    // //makes the lines disappear if it is equal to zero
+    // if (selectedSchools <= 0) {
+    //     $("#Schools").hide();
+    // } else {
+    //     $("#Schools").show();
+    // }
+    // if (testFilter("middle", filterSelect).length <= 0) {
+    //     $("#MiddleSchools").hide();
+    // } else {
+    //     $("#MiddleSchools").show();
+    // }
+    // if (testFilter("high", filterSelect).length <= 0) {
+    //     $("#HighSchools").hide();
+    // } else {
+    //     $("#HighSchools").show();
+    // }
+    // if (testFilter("elementary", filterSelect).length <= 0) {
+    //     $("#ElementarySchools").hide();
+    // } else {
+    //     $("#ElementarySchools").show();
+    // }
+    // if (testFilter("span", filterSelect).length <= 0) {
+    //     $("#SpanSchools").hide();
+    // } else {
+    //     $("#SpanSchools").show();
+    // }
+    // if (testFilter("NTG", filterSelect).length <= 0) {
+    //     $("#NTGRecipients").hide();
+    // } else {
+    //     $("#NTGRecipients").show();
+    // }
+    // if (testFilter("Workshop", filterSelect).length <= 0) {
+    //     $("#Workshops").hide();
+    // } else {
+    //     $("#Workshops").show();
+    // }
+    // if (testFilter("Hosting", filterSelect).length <= 0) {
+    //     $("#HostingVEXIQEvents").hide();
+    // } else {
+    //     $("#HostingVEXIQEvents").show();
+    // }
+    // if (testFilter("VIQC", filterSelect).length <= 0) {
+    //     $("#VEXIQprograms").hide();
+    // } else {
+    //     $("#VEXIQprograms").show();
+    // }
+    // if (testFilter("VRC", filterSelect).length <= 0) {
+    //     $("#VRCprograms").hide();
+    // } else {
+    //     $("#VRCprograms").show();
+    // }
+};
 $(document).on('change', '#filter-select', onDrowDownChange);
 $(document).on('click', '#filter-select', onDrowDownChange);
