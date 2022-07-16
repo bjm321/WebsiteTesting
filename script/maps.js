@@ -98,6 +98,14 @@ function isVRC(schoolFeature) {
         schoolFeature.properties.VRC.toLowerCase().trim() === "yes";
 }
 
+/**
+ * Returns true if the given school geoJSON object is  hosting VEX IQ Challenge Event.
+ */
+ function isHosting(schoolFeature) {
+    return "Hosting" in schoolFeature.properties &&
+        schoolFeature.properties.Hosting.toLowerCase().trim() === "yes";
+}
+
 var addedSchools = L.geoJSON(schools, {
     pointToLayer: function (geoJsonPoint, latLng) {
         // Determine what icon to use for the schools.
@@ -339,18 +347,18 @@ $(document).on('change', '#filter-select', function (currentElement) {
                     mymap.removeLayer(layer);
                 }
             } else if (filterSelect === "Hosting") {
-                if (layer.feature.properties.Hosting.toLowerCase().trim() === "yes") {
+                if (isHosting(layer.feature)) {
                     layer.addTo(mymap);
                 } else {
                     mymap.removeLayer(layer);
                 }
-            } /* else if (filterSelect === "Workshop") {
+            } else if (filterSelect === "Workshop") {
                  if (layer.feature.properties.Workshop.toLowerCase().trim() === "yes") {
                     layer.addTo(mymap);
                 }else {
                     mymap.removeLayer(layer);
                 }
-            } */ else {
+            } else {
                 mymap.removeLayer(layer);
             }
         });
