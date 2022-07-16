@@ -392,7 +392,7 @@ $(document).on('change', '#filter-select', function (currentElement) {
 
 //school stat display
 
-$(document).on('change', '#filter-select', function (currentElement) {
+function onDrowDownChange(currentElement) {
     var filterSelect = currentElement.target.value,
         selectedSchools = testFilter(filterSelect, "high").length + testFilter(filterSelect, "middle").length + testFilter(filterSelect, "elementary").length + testFilter(filterSelect, "span").length;
 
@@ -459,4 +459,6 @@ $(document).on('change', '#filter-select', function (currentElement) {
     } else {
         $("#VRCprograms").show();
     }
-});
+});};
+$(document).on('change', '#filter-select', onDrowDownChange);
+$(document).on('click', '#filter-select', onDrowDownChange);
